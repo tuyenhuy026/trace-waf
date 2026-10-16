@@ -1,0 +1,22 @@
+{
+  "exempt_routes": [
+    "/docs",
+    "/search"
+  ],
+  "patterns": [
+    {
+      "route": "/sql",
+      "regex": "(?:['\"]\\s*(?:or\\b\\s+(?:\\d+\\s*=\\s*\\d+|['\"][^'\"]*['\"]\\s*=)|union\\b\\s+select\\b))"
+    },
+    {
+      "route": "/xss",
+      "regex": "(?:<script\\b[^>]*>[\\s\\S]*?window\\s*\\.\\s*__trace\\s*=\\s*1|\\bon\\w+\\s*=\\s*['\"][^'\"]*window\\s*\\.\\s*__trace\\s*=\\s*1)"
+    },
+    {
+      "route": "/file",
+      "regex": "(?:\\.\\./)+secret\\.txt"
+    }
+  ],
+  "rationale": "Exempt only the two routes that always HTML-escape q; this also avoids observed benign CRS false positives there. Keep CRS inspection on attack routes and add narrowly targeted blocking for SQL injection structure, executable XSS that triggers the stated oracle, and traversal specifically resolving to the secret file. Patterns match after the specified transformations. The file pattern catches both ../secret.txt and public/../../secret.txt without blocking ../public/readme.txt.",
+  "risks": "No test data is available, so regex behavior and interaction with CRS scoring are unverified. The narrow SQL and XSS patterns do not cover every attack form; CRS remains the broader defense. The file pattern intentionally targets secret.txt and may miss alternate traversal encodings or paths if application resolution semantics differ."
+}

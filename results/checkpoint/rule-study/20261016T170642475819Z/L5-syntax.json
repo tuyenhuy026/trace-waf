@@ -1,0 +1,16 @@
+{
+  "command": [
+    "docker",
+    "compose",
+    "-f",
+    "lab/compose.yaml",
+    "exec",
+    "-T",
+    "waf",
+    "httpd",
+    "-t"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "Syntax OK\n"
+}

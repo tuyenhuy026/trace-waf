@@ -1,0 +1,22 @@
+{
+  "exempt_routes": [
+    "/docs",
+    "/search"
+  ],
+  "patterns": [
+    {
+      "route": "/sql",
+      "regex": "(?is)(?:'|%27)\\s*(?:or|and)\\s+\\d+\\s*=\\s*\\d+|\\bunion\\s+(?:all\\s+)?select\\b"
+    },
+    {
+      "route": "/xss",
+      "regex": "<\\s*script\\b[^>]*>\\s*window\\s*\\.\\s*__trace\\s*=\\s*1\\s*</\\s*script\\s*>|\\bon(?:error|load)\\s*=\\s*[\"']?\\s*window\\s*\\.\\s*__trace\\s*=\\s*1"
+    },
+    {
+      "route": "/file",
+      "regex": "(?:^|/)\\.\\.(?:/|$)"
+    }
+  ],
+  "rationale": "Exempt only the two HTML-escaping documentation routes to avoid the observed benign CRS false positives there. Route-scoped patterns target the stated SQL injection forms, executable trace-setting XSS forms, and parent-directory traversal; the supplied dev probes for these attacks were blocked, while the file pattern avoids blocking ../public/readme.txt.",
+  "risks": "Patterns cover known behaviors, not all equivalent payloads; SQL syntax, browser execution contexts, and path normalization can vary. The file traversal pattern intentionally also blocks benign parent-relative paths such as ../public/readme.txt. No test data was supplied to validate pattern behavior or broader false-positive rates."
+}

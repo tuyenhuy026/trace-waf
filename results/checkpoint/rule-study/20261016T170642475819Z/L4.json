@@ -1,0 +1,22 @@
+{
+  "exempt_routes": [
+    "/docs",
+    "/search"
+  ],
+  "patterns": [
+    {
+      "route": "/sql",
+      "regex": "(?:'|%27)\\s*(?:or|union\\s+select)\\b"
+    },
+    {
+      "route": "/xss",
+      "regex": "<\\s*script\\b|\\bon\\w+\\s*="
+    },
+    {
+      "route": "/file",
+      "regex": "(?:^|/)\\.\\.(?:/|$)"
+    }
+  ],
+  "rationale": "Exempt only /docs and /search: both HTML-escape q, and dev observations show CRS false positives for harmless SQL/XSS examples on these routes. Keep CRS inspection on attack routes and add narrow route-specific signatures for SQL quote-plus-boolean/UNION probes, script or event-handler markup, and parent-directory traversal. The file pattern does not block ../public/readme.txt, avoiding the observed benign traversal false positive. Patterns use the specified normalized input; percent-encoding alternatives are retained only where harmlessly redundant after decoding.",
+  "risks": "No test data was supplied, so pattern coverage and false-positive behavior remain unvalidated. The signatures are intentionally narrow and may miss SQL injection, XSS, or traversal variants not matching them; CRS remains the primary layer. The file rule may also block legitimate parent-directory paths, and the SQL rule may block quoted boolean or UNION text used benignly on /sql."
+}

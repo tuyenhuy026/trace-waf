@@ -1,0 +1,47 @@
+{
+  "source_plan_sha256": "80897b18898c5e90285e47de12f5de3acd4f14cf620cf802380537a2f592f5a3",
+  "candidate_hashes": [
+    {
+      "id": "B0",
+      "source": "stock_crs",
+      "rule_sha256": "75dab9ab7d49c82d4f2c8b48b5920d906857bcc67c8166a05d79a513fd104202"
+    },
+    {
+      "id": "B1",
+      "source": "fixed_heuristic",
+      "rule_sha256": "b80730cdd94bb16f7bc1e12236b4f9d2f332af4f79522eb8bf531e5d3be2cab0"
+    },
+    {
+      "id": "L1",
+      "source": "gpt-6-luna",
+      "rule_sha256": "f2d6b67bdba3d0206bceead4278d20969ec52caf9d96520ad2dc9876ab875b77"
+    },
+    {
+      "id": "L2",
+      "source": "gpt-6-luna",
+      "rule_sha256": "fed9967f0f17994b4d1801ebde3175b048bee3c903861e911ee6a45373ea8cc4"
+    },
+    {
+      "id": "L3",
+      "source": "gpt-6-luna",
+      "rule_sha256": "e5d3084e17f9e2390c990b2b83f3f784a1385fa52f87e088eb0e4fc62fac950a"
+    },
+    {
+      "id": "L4",
+      "source": "gpt-6-luna",
+      "rule_sha256": "b84b46b7d488759678c3e67d4af60b299a1a00ace948b019c563caef8f2a9723"
+    },
+    {
+      "id": "L5",
+      "source": "gpt-6-luna",
+      "rule_sha256": "a6b08e0a89b1499be588e7f8d16feb6e41c7b613c4bcea8fc4fad1d46641dff3"
+    }
+  ],
+  "corpus_sha256": "2b96fbdf944bcb06f8d4918b063dc16e9e318091dcf8740e9e3b9538b3d7c707",
+  "api_calls": 0,
+  "selection_allowed": false,
+  "validation_decision": "NO_GO",
+  "purpose": "One descriptive test pass per frozen policy; no tuning or deployment approval",
+  "runner_sha256": "b57de18a3a6a365af3c7f016805bb73364fec13d6350fba1c34cd7476d53d05c",
+  "orchestrator_sha256": "b9fd05cee7865f0ffe29b10ea510bc6a7051ae854501797c12ac9b914f1cebfc"
+}

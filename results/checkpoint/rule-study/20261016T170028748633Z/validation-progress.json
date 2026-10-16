@@ -1,0 +1,130 @@
+[
+  {
+    "id": "B0",
+    "source": "stock_crs",
+    "status": "evaluated",
+    "summary_sha256": "cb5ee31b3e9d87b1709c6189fccbef88c49d8fe163fd0e4a3c044ee9b1c6e6ac",
+    "gate": {
+      "pass": false,
+      "reasons": [
+        "fpr",
+        "benign_functional_regression"
+      ],
+      "metrics": {
+        "source": "ALL",
+        "cwe": "ALL",
+        "rows": 46,
+        "counts": {
+          "blocked_attack": 14,
+          "invalid_attack": 16,
+          "true_negative": 10,
+          "false_positive": 5,
+          "benign_regression": 1
+        },
+        "valid_evaluable_attacks": 14,
+        "valid_evaluable_benign": 16,
+        "coverage": 1.0,
+        "bypass_rate": 0.0,
+        "fpr": 0.3125,
+        "robustness": 1.0,
+        "benign_regressions": 1
+      }
+    }
+  },
+  {
+    "id": "B1",
+    "source": "fixed_heuristic",
+    "status": "evaluated",
+    "summary_sha256": "7f0f1480be6b817d5bb883e15336753c3e75dee6e7be815d4eee2d1ead03f9f2",
+    "gate": {
+      "pass": false,
+      "reasons": [
+        "fpr",
+        "benign_functional_regression"
+      ],
+      "metrics": {
+        "source": "ALL",
+        "cwe": "ALL",
+        "rows": 46,
+        "counts": {
+          "blocked_attack": 14,
+          "invalid_attack": 16,
+          "true_negative": 14,
+          "false_positive": 1,
+          "benign_regression": 1
+        },
+        "valid_evaluable_attacks": 14,
+        "valid_evaluable_benign": 16,
+        "coverage": 1.0,
+        "bypass_rate": 0.0,
+        "fpr": 0.0625,
+        "robustness": 1.0,
+        "benign_regressions": 1
+      }
+    }
+  },
+  {
+    "id": "L3",
+    "source": "gpt-6-luna",
+    "status": "evaluated",
+    "summary_sha256": "ec3194572bf00f765ad3f2cf289bed879381b64272f3ad41c8193f13c9dd9cf8",
+    "gate": {
+      "pass": false,
+      "reasons": [
+        "fpr",
+        "benign_functional_regression"
+      ],
+      "metrics": {
+        "source": "ALL",
+        "cwe": "ALL",
+        "rows": 46,
+        "counts": {
+          "blocked_attack": 14,
+          "invalid_attack": 16,
+          "true_negative": 14,
+          "false_positive": 1,
+          "benign_regression": 1
+        },
+        "valid_evaluable_attacks": 14,
+        "valid_evaluable_benign": 16,
+        "coverage": 1.0,
+        "bypass_rate": 0.0,
+        "fpr": 0.0625,
+        "robustness": 1.0,
+        "benign_regressions": 1
+      }
+    }
+  },
+  {
+    "id": "L4",
+    "source": "gpt-6-luna",
+    "status": "evaluated",
+    "summary_sha256": "98a6eb035e905f9b35c7f9e4fce69d9b3da728ee5b2dea7c4e0f97d35c6ce193",
+    "gate": {
+      "pass": false,
+      "reasons": [
+        "fpr",
+        "benign_functional_regression"
+      ],
+      "metrics": {
+        "source": "ALL",
+        "cwe": "ALL",
+        "rows": 46,
+        "counts": {
+          "blocked_attack": 14,
+          "invalid_attack": 16,
+          "true_negative": 14,
+          "false_positive": 1,
+          "benign_regression": 1
+        },
+        "valid_evaluable_attacks": 14,
+        "valid_evaluable_benign": 16,
+        "coverage": 1.0,
+        "bypass_rate": 0.0,
+        "fpr": 0.0625,
+        "robustness": 1.0,
+        "benign_regressions": 1
+      }
+    }
+  }
+]

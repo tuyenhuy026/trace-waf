@@ -1,0 +1,46 @@
+{
+  "created_utc": "2026-10-16T17:00:56.672886+00:00",
+  "candidates": [
+    {
+      "id": "B0",
+      "source": "stock_crs",
+      "rule_sha256": "75dab9ab7d49c82d4f2c8b48b5920d906857bcc67c8166a05d79a513fd104202"
+    },
+    {
+      "id": "B1",
+      "source": "fixed_heuristic",
+      "rule_sha256": "b80730cdd94bb16f7bc1e12236b4f9d2f332af4f79522eb8bf531e5d3be2cab0"
+    },
+    {
+      "id": "L3",
+      "source": "gpt-6-luna",
+      "rule_sha256": "e5d3084e17f9e2390c990b2b83f3f784a1385fa52f87e088eb0e4fc62fac950a"
+    },
+    {
+      "id": "L4",
+      "source": "gpt-6-luna",
+      "rule_sha256": "b84b46b7d488759678c3e67d4af60b299a1a00ace948b019c563caef8f2a9723"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "L1",
+      "reason": "Unsafe or oversized rule representation"
+    },
+    {
+      "id": "L2",
+      "reason": "Unsafe or oversized rule representation"
+    },
+    {
+      "id": "L5",
+      "reason": "Unsafe or oversized rule representation"
+    }
+  ],
+  "dev_evidence_sha256": "493207f844e4957322716168f081d49122a550f2fa6844c902e13ec0b8bf0102",
+  "corpus_sha256": "2b96fbdf944bcb06f8d4918b063dc16e9e318091dcf8740e9e3b9538b3d7c707",
+  "selection": "passing validation gate; min FPR, max coverage, then ID",
+  "gate": "coverage>=.90, FPR<=.05, robustness>=.85; all CWEs present; no uncertainty or functional regression",
+  "test_accessed": false,
+  "model": "gpt-6-luna",
+  "replicates": 5
+}

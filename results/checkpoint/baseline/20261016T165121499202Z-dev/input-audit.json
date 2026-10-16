@@ -1,0 +1,51 @@
+{
+  "corpus_sha256": "2b96fbdf944bcb06f8d4918b063dc16e9e318091dcf8740e9e3b9538b3d7c707",
+  "corpus_rows": 196,
+  "shared_exact_inputs_across_splits": 6,
+  "note": "Disjoint family identifiers do not prove semantic family independence.",
+  "api_calls": [
+    {
+      "file": "payload-gpt-6-luna-0.json",
+      "sha256": "0ac97d4a6282c9d9087d00d5f313157e3f783b1f9e67fd18bd0732a8439b22c4",
+      "status": 200,
+      "parsed_json": true,
+      "candidate_count": 12,
+      "budget_compliant": true
+    },
+    {
+      "file": "payload-gpt-6-luna-1.json",
+      "sha256": "c9ee4a3c293a3cbce8e29dae5593ccf927a33cc59bf9ad6851cbe1fa826d1a3f",
+      "status": 200,
+      "parsed_json": true,
+      "candidate_count": 12,
+      "budget_compliant": true
+    },
+    {
+      "file": "payload-gpt-6-luna-2.json",
+      "sha256": "210ea08b5aa4fa65aca8582d0993b4c166f2f748fd02d8818090fdec0bcc793a",
+      "status": 200,
+      "parsed_json": true,
+      "candidate_count": 0,
+      "budget_compliant": false
+    },
+    {
+      "file": "payload-gpt-6-luna-3.json",
+      "sha256": "4e07a1348305d10046e4a2f39ea2e88fd7a53f917dfc07c7c716cfdf2d30f7a0",
+      "status": 200,
+      "parsed_json": true,
+      "candidate_count": 0,
+      "budget_compliant": false
+    },
+    {
+      "file": "payload-gpt-6-luna-4.json",
+      "sha256": "ebefa4f4afd88b6d6ae99e782d12a8ee5f9296ed4338250519a840dd12bc6ba7",
+      "status": 200,
+      "parsed_json": true,
+      "candidate_count": 0,
+      "budget_compliant": false
+    }
+  ],
+  "rejected_llm_cases": [],
+  "selected_rows": 70,
+  "within_source_duplicates": 0
+}

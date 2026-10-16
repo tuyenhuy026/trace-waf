@@ -1,0 +1,7 @@
+{
+  "exempt_routes": [
+    "/docs",
+    "/search"
+  ],
+  "patterns": []
+}

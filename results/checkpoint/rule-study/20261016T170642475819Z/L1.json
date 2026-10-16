@@ -1,0 +1,22 @@
+{
+  "exempt_routes": [
+    "/docs",
+    "/search"
+  ],
+  "patterns": [
+    {
+      "route": "/sql",
+      "regex": "(?:['\"]\\s*(?:or|and)\\s+\\d+\\s*=\\s*\\d+|\\bunion\\s+(?:all\\s+)?select\\b)"
+    },
+    {
+      "route": "/xss",
+      "regex": "<\\s*script\\b|\\bon\\w+\\s*=\\s*[\"']?\\s*(?:window\\.)?__trace\\b"
+    },
+    {
+      "route": "/file",
+      "regex": "(?:\\.\\./)+(?:secret\\.txt|public/(?:\\.\\./)+secret\\.txt)"
+    }
+  ],
+  "rationale": "Exempt only /docs and /search, where q is HTML-escaped; this also addresses the documented benign CRS false positives on those routes. Keep CRS inspection and anomaly scoring on all other routes, adding narrowly scoped signatures for SQL tautologies/UNION SELECT, script tags or trace-triggering event handlers, and traversal paths to secret.txt. Dev observations show these attack families were blocked, while benign traversal to public/readme.txt was a false positive; the file signature avoids blocking that observed path.",
+  "risks": "No test data is available, and dev evidence is limited: crafted SQL/XSS/file variants may evade these signatures, while broader CRS rules can still block benign q values on attack routes. The file pattern targets the disclosed secret path rather than general traversal, so other sensitive-file paths are not covered by this added rule."
+}

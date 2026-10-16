@@ -1,0 +1,22 @@
+{
+  "exempt_routes": [
+    "/docs",
+    "/search"
+  ],
+  "patterns": [
+    {
+      "route": "/sql",
+      "regex": "(?:'|%27)\\s*(?:or\\s+\\d+\\s*=\\s*\\d+|union\\s+select\\b)|--"
+    },
+    {
+      "route": "/xss",
+      "regex": "<\\s*script\\b|\\bonerror\\s*="
+    },
+    {
+      "route": "/file",
+      "regex": "(?:\\.\\./)+secret\\.txt|(?:^|/)public/(?:\\.\\./)+"
+    }
+  ],
+  "rationale": "Exempt only /docs and /search: q is HTML-escaped on both, and dev observations show CRS false positives there for documentation-like SQL and script examples. Keep CRS inspection on attack routes and add narrow route-scoped patterns for observed SQL tautology/UNION-comment forms, script or onerror markup, and traversal aimed at the specified secret file. Patterns use the specified normalized input and do not exempt other arguments or routes.",
+  "risks": "The dev set is small and reports zero bypasses only for its valid evaluable attacks; it does not establish broad coverage. Narrow patterns may miss other payload forms, while CRS may still false-positive on attack routes. The /file rule deliberately targets secret.txt traversal rather than blocking all traversal, preserving public-path compatibility but leaving other traversal shapes dependent on CRS."
+}
