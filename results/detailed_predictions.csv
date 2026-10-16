@@ -1,0 +1,571 @@
+case_id,split,label,cwe,route,variant,group_id,value,pred_raw_signature,pred_canonical_signature,pred_trace_policy
+A-CWE-89-0-4-raw,test,1,CWE-89,/api/search,raw,CWE-89-0-4,item4' OR 1=1 --,1,1,1
+A-CWE-89-0-4-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-0-4,%69%74%65%6D%34%27%20%4F%52%20%31%3D%31%20%2D%2D,0,1,1
+A-CWE-89-0-4-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-0-4,%25%36%39%25%37%34%25%36%35%25%36%44%25%33%34%25%32%37%25%32%30%25%34%46%25%35%32%25%32%30%25%33%31%25%33%44%25%33%31%25%32%30%25%32%44%25%32%44,0,1,1
+A-CWE-89-0-4-case,test,1,CWE-89,/api/search,case,CWE-89-0-4,iTeM4' Or 1=1 --,1,1,1
+A-CWE-89-0-4-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-0-4,item4'/**/OR/**/1=1/**/--,0,0,1
+A-CWE-89-0-5-raw,test,1,CWE-89,/api/search,raw,CWE-89-0-5,item5' OR 1=1 --,1,1,1
+A-CWE-89-0-5-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-0-5,%69%74%65%6D%35%27%20%4F%52%20%31%3D%31%20%2D%2D,0,1,1
+A-CWE-89-0-5-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-0-5,%25%36%39%25%37%34%25%36%35%25%36%44%25%33%35%25%32%37%25%32%30%25%34%46%25%35%32%25%32%30%25%33%31%25%33%44%25%33%31%25%32%30%25%32%44%25%32%44,0,1,1
+A-CWE-89-0-5-case,test,1,CWE-89,/api/search,case,CWE-89-0-5,iTeM5' Or 1=1 --,1,1,1
+A-CWE-89-0-5-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-0-5,item5'/**/OR/**/1=1/**/--,0,0,1
+A-CWE-89-0-6-raw,test,1,CWE-89,/api/search,raw,CWE-89-0-6,item6' OR 1=1 --,1,1,1
+A-CWE-89-0-6-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-0-6,%69%74%65%6D%36%27%20%4F%52%20%31%3D%31%20%2D%2D,0,1,1
+A-CWE-89-0-6-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-0-6,%25%36%39%25%37%34%25%36%35%25%36%44%25%33%36%25%32%37%25%32%30%25%34%46%25%35%32%25%32%30%25%33%31%25%33%44%25%33%31%25%32%30%25%32%44%25%32%44,0,1,1
+A-CWE-89-0-6-case,test,1,CWE-89,/api/search,case,CWE-89-0-6,iTeM6' Or 1=1 --,1,1,1
+A-CWE-89-0-6-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-0-6,item6'/**/OR/**/1=1/**/--,0,0,1
+A-CWE-89-0-7-raw,test,1,CWE-89,/api/search,raw,CWE-89-0-7,item7' OR 1=1 --,1,1,1
+A-CWE-89-0-7-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-0-7,%69%74%65%6D%37%27%20%4F%52%20%31%3D%31%20%2D%2D,0,1,1
+A-CWE-89-0-7-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-0-7,%25%36%39%25%37%34%25%36%35%25%36%44%25%33%37%25%32%37%25%32%30%25%34%46%25%35%32%25%32%30%25%33%31%25%33%44%25%33%31%25%32%30%25%32%44%25%32%44,0,1,1
+A-CWE-89-0-7-case,test,1,CWE-89,/api/search,case,CWE-89-0-7,iTeM7' Or 1=1 --,1,1,1
+A-CWE-89-0-7-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-0-7,item7'/**/OR/**/1=1/**/--,0,0,1
+A-CWE-89-0-8-raw,test,1,CWE-89,/api/search,raw,CWE-89-0-8,item8' OR 1=1 --,1,1,1
+A-CWE-89-0-8-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-0-8,%69%74%65%6D%38%27%20%4F%52%20%31%3D%31%20%2D%2D,0,1,1
+A-CWE-89-0-8-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-0-8,%25%36%39%25%37%34%25%36%35%25%36%44%25%33%38%25%32%37%25%32%30%25%34%46%25%35%32%25%32%30%25%33%31%25%33%44%25%33%31%25%32%30%25%32%44%25%32%44,0,1,1
+A-CWE-89-0-8-case,test,1,CWE-89,/api/search,case,CWE-89-0-8,iTeM8' Or 1=1 --,1,1,1
+A-CWE-89-0-8-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-0-8,item8'/**/OR/**/1=1/**/--,0,0,1
+A-CWE-89-0-9-raw,test,1,CWE-89,/api/search,raw,CWE-89-0-9,item9' OR 1=1 --,1,1,1
+A-CWE-89-0-9-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-0-9,%69%74%65%6D%39%27%20%4F%52%20%31%3D%31%20%2D%2D,0,1,1
+A-CWE-89-0-9-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-0-9,%25%36%39%25%37%34%25%36%35%25%36%44%25%33%39%25%32%37%25%32%30%25%34%46%25%35%32%25%32%30%25%33%31%25%33%44%25%33%31%25%32%30%25%32%44%25%32%44,0,1,1
+A-CWE-89-0-9-case,test,1,CWE-89,/api/search,case,CWE-89-0-9,iTeM9' Or 1=1 --,1,1,1
+A-CWE-89-0-9-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-0-9,item9'/**/OR/**/1=1/**/--,0,0,1
+A-CWE-89-1-4-raw,test,1,CWE-89,/api/search,raw,CWE-89-1-4,item4') OR ('a'='a') --,1,1,1
+A-CWE-89-1-4-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-1-4,%69%74%65%6D%34%27%29%20%4F%52%20%28%27%61%27%3D%27%61%27%29%20%2D%2D,0,1,1
+A-CWE-89-1-4-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-1-4,%25%36%39%25%37%34%25%36%35%25%36%44%25%33%34%25%32%37%25%32%39%25%32%30%25%34%46%25%35%32%25%32%30%25%32%38%25%32%37%25%36%31%25%32%37%25%33%44%25%32%37%25%36%31%25%32%37%25%32%39%25%32%30%25%32%44%25%32%44,0,1,1
+A-CWE-89-1-4-case,test,1,CWE-89,/api/search,case,CWE-89-1-4,iTeM4') oR ('A'='A') --,1,1,1
+A-CWE-89-1-4-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-1-4,item4')/**/OR/**/('a'='a')/**/--,0,0,1
+A-CWE-89-1-5-raw,test,1,CWE-89,/api/search,raw,CWE-89-1-5,item5') OR ('a'='a') --,1,1,1
+A-CWE-89-1-5-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-1-5,%69%74%65%6D%35%27%29%20%4F%52%20%28%27%61%27%3D%27%61%27%29%20%2D%2D,0,1,1
+A-CWE-89-1-5-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-1-5,%25%36%39%25%37%34%25%36%35%25%36%44%25%33%35%25%32%37%25%32%39%25%32%30%25%34%46%25%35%32%25%32%30%25%32%38%25%32%37%25%36%31%25%32%37%25%33%44%25%32%37%25%36%31%25%32%37%25%32%39%25%32%30%25%32%44%25%32%44,0,1,1
+A-CWE-89-1-5-case,test,1,CWE-89,/api/search,case,CWE-89-1-5,iTeM5') oR ('A'='A') --,1,1,1
+A-CWE-89-1-5-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-1-5,item5')/**/OR/**/('a'='a')/**/--,0,0,1
+A-CWE-89-1-6-raw,test,1,CWE-89,/api/search,raw,CWE-89-1-6,item6') OR ('a'='a') --,1,1,1
+A-CWE-89-1-6-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-1-6,%69%74%65%6D%36%27%29%20%4F%52%20%28%27%61%27%3D%27%61%27%29%20%2D%2D,0,1,1
+A-CWE-89-1-6-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-1-6,%25%36%39%25%37%34%25%36%35%25%36%44%25%33%36%25%32%37%25%32%39%25%32%30%25%34%46%25%35%32%25%32%30%25%32%38%25%32%37%25%36%31%25%32%37%25%33%44%25%32%37%25%36%31%25%32%37%25%32%39%25%32%30%25%32%44%25%32%44,0,1,1
+A-CWE-89-1-6-case,test,1,CWE-89,/api/search,case,CWE-89-1-6,iTeM6') oR ('A'='A') --,1,1,1
+A-CWE-89-1-6-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-1-6,item6')/**/OR/**/('a'='a')/**/--,0,0,1
+A-CWE-89-1-7-raw,test,1,CWE-89,/api/search,raw,CWE-89-1-7,item7') OR ('a'='a') --,1,1,1
+A-CWE-89-1-7-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-1-7,%69%74%65%6D%37%27%29%20%4F%52%20%28%27%61%27%3D%27%61%27%29%20%2D%2D,0,1,1
+A-CWE-89-1-7-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-1-7,%25%36%39%25%37%34%25%36%35%25%36%44%25%33%37%25%32%37%25%32%39%25%32%30%25%34%46%25%35%32%25%32%30%25%32%38%25%32%37%25%36%31%25%32%37%25%33%44%25%32%37%25%36%31%25%32%37%25%32%39%25%32%30%25%32%44%25%32%44,0,1,1
+A-CWE-89-1-7-case,test,1,CWE-89,/api/search,case,CWE-89-1-7,iTeM7') oR ('A'='A') --,1,1,1
+A-CWE-89-1-7-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-1-7,item7')/**/OR/**/('a'='a')/**/--,0,0,1
+A-CWE-89-1-8-raw,test,1,CWE-89,/api/search,raw,CWE-89-1-8,item8') OR ('a'='a') --,1,1,1
+A-CWE-89-1-8-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-1-8,%69%74%65%6D%38%27%29%20%4F%52%20%28%27%61%27%3D%27%61%27%29%20%2D%2D,0,1,1
+A-CWE-89-1-8-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-1-8,%25%36%39%25%37%34%25%36%35%25%36%44%25%33%38%25%32%37%25%32%39%25%32%30%25%34%46%25%35%32%25%32%30%25%32%38%25%32%37%25%36%31%25%32%37%25%33%44%25%32%37%25%36%31%25%32%37%25%32%39%25%32%30%25%32%44%25%32%44,0,1,1
+A-CWE-89-1-8-case,test,1,CWE-89,/api/search,case,CWE-89-1-8,iTeM8') oR ('A'='A') --,1,1,1
+A-CWE-89-1-8-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-1-8,item8')/**/OR/**/('a'='a')/**/--,0,0,1
+A-CWE-89-1-9-raw,test,1,CWE-89,/api/search,raw,CWE-89-1-9,item9') OR ('a'='a') --,1,1,1
+A-CWE-89-1-9-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-1-9,%69%74%65%6D%39%27%29%20%4F%52%20%28%27%61%27%3D%27%61%27%29%20%2D%2D,0,1,1
+A-CWE-89-1-9-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-1-9,%25%36%39%25%37%34%25%36%35%25%36%44%25%33%39%25%32%37%25%32%39%25%32%30%25%34%46%25%35%32%25%32%30%25%32%38%25%32%37%25%36%31%25%32%37%25%33%44%25%32%37%25%36%31%25%32%37%25%32%39%25%32%30%25%32%44%25%32%44,0,1,1
+A-CWE-89-1-9-case,test,1,CWE-89,/api/search,case,CWE-89-1-9,iTeM9') oR ('A'='A') --,1,1,1
+A-CWE-89-1-9-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-1-9,item9')/**/OR/**/('a'='a')/**/--,0,0,1
+A-CWE-89-2-4-raw,test,1,CWE-89,/api/search,raw,CWE-89-2-4,1 UNION SELECT marker4 FROM demo,1,1,1
+A-CWE-89-2-4-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-2-4,%31%20%55%4E%49%4F%4E%20%53%45%4C%45%43%54%20%6D%61%72%6B%65%72%34%20%46%52%4F%4D%20%64%65%6D%6F,0,1,1
+A-CWE-89-2-4-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-2-4,%25%33%31%25%32%30%25%35%35%25%34%45%25%34%39%25%34%46%25%34%45%25%32%30%25%35%33%25%34%35%25%34%43%25%34%35%25%34%33%25%35%34%25%32%30%25%36%44%25%36%31%25%37%32%25%36%42%25%36%35%25%37%32%25%33%34%25%32%30%25%34%36%25%35%32%25%34%46%25%34%44%25%32%30%25%36%34%25%36%35%25%36%44%25%36%46,0,1,1
+A-CWE-89-2-4-case,test,1,CWE-89,/api/search,case,CWE-89-2-4,1 uNiOn sElEcT MaRkEr4 FrOm dEmO,1,1,1
+A-CWE-89-2-4-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-2-4,1/**/UNION/**/SELECT/**/marker4/**/FROM/**/demo,0,0,1
+A-CWE-89-2-5-raw,test,1,CWE-89,/api/search,raw,CWE-89-2-5,1 UNION SELECT marker5 FROM demo,1,1,1
+A-CWE-89-2-5-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-2-5,%31%20%55%4E%49%4F%4E%20%53%45%4C%45%43%54%20%6D%61%72%6B%65%72%35%20%46%52%4F%4D%20%64%65%6D%6F,0,1,1
+A-CWE-89-2-5-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-2-5,%25%33%31%25%32%30%25%35%35%25%34%45%25%34%39%25%34%46%25%34%45%25%32%30%25%35%33%25%34%35%25%34%43%25%34%35%25%34%33%25%35%34%25%32%30%25%36%44%25%36%31%25%37%32%25%36%42%25%36%35%25%37%32%25%33%35%25%32%30%25%34%36%25%35%32%25%34%46%25%34%44%25%32%30%25%36%34%25%36%35%25%36%44%25%36%46,0,1,1
+A-CWE-89-2-5-case,test,1,CWE-89,/api/search,case,CWE-89-2-5,1 uNiOn sElEcT MaRkEr5 FrOm dEmO,1,1,1
+A-CWE-89-2-5-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-2-5,1/**/UNION/**/SELECT/**/marker5/**/FROM/**/demo,0,0,1
+A-CWE-89-2-6-raw,test,1,CWE-89,/api/search,raw,CWE-89-2-6,1 UNION SELECT marker6 FROM demo,1,1,1
+A-CWE-89-2-6-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-2-6,%31%20%55%4E%49%4F%4E%20%53%45%4C%45%43%54%20%6D%61%72%6B%65%72%36%20%46%52%4F%4D%20%64%65%6D%6F,0,1,1
+A-CWE-89-2-6-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-2-6,%25%33%31%25%32%30%25%35%35%25%34%45%25%34%39%25%34%46%25%34%45%25%32%30%25%35%33%25%34%35%25%34%43%25%34%35%25%34%33%25%35%34%25%32%30%25%36%44%25%36%31%25%37%32%25%36%42%25%36%35%25%37%32%25%33%36%25%32%30%25%34%36%25%35%32%25%34%46%25%34%44%25%32%30%25%36%34%25%36%35%25%36%44%25%36%46,0,1,1
+A-CWE-89-2-6-case,test,1,CWE-89,/api/search,case,CWE-89-2-6,1 uNiOn sElEcT MaRkEr6 FrOm dEmO,1,1,1
+A-CWE-89-2-6-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-2-6,1/**/UNION/**/SELECT/**/marker6/**/FROM/**/demo,0,0,1
+A-CWE-89-2-7-raw,test,1,CWE-89,/api/search,raw,CWE-89-2-7,1 UNION SELECT marker7 FROM demo,1,1,1
+A-CWE-89-2-7-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-2-7,%31%20%55%4E%49%4F%4E%20%53%45%4C%45%43%54%20%6D%61%72%6B%65%72%37%20%46%52%4F%4D%20%64%65%6D%6F,0,1,1
+A-CWE-89-2-7-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-2-7,%25%33%31%25%32%30%25%35%35%25%34%45%25%34%39%25%34%46%25%34%45%25%32%30%25%35%33%25%34%35%25%34%43%25%34%35%25%34%33%25%35%34%25%32%30%25%36%44%25%36%31%25%37%32%25%36%42%25%36%35%25%37%32%25%33%37%25%32%30%25%34%36%25%35%32%25%34%46%25%34%44%25%32%30%25%36%34%25%36%35%25%36%44%25%36%46,0,1,1
+A-CWE-89-2-7-case,test,1,CWE-89,/api/search,case,CWE-89-2-7,1 uNiOn sElEcT MaRkEr7 FrOm dEmO,1,1,1
+A-CWE-89-2-7-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-2-7,1/**/UNION/**/SELECT/**/marker7/**/FROM/**/demo,0,0,1
+A-CWE-89-2-8-raw,test,1,CWE-89,/api/search,raw,CWE-89-2-8,1 UNION SELECT marker8 FROM demo,1,1,1
+A-CWE-89-2-8-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-2-8,%31%20%55%4E%49%4F%4E%20%53%45%4C%45%43%54%20%6D%61%72%6B%65%72%38%20%46%52%4F%4D%20%64%65%6D%6F,0,1,1
+A-CWE-89-2-8-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-2-8,%25%33%31%25%32%30%25%35%35%25%34%45%25%34%39%25%34%46%25%34%45%25%32%30%25%35%33%25%34%35%25%34%43%25%34%35%25%34%33%25%35%34%25%32%30%25%36%44%25%36%31%25%37%32%25%36%42%25%36%35%25%37%32%25%33%38%25%32%30%25%34%36%25%35%32%25%34%46%25%34%44%25%32%30%25%36%34%25%36%35%25%36%44%25%36%46,0,1,1
+A-CWE-89-2-8-case,test,1,CWE-89,/api/search,case,CWE-89-2-8,1 uNiOn sElEcT MaRkEr8 FrOm dEmO,1,1,1
+A-CWE-89-2-8-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-2-8,1/**/UNION/**/SELECT/**/marker8/**/FROM/**/demo,0,0,1
+A-CWE-89-2-9-raw,test,1,CWE-89,/api/search,raw,CWE-89-2-9,1 UNION SELECT marker9 FROM demo,1,1,1
+A-CWE-89-2-9-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-2-9,%31%20%55%4E%49%4F%4E%20%53%45%4C%45%43%54%20%6D%61%72%6B%65%72%39%20%46%52%4F%4D%20%64%65%6D%6F,0,1,1
+A-CWE-89-2-9-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-2-9,%25%33%31%25%32%30%25%35%35%25%34%45%25%34%39%25%34%46%25%34%45%25%32%30%25%35%33%25%34%35%25%34%43%25%34%35%25%34%33%25%35%34%25%32%30%25%36%44%25%36%31%25%37%32%25%36%42%25%36%35%25%37%32%25%33%39%25%32%30%25%34%36%25%35%32%25%34%46%25%34%44%25%32%30%25%36%34%25%36%35%25%36%44%25%36%46,0,1,1
+A-CWE-89-2-9-case,test,1,CWE-89,/api/search,case,CWE-89-2-9,1 uNiOn sElEcT MaRkEr9 FrOm dEmO,1,1,1
+A-CWE-89-2-9-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-2-9,1/**/UNION/**/SELECT/**/marker9/**/FROM/**/demo,0,0,1
+A-CWE-89-3-4-raw,test,1,CWE-89,/api/search,raw,CWE-89-3-4,name4' AND 7=7 --,1,1,1
+A-CWE-89-3-4-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-3-4,%6E%61%6D%65%34%27%20%41%4E%44%20%37%3D%37%20%2D%2D,0,1,1
+A-CWE-89-3-4-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-3-4,%25%36%45%25%36%31%25%36%44%25%36%35%25%33%34%25%32%37%25%32%30%25%34%31%25%34%45%25%34%34%25%32%30%25%33%37%25%33%44%25%33%37%25%32%30%25%32%44%25%32%44,0,1,1
+A-CWE-89-3-4-case,test,1,CWE-89,/api/search,case,CWE-89-3-4,nAmE4' AnD 7=7 --,1,1,1
+A-CWE-89-3-4-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-3-4,name4'/**/AND/**/7=7/**/--,0,0,1
+A-CWE-89-3-5-raw,test,1,CWE-89,/api/search,raw,CWE-89-3-5,name5' AND 7=7 --,1,1,1
+A-CWE-89-3-5-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-3-5,%6E%61%6D%65%35%27%20%41%4E%44%20%37%3D%37%20%2D%2D,0,1,1
+A-CWE-89-3-5-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-3-5,%25%36%45%25%36%31%25%36%44%25%36%35%25%33%35%25%32%37%25%32%30%25%34%31%25%34%45%25%34%34%25%32%30%25%33%37%25%33%44%25%33%37%25%32%30%25%32%44%25%32%44,0,1,1
+A-CWE-89-3-5-case,test,1,CWE-89,/api/search,case,CWE-89-3-5,nAmE5' AnD 7=7 --,1,1,1
+A-CWE-89-3-5-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-3-5,name5'/**/AND/**/7=7/**/--,0,0,1
+A-CWE-89-3-6-raw,test,1,CWE-89,/api/search,raw,CWE-89-3-6,name6' AND 7=7 --,1,1,1
+A-CWE-89-3-6-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-3-6,%6E%61%6D%65%36%27%20%41%4E%44%20%37%3D%37%20%2D%2D,0,1,1
+A-CWE-89-3-6-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-3-6,%25%36%45%25%36%31%25%36%44%25%36%35%25%33%36%25%32%37%25%32%30%25%34%31%25%34%45%25%34%34%25%32%30%25%33%37%25%33%44%25%33%37%25%32%30%25%32%44%25%32%44,0,1,1
+A-CWE-89-3-6-case,test,1,CWE-89,/api/search,case,CWE-89-3-6,nAmE6' AnD 7=7 --,1,1,1
+A-CWE-89-3-6-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-3-6,name6'/**/AND/**/7=7/**/--,0,0,1
+A-CWE-89-3-7-raw,test,1,CWE-89,/api/search,raw,CWE-89-3-7,name7' AND 7=7 --,1,1,1
+A-CWE-89-3-7-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-3-7,%6E%61%6D%65%37%27%20%41%4E%44%20%37%3D%37%20%2D%2D,0,1,1
+A-CWE-89-3-7-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-3-7,%25%36%45%25%36%31%25%36%44%25%36%35%25%33%37%25%32%37%25%32%30%25%34%31%25%34%45%25%34%34%25%32%30%25%33%37%25%33%44%25%33%37%25%32%30%25%32%44%25%32%44,0,1,1
+A-CWE-89-3-7-case,test,1,CWE-89,/api/search,case,CWE-89-3-7,nAmE7' AnD 7=7 --,1,1,1
+A-CWE-89-3-7-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-3-7,name7'/**/AND/**/7=7/**/--,0,0,1
+A-CWE-89-3-8-raw,test,1,CWE-89,/api/search,raw,CWE-89-3-8,name8' AND 7=7 --,1,1,1
+A-CWE-89-3-8-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-3-8,%6E%61%6D%65%38%27%20%41%4E%44%20%37%3D%37%20%2D%2D,0,1,1
+A-CWE-89-3-8-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-3-8,%25%36%45%25%36%31%25%36%44%25%36%35%25%33%38%25%32%37%25%32%30%25%34%31%25%34%45%25%34%34%25%32%30%25%33%37%25%33%44%25%33%37%25%32%30%25%32%44%25%32%44,0,1,1
+A-CWE-89-3-8-case,test,1,CWE-89,/api/search,case,CWE-89-3-8,nAmE8' AnD 7=7 --,1,1,1
+A-CWE-89-3-8-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-3-8,name8'/**/AND/**/7=7/**/--,0,0,1
+A-CWE-89-3-9-raw,test,1,CWE-89,/api/search,raw,CWE-89-3-9,name9' AND 7=7 --,1,1,1
+A-CWE-89-3-9-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-3-9,%6E%61%6D%65%39%27%20%41%4E%44%20%37%3D%37%20%2D%2D,0,1,1
+A-CWE-89-3-9-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-3-9,%25%36%45%25%36%31%25%36%44%25%36%35%25%33%39%25%32%37%25%32%30%25%34%31%25%34%45%25%34%34%25%32%30%25%33%37%25%33%44%25%33%37%25%32%30%25%32%44%25%32%44,0,1,1
+A-CWE-89-3-9-case,test,1,CWE-89,/api/search,case,CWE-89-3-9,nAmE9' AnD 7=7 --,1,1,1
+A-CWE-89-3-9-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-3-9,name9'/**/AND/**/7=7/**/--,0,0,1
+A-CWE-89-4-4-raw,test,1,CWE-89,/api/search,raw,CWE-89-4-4,"item4"" OR 2=2 #",1,1,1
+A-CWE-89-4-4-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-4-4,%69%74%65%6D%34%22%20%4F%52%20%32%3D%32%20%23,0,1,1
+A-CWE-89-4-4-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-4-4,%25%36%39%25%37%34%25%36%35%25%36%44%25%33%34%25%32%32%25%32%30%25%34%46%25%35%32%25%32%30%25%33%32%25%33%44%25%33%32%25%32%30%25%32%33,0,1,1
+A-CWE-89-4-4-case,test,1,CWE-89,/api/search,case,CWE-89-4-4,"iTeM4"" Or 2=2 #",1,1,1
+A-CWE-89-4-4-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-4-4,"item4""/**/OR/**/2=2/**/#",0,0,1
+A-CWE-89-4-5-raw,test,1,CWE-89,/api/search,raw,CWE-89-4-5,"item5"" OR 2=2 #",1,1,1
+A-CWE-89-4-5-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-4-5,%69%74%65%6D%35%22%20%4F%52%20%32%3D%32%20%23,0,1,1
+A-CWE-89-4-5-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-4-5,%25%36%39%25%37%34%25%36%35%25%36%44%25%33%35%25%32%32%25%32%30%25%34%46%25%35%32%25%32%30%25%33%32%25%33%44%25%33%32%25%32%30%25%32%33,0,1,1
+A-CWE-89-4-5-case,test,1,CWE-89,/api/search,case,CWE-89-4-5,"iTeM5"" Or 2=2 #",1,1,1
+A-CWE-89-4-5-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-4-5,"item5""/**/OR/**/2=2/**/#",0,0,1
+A-CWE-89-4-6-raw,test,1,CWE-89,/api/search,raw,CWE-89-4-6,"item6"" OR 2=2 #",1,1,1
+A-CWE-89-4-6-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-4-6,%69%74%65%6D%36%22%20%4F%52%20%32%3D%32%20%23,0,1,1
+A-CWE-89-4-6-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-4-6,%25%36%39%25%37%34%25%36%35%25%36%44%25%33%36%25%32%32%25%32%30%25%34%46%25%35%32%25%32%30%25%33%32%25%33%44%25%33%32%25%32%30%25%32%33,0,1,1
+A-CWE-89-4-6-case,test,1,CWE-89,/api/search,case,CWE-89-4-6,"iTeM6"" Or 2=2 #",1,1,1
+A-CWE-89-4-6-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-4-6,"item6""/**/OR/**/2=2/**/#",0,0,1
+A-CWE-89-4-7-raw,test,1,CWE-89,/api/search,raw,CWE-89-4-7,"item7"" OR 2=2 #",1,1,1
+A-CWE-89-4-7-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-4-7,%69%74%65%6D%37%22%20%4F%52%20%32%3D%32%20%23,0,1,1
+A-CWE-89-4-7-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-4-7,%25%36%39%25%37%34%25%36%35%25%36%44%25%33%37%25%32%32%25%32%30%25%34%46%25%35%32%25%32%30%25%33%32%25%33%44%25%33%32%25%32%30%25%32%33,0,1,1
+A-CWE-89-4-7-case,test,1,CWE-89,/api/search,case,CWE-89-4-7,"iTeM7"" Or 2=2 #",1,1,1
+A-CWE-89-4-7-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-4-7,"item7""/**/OR/**/2=2/**/#",0,0,1
+A-CWE-89-4-8-raw,test,1,CWE-89,/api/search,raw,CWE-89-4-8,"item8"" OR 2=2 #",1,1,1
+A-CWE-89-4-8-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-4-8,%69%74%65%6D%38%22%20%4F%52%20%32%3D%32%20%23,0,1,1
+A-CWE-89-4-8-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-4-8,%25%36%39%25%37%34%25%36%35%25%36%44%25%33%38%25%32%32%25%32%30%25%34%46%25%35%32%25%32%30%25%33%32%25%33%44%25%33%32%25%32%30%25%32%33,0,1,1
+A-CWE-89-4-8-case,test,1,CWE-89,/api/search,case,CWE-89-4-8,"iTeM8"" Or 2=2 #",1,1,1
+A-CWE-89-4-8-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-4-8,"item8""/**/OR/**/2=2/**/#",0,0,1
+A-CWE-89-4-9-raw,test,1,CWE-89,/api/search,raw,CWE-89-4-9,"item9"" OR 2=2 #",1,1,1
+A-CWE-89-4-9-url_1,test,1,CWE-89,/api/search,url_1,CWE-89-4-9,%69%74%65%6D%39%22%20%4F%52%20%32%3D%32%20%23,0,1,1
+A-CWE-89-4-9-url_2,test,1,CWE-89,/api/search,url_2,CWE-89-4-9,%25%36%39%25%37%34%25%36%35%25%36%44%25%33%39%25%32%32%25%32%30%25%34%46%25%35%32%25%32%30%25%33%32%25%33%44%25%33%32%25%32%30%25%32%33,0,1,1
+A-CWE-89-4-9-case,test,1,CWE-89,/api/search,case,CWE-89-4-9,"iTeM9"" Or 2=2 #",1,1,1
+A-CWE-89-4-9-cwe_transform,test,1,CWE-89,/api/search,cwe_transform,CWE-89-4-9,"item9""/**/OR/**/2=2/**/#",0,0,1
+A-CWE-79-0-4-raw,test,1,CWE-79,/api/comment,raw,CWE-79-0-4,<script>alert(4)</script>,1,1,1
+A-CWE-79-0-4-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-0-4,%3C%73%63%72%69%70%74%3E%61%6C%65%72%74%28%34%29%3C%2F%73%63%72%69%70%74%3E,0,1,1
+A-CWE-79-0-4-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-0-4,%25%33%43%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%34%25%32%39%25%33%43%25%32%46%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45,0,1,1
+A-CWE-79-0-4-case,test,1,CWE-79,/api/comment,case,CWE-79-0-4,<ScRiPt>aLeRt(4)</sCrIpT>,1,1,1
+A-CWE-79-0-4-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-0-4,&#60;script&#62;alert(4)&#60;/script&#62;,0,1,1
+A-CWE-79-0-5-raw,test,1,CWE-79,/api/comment,raw,CWE-79-0-5,<script>alert(5)</script>,1,1,1
+A-CWE-79-0-5-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-0-5,%3C%73%63%72%69%70%74%3E%61%6C%65%72%74%28%35%29%3C%2F%73%63%72%69%70%74%3E,0,1,1
+A-CWE-79-0-5-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-0-5,%25%33%43%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%35%25%32%39%25%33%43%25%32%46%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45,0,1,1
+A-CWE-79-0-5-case,test,1,CWE-79,/api/comment,case,CWE-79-0-5,<ScRiPt>aLeRt(5)</sCrIpT>,1,1,1
+A-CWE-79-0-5-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-0-5,&#60;script&#62;alert(5)&#60;/script&#62;,0,1,1
+A-CWE-79-0-6-raw,test,1,CWE-79,/api/comment,raw,CWE-79-0-6,<script>alert(6)</script>,1,1,1
+A-CWE-79-0-6-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-0-6,%3C%73%63%72%69%70%74%3E%61%6C%65%72%74%28%36%29%3C%2F%73%63%72%69%70%74%3E,0,1,1
+A-CWE-79-0-6-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-0-6,%25%33%43%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%36%25%32%39%25%33%43%25%32%46%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45,0,1,1
+A-CWE-79-0-6-case,test,1,CWE-79,/api/comment,case,CWE-79-0-6,<ScRiPt>aLeRt(6)</sCrIpT>,1,1,1
+A-CWE-79-0-6-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-0-6,&#60;script&#62;alert(6)&#60;/script&#62;,0,1,1
+A-CWE-79-0-7-raw,test,1,CWE-79,/api/comment,raw,CWE-79-0-7,<script>alert(7)</script>,1,1,1
+A-CWE-79-0-7-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-0-7,%3C%73%63%72%69%70%74%3E%61%6C%65%72%74%28%37%29%3C%2F%73%63%72%69%70%74%3E,0,1,1
+A-CWE-79-0-7-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-0-7,%25%33%43%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%37%25%32%39%25%33%43%25%32%46%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45,0,1,1
+A-CWE-79-0-7-case,test,1,CWE-79,/api/comment,case,CWE-79-0-7,<ScRiPt>aLeRt(7)</sCrIpT>,1,1,1
+A-CWE-79-0-7-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-0-7,&#60;script&#62;alert(7)&#60;/script&#62;,0,1,1
+A-CWE-79-0-8-raw,test,1,CWE-79,/api/comment,raw,CWE-79-0-8,<script>alert(8)</script>,1,1,1
+A-CWE-79-0-8-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-0-8,%3C%73%63%72%69%70%74%3E%61%6C%65%72%74%28%38%29%3C%2F%73%63%72%69%70%74%3E,0,1,1
+A-CWE-79-0-8-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-0-8,%25%33%43%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%38%25%32%39%25%33%43%25%32%46%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45,0,1,1
+A-CWE-79-0-8-case,test,1,CWE-79,/api/comment,case,CWE-79-0-8,<ScRiPt>aLeRt(8)</sCrIpT>,1,1,1
+A-CWE-79-0-8-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-0-8,&#60;script&#62;alert(8)&#60;/script&#62;,0,1,1
+A-CWE-79-0-9-raw,test,1,CWE-79,/api/comment,raw,CWE-79-0-9,<script>alert(9)</script>,1,1,1
+A-CWE-79-0-9-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-0-9,%3C%73%63%72%69%70%74%3E%61%6C%65%72%74%28%39%29%3C%2F%73%63%72%69%70%74%3E,0,1,1
+A-CWE-79-0-9-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-0-9,%25%33%43%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%39%25%32%39%25%33%43%25%32%46%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45,0,1,1
+A-CWE-79-0-9-case,test,1,CWE-79,/api/comment,case,CWE-79-0-9,<ScRiPt>aLeRt(9)</sCrIpT>,1,1,1
+A-CWE-79-0-9-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-0-9,&#60;script&#62;alert(9)&#60;/script&#62;,0,1,1
+A-CWE-79-1-4-raw,test,1,CWE-79,/api/comment,raw,CWE-79-1-4,<img src=x onerror=alert(4)>,1,1,1
+A-CWE-79-1-4-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-1-4,%3C%69%6D%67%20%73%72%63%3D%78%20%6F%6E%65%72%72%6F%72%3D%61%6C%65%72%74%28%34%29%3E,0,1,1
+A-CWE-79-1-4-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-1-4,%25%33%43%25%36%39%25%36%44%25%36%37%25%32%30%25%37%33%25%37%32%25%36%33%25%33%44%25%37%38%25%32%30%25%36%46%25%36%45%25%36%35%25%37%32%25%37%32%25%36%46%25%37%32%25%33%44%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%34%25%32%39%25%33%45,0,1,1
+A-CWE-79-1-4-case,test,1,CWE-79,/api/comment,case,CWE-79-1-4,<ImG SrC=X OnErRoR=AlErT(4)>,1,1,1
+A-CWE-79-1-4-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-1-4,&#60;img src=x onerror=alert(4)&#62;,1,1,1
+A-CWE-79-1-5-raw,test,1,CWE-79,/api/comment,raw,CWE-79-1-5,<img src=x onerror=alert(5)>,1,1,1
+A-CWE-79-1-5-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-1-5,%3C%69%6D%67%20%73%72%63%3D%78%20%6F%6E%65%72%72%6F%72%3D%61%6C%65%72%74%28%35%29%3E,0,1,1
+A-CWE-79-1-5-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-1-5,%25%33%43%25%36%39%25%36%44%25%36%37%25%32%30%25%37%33%25%37%32%25%36%33%25%33%44%25%37%38%25%32%30%25%36%46%25%36%45%25%36%35%25%37%32%25%37%32%25%36%46%25%37%32%25%33%44%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%35%25%32%39%25%33%45,0,1,1
+A-CWE-79-1-5-case,test,1,CWE-79,/api/comment,case,CWE-79-1-5,<ImG SrC=X OnErRoR=AlErT(5)>,1,1,1
+A-CWE-79-1-5-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-1-5,&#60;img src=x onerror=alert(5)&#62;,1,1,1
+A-CWE-79-1-6-raw,test,1,CWE-79,/api/comment,raw,CWE-79-1-6,<img src=x onerror=alert(6)>,1,1,1
+A-CWE-79-1-6-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-1-6,%3C%69%6D%67%20%73%72%63%3D%78%20%6F%6E%65%72%72%6F%72%3D%61%6C%65%72%74%28%36%29%3E,0,1,1
+A-CWE-79-1-6-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-1-6,%25%33%43%25%36%39%25%36%44%25%36%37%25%32%30%25%37%33%25%37%32%25%36%33%25%33%44%25%37%38%25%32%30%25%36%46%25%36%45%25%36%35%25%37%32%25%37%32%25%36%46%25%37%32%25%33%44%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%36%25%32%39%25%33%45,0,1,1
+A-CWE-79-1-6-case,test,1,CWE-79,/api/comment,case,CWE-79-1-6,<ImG SrC=X OnErRoR=AlErT(6)>,1,1,1
+A-CWE-79-1-6-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-1-6,&#60;img src=x onerror=alert(6)&#62;,1,1,1
+A-CWE-79-1-7-raw,test,1,CWE-79,/api/comment,raw,CWE-79-1-7,<img src=x onerror=alert(7)>,1,1,1
+A-CWE-79-1-7-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-1-7,%3C%69%6D%67%20%73%72%63%3D%78%20%6F%6E%65%72%72%6F%72%3D%61%6C%65%72%74%28%37%29%3E,0,1,1
+A-CWE-79-1-7-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-1-7,%25%33%43%25%36%39%25%36%44%25%36%37%25%32%30%25%37%33%25%37%32%25%36%33%25%33%44%25%37%38%25%32%30%25%36%46%25%36%45%25%36%35%25%37%32%25%37%32%25%36%46%25%37%32%25%33%44%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%37%25%32%39%25%33%45,0,1,1
+A-CWE-79-1-7-case,test,1,CWE-79,/api/comment,case,CWE-79-1-7,<ImG SrC=X OnErRoR=AlErT(7)>,1,1,1
+A-CWE-79-1-7-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-1-7,&#60;img src=x onerror=alert(7)&#62;,1,1,1
+A-CWE-79-1-8-raw,test,1,CWE-79,/api/comment,raw,CWE-79-1-8,<img src=x onerror=alert(8)>,1,1,1
+A-CWE-79-1-8-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-1-8,%3C%69%6D%67%20%73%72%63%3D%78%20%6F%6E%65%72%72%6F%72%3D%61%6C%65%72%74%28%38%29%3E,0,1,1
+A-CWE-79-1-8-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-1-8,%25%33%43%25%36%39%25%36%44%25%36%37%25%32%30%25%37%33%25%37%32%25%36%33%25%33%44%25%37%38%25%32%30%25%36%46%25%36%45%25%36%35%25%37%32%25%37%32%25%36%46%25%37%32%25%33%44%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%38%25%32%39%25%33%45,0,1,1
+A-CWE-79-1-8-case,test,1,CWE-79,/api/comment,case,CWE-79-1-8,<ImG SrC=X OnErRoR=AlErT(8)>,1,1,1
+A-CWE-79-1-8-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-1-8,&#60;img src=x onerror=alert(8)&#62;,1,1,1
+A-CWE-79-1-9-raw,test,1,CWE-79,/api/comment,raw,CWE-79-1-9,<img src=x onerror=alert(9)>,1,1,1
+A-CWE-79-1-9-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-1-9,%3C%69%6D%67%20%73%72%63%3D%78%20%6F%6E%65%72%72%6F%72%3D%61%6C%65%72%74%28%39%29%3E,0,1,1
+A-CWE-79-1-9-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-1-9,%25%33%43%25%36%39%25%36%44%25%36%37%25%32%30%25%37%33%25%37%32%25%36%33%25%33%44%25%37%38%25%32%30%25%36%46%25%36%45%25%36%35%25%37%32%25%37%32%25%36%46%25%37%32%25%33%44%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%39%25%32%39%25%33%45,0,1,1
+A-CWE-79-1-9-case,test,1,CWE-79,/api/comment,case,CWE-79-1-9,<ImG SrC=X OnErRoR=AlErT(9)>,1,1,1
+A-CWE-79-1-9-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-1-9,&#60;img src=x onerror=alert(9)&#62;,1,1,1
+A-CWE-79-2-4-raw,test,1,CWE-79,/api/comment,raw,CWE-79-2-4,<svg onload=alert(4)>,1,1,1
+A-CWE-79-2-4-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-2-4,%3C%73%76%67%20%6F%6E%6C%6F%61%64%3D%61%6C%65%72%74%28%34%29%3E,0,1,1
+A-CWE-79-2-4-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-2-4,%25%33%43%25%37%33%25%37%36%25%36%37%25%32%30%25%36%46%25%36%45%25%36%43%25%36%46%25%36%31%25%36%34%25%33%44%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%34%25%32%39%25%33%45,0,1,1
+A-CWE-79-2-4-case,test,1,CWE-79,/api/comment,case,CWE-79-2-4,<SvG OnLoAd=aLeRt(4)>,1,1,1
+A-CWE-79-2-4-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-2-4,&#60;svg onload=alert(4)&#62;,1,1,1
+A-CWE-79-2-5-raw,test,1,CWE-79,/api/comment,raw,CWE-79-2-5,<svg onload=alert(5)>,1,1,1
+A-CWE-79-2-5-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-2-5,%3C%73%76%67%20%6F%6E%6C%6F%61%64%3D%61%6C%65%72%74%28%35%29%3E,0,1,1
+A-CWE-79-2-5-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-2-5,%25%33%43%25%37%33%25%37%36%25%36%37%25%32%30%25%36%46%25%36%45%25%36%43%25%36%46%25%36%31%25%36%34%25%33%44%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%35%25%32%39%25%33%45,0,1,1
+A-CWE-79-2-5-case,test,1,CWE-79,/api/comment,case,CWE-79-2-5,<SvG OnLoAd=aLeRt(5)>,1,1,1
+A-CWE-79-2-5-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-2-5,&#60;svg onload=alert(5)&#62;,1,1,1
+A-CWE-79-2-6-raw,test,1,CWE-79,/api/comment,raw,CWE-79-2-6,<svg onload=alert(6)>,1,1,1
+A-CWE-79-2-6-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-2-6,%3C%73%76%67%20%6F%6E%6C%6F%61%64%3D%61%6C%65%72%74%28%36%29%3E,0,1,1
+A-CWE-79-2-6-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-2-6,%25%33%43%25%37%33%25%37%36%25%36%37%25%32%30%25%36%46%25%36%45%25%36%43%25%36%46%25%36%31%25%36%34%25%33%44%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%36%25%32%39%25%33%45,0,1,1
+A-CWE-79-2-6-case,test,1,CWE-79,/api/comment,case,CWE-79-2-6,<SvG OnLoAd=aLeRt(6)>,1,1,1
+A-CWE-79-2-6-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-2-6,&#60;svg onload=alert(6)&#62;,1,1,1
+A-CWE-79-2-7-raw,test,1,CWE-79,/api/comment,raw,CWE-79-2-7,<svg onload=alert(7)>,1,1,1
+A-CWE-79-2-7-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-2-7,%3C%73%76%67%20%6F%6E%6C%6F%61%64%3D%61%6C%65%72%74%28%37%29%3E,0,1,1
+A-CWE-79-2-7-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-2-7,%25%33%43%25%37%33%25%37%36%25%36%37%25%32%30%25%36%46%25%36%45%25%36%43%25%36%46%25%36%31%25%36%34%25%33%44%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%37%25%32%39%25%33%45,0,1,1
+A-CWE-79-2-7-case,test,1,CWE-79,/api/comment,case,CWE-79-2-7,<SvG OnLoAd=aLeRt(7)>,1,1,1
+A-CWE-79-2-7-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-2-7,&#60;svg onload=alert(7)&#62;,1,1,1
+A-CWE-79-2-8-raw,test,1,CWE-79,/api/comment,raw,CWE-79-2-8,<svg onload=alert(8)>,1,1,1
+A-CWE-79-2-8-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-2-8,%3C%73%76%67%20%6F%6E%6C%6F%61%64%3D%61%6C%65%72%74%28%38%29%3E,0,1,1
+A-CWE-79-2-8-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-2-8,%25%33%43%25%37%33%25%37%36%25%36%37%25%32%30%25%36%46%25%36%45%25%36%43%25%36%46%25%36%31%25%36%34%25%33%44%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%38%25%32%39%25%33%45,0,1,1
+A-CWE-79-2-8-case,test,1,CWE-79,/api/comment,case,CWE-79-2-8,<SvG OnLoAd=aLeRt(8)>,1,1,1
+A-CWE-79-2-8-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-2-8,&#60;svg onload=alert(8)&#62;,1,1,1
+A-CWE-79-2-9-raw,test,1,CWE-79,/api/comment,raw,CWE-79-2-9,<svg onload=alert(9)>,1,1,1
+A-CWE-79-2-9-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-2-9,%3C%73%76%67%20%6F%6E%6C%6F%61%64%3D%61%6C%65%72%74%28%39%29%3E,0,1,1
+A-CWE-79-2-9-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-2-9,%25%33%43%25%37%33%25%37%36%25%36%37%25%32%30%25%36%46%25%36%45%25%36%43%25%36%46%25%36%31%25%36%34%25%33%44%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%39%25%32%39%25%33%45,0,1,1
+A-CWE-79-2-9-case,test,1,CWE-79,/api/comment,case,CWE-79-2-9,<SvG OnLoAd=aLeRt(9)>,1,1,1
+A-CWE-79-2-9-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-2-9,&#60;svg onload=alert(9)&#62;,1,1,1
+A-CWE-79-3-4-raw,test,1,CWE-79,/api/comment,raw,CWE-79-3-4,"<a href=""javascript:alert(4)"">test</a>",1,1,1
+A-CWE-79-3-4-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-3-4,%3C%61%20%68%72%65%66%3D%22%6A%61%76%61%73%63%72%69%70%74%3A%61%6C%65%72%74%28%34%29%22%3E%74%65%73%74%3C%2F%61%3E,0,1,1
+A-CWE-79-3-4-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-3-4,%25%33%43%25%36%31%25%32%30%25%36%38%25%37%32%25%36%35%25%36%36%25%33%44%25%32%32%25%36%41%25%36%31%25%37%36%25%36%31%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%41%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%34%25%32%39%25%32%32%25%33%45%25%37%34%25%36%35%25%37%33%25%37%34%25%33%43%25%32%46%25%36%31%25%33%45,0,1,1
+A-CWE-79-3-4-case,test,1,CWE-79,/api/comment,case,CWE-79-3-4,"<A HrEf=""JaVaScRiPt:aLeRt(4)"">tEsT</a>",1,1,1
+A-CWE-79-3-4-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-3-4,"&#60;a href=""javascript:alert(4)""&#62;test&#60;/a&#62;",1,1,1
+A-CWE-79-3-5-raw,test,1,CWE-79,/api/comment,raw,CWE-79-3-5,"<a href=""javascript:alert(5)"">test</a>",1,1,1
+A-CWE-79-3-5-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-3-5,%3C%61%20%68%72%65%66%3D%22%6A%61%76%61%73%63%72%69%70%74%3A%61%6C%65%72%74%28%35%29%22%3E%74%65%73%74%3C%2F%61%3E,0,1,1
+A-CWE-79-3-5-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-3-5,%25%33%43%25%36%31%25%32%30%25%36%38%25%37%32%25%36%35%25%36%36%25%33%44%25%32%32%25%36%41%25%36%31%25%37%36%25%36%31%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%41%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%35%25%32%39%25%32%32%25%33%45%25%37%34%25%36%35%25%37%33%25%37%34%25%33%43%25%32%46%25%36%31%25%33%45,0,1,1
+A-CWE-79-3-5-case,test,1,CWE-79,/api/comment,case,CWE-79-3-5,"<A HrEf=""JaVaScRiPt:aLeRt(5)"">tEsT</a>",1,1,1
+A-CWE-79-3-5-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-3-5,"&#60;a href=""javascript:alert(5)""&#62;test&#60;/a&#62;",1,1,1
+A-CWE-79-3-6-raw,test,1,CWE-79,/api/comment,raw,CWE-79-3-6,"<a href=""javascript:alert(6)"">test</a>",1,1,1
+A-CWE-79-3-6-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-3-6,%3C%61%20%68%72%65%66%3D%22%6A%61%76%61%73%63%72%69%70%74%3A%61%6C%65%72%74%28%36%29%22%3E%74%65%73%74%3C%2F%61%3E,0,1,1
+A-CWE-79-3-6-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-3-6,%25%33%43%25%36%31%25%32%30%25%36%38%25%37%32%25%36%35%25%36%36%25%33%44%25%32%32%25%36%41%25%36%31%25%37%36%25%36%31%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%41%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%36%25%32%39%25%32%32%25%33%45%25%37%34%25%36%35%25%37%33%25%37%34%25%33%43%25%32%46%25%36%31%25%33%45,0,1,1
+A-CWE-79-3-6-case,test,1,CWE-79,/api/comment,case,CWE-79-3-6,"<A HrEf=""JaVaScRiPt:aLeRt(6)"">tEsT</a>",1,1,1
+A-CWE-79-3-6-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-3-6,"&#60;a href=""javascript:alert(6)""&#62;test&#60;/a&#62;",1,1,1
+A-CWE-79-3-7-raw,test,1,CWE-79,/api/comment,raw,CWE-79-3-7,"<a href=""javascript:alert(7)"">test</a>",1,1,1
+A-CWE-79-3-7-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-3-7,%3C%61%20%68%72%65%66%3D%22%6A%61%76%61%73%63%72%69%70%74%3A%61%6C%65%72%74%28%37%29%22%3E%74%65%73%74%3C%2F%61%3E,0,1,1
+A-CWE-79-3-7-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-3-7,%25%33%43%25%36%31%25%32%30%25%36%38%25%37%32%25%36%35%25%36%36%25%33%44%25%32%32%25%36%41%25%36%31%25%37%36%25%36%31%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%41%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%37%25%32%39%25%32%32%25%33%45%25%37%34%25%36%35%25%37%33%25%37%34%25%33%43%25%32%46%25%36%31%25%33%45,0,1,1
+A-CWE-79-3-7-case,test,1,CWE-79,/api/comment,case,CWE-79-3-7,"<A HrEf=""JaVaScRiPt:aLeRt(7)"">tEsT</a>",1,1,1
+A-CWE-79-3-7-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-3-7,"&#60;a href=""javascript:alert(7)""&#62;test&#60;/a&#62;",1,1,1
+A-CWE-79-3-8-raw,test,1,CWE-79,/api/comment,raw,CWE-79-3-8,"<a href=""javascript:alert(8)"">test</a>",1,1,1
+A-CWE-79-3-8-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-3-8,%3C%61%20%68%72%65%66%3D%22%6A%61%76%61%73%63%72%69%70%74%3A%61%6C%65%72%74%28%38%29%22%3E%74%65%73%74%3C%2F%61%3E,0,1,1
+A-CWE-79-3-8-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-3-8,%25%33%43%25%36%31%25%32%30%25%36%38%25%37%32%25%36%35%25%36%36%25%33%44%25%32%32%25%36%41%25%36%31%25%37%36%25%36%31%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%41%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%38%25%32%39%25%32%32%25%33%45%25%37%34%25%36%35%25%37%33%25%37%34%25%33%43%25%32%46%25%36%31%25%33%45,0,1,1
+A-CWE-79-3-8-case,test,1,CWE-79,/api/comment,case,CWE-79-3-8,"<A HrEf=""JaVaScRiPt:aLeRt(8)"">tEsT</a>",1,1,1
+A-CWE-79-3-8-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-3-8,"&#60;a href=""javascript:alert(8)""&#62;test&#60;/a&#62;",1,1,1
+A-CWE-79-3-9-raw,test,1,CWE-79,/api/comment,raw,CWE-79-3-9,"<a href=""javascript:alert(9)"">test</a>",1,1,1
+A-CWE-79-3-9-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-3-9,%3C%61%20%68%72%65%66%3D%22%6A%61%76%61%73%63%72%69%70%74%3A%61%6C%65%72%74%28%39%29%22%3E%74%65%73%74%3C%2F%61%3E,0,1,1
+A-CWE-79-3-9-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-3-9,%25%33%43%25%36%31%25%32%30%25%36%38%25%37%32%25%36%35%25%36%36%25%33%44%25%32%32%25%36%41%25%36%31%25%37%36%25%36%31%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%41%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%39%25%32%39%25%32%32%25%33%45%25%37%34%25%36%35%25%37%33%25%37%34%25%33%43%25%32%46%25%36%31%25%33%45,0,1,1
+A-CWE-79-3-9-case,test,1,CWE-79,/api/comment,case,CWE-79-3-9,"<A HrEf=""JaVaScRiPt:aLeRt(9)"">tEsT</a>",1,1,1
+A-CWE-79-3-9-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-3-9,"&#60;a href=""javascript:alert(9)""&#62;test&#60;/a&#62;",1,1,1
+A-CWE-79-4-4-raw,test,1,CWE-79,/api/comment,raw,CWE-79-4-4,<iframe srcdoc='<script>alert(4)</script>'></iframe>,1,1,1
+A-CWE-79-4-4-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-4-4,%3C%69%66%72%61%6D%65%20%73%72%63%64%6F%63%3D%27%3C%73%63%72%69%70%74%3E%61%6C%65%72%74%28%34%29%3C%2F%73%63%72%69%70%74%3E%27%3E%3C%2F%69%66%72%61%6D%65%3E,0,1,1
+A-CWE-79-4-4-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-4-4,%25%33%43%25%36%39%25%36%36%25%37%32%25%36%31%25%36%44%25%36%35%25%32%30%25%37%33%25%37%32%25%36%33%25%36%34%25%36%46%25%36%33%25%33%44%25%32%37%25%33%43%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%34%25%32%39%25%33%43%25%32%46%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45%25%32%37%25%33%45%25%33%43%25%32%46%25%36%39%25%36%36%25%37%32%25%36%31%25%36%44%25%36%35%25%33%45,0,1,1
+A-CWE-79-4-4-case,test,1,CWE-79,/api/comment,case,CWE-79-4-4,<IfRaMe sRcDoC='<ScRiPt>aLeRt(4)</sCrIpT>'></IfRaMe>,1,1,1
+A-CWE-79-4-4-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-4-4,&#60;iframe srcdoc='&#60;script&#62;alert(4)&#60;/script&#62;'&#62;&#60;/iframe&#62;,0,1,1
+A-CWE-79-4-5-raw,test,1,CWE-79,/api/comment,raw,CWE-79-4-5,<iframe srcdoc='<script>alert(5)</script>'></iframe>,1,1,1
+A-CWE-79-4-5-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-4-5,%3C%69%66%72%61%6D%65%20%73%72%63%64%6F%63%3D%27%3C%73%63%72%69%70%74%3E%61%6C%65%72%74%28%35%29%3C%2F%73%63%72%69%70%74%3E%27%3E%3C%2F%69%66%72%61%6D%65%3E,0,1,1
+A-CWE-79-4-5-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-4-5,%25%33%43%25%36%39%25%36%36%25%37%32%25%36%31%25%36%44%25%36%35%25%32%30%25%37%33%25%37%32%25%36%33%25%36%34%25%36%46%25%36%33%25%33%44%25%32%37%25%33%43%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%35%25%32%39%25%33%43%25%32%46%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45%25%32%37%25%33%45%25%33%43%25%32%46%25%36%39%25%36%36%25%37%32%25%36%31%25%36%44%25%36%35%25%33%45,0,1,1
+A-CWE-79-4-5-case,test,1,CWE-79,/api/comment,case,CWE-79-4-5,<IfRaMe sRcDoC='<ScRiPt>aLeRt(5)</sCrIpT>'></IfRaMe>,1,1,1
+A-CWE-79-4-5-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-4-5,&#60;iframe srcdoc='&#60;script&#62;alert(5)&#60;/script&#62;'&#62;&#60;/iframe&#62;,0,1,1
+A-CWE-79-4-6-raw,test,1,CWE-79,/api/comment,raw,CWE-79-4-6,<iframe srcdoc='<script>alert(6)</script>'></iframe>,1,1,1
+A-CWE-79-4-6-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-4-6,%3C%69%66%72%61%6D%65%20%73%72%63%64%6F%63%3D%27%3C%73%63%72%69%70%74%3E%61%6C%65%72%74%28%36%29%3C%2F%73%63%72%69%70%74%3E%27%3E%3C%2F%69%66%72%61%6D%65%3E,0,1,1
+A-CWE-79-4-6-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-4-6,%25%33%43%25%36%39%25%36%36%25%37%32%25%36%31%25%36%44%25%36%35%25%32%30%25%37%33%25%37%32%25%36%33%25%36%34%25%36%46%25%36%33%25%33%44%25%32%37%25%33%43%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%36%25%32%39%25%33%43%25%32%46%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45%25%32%37%25%33%45%25%33%43%25%32%46%25%36%39%25%36%36%25%37%32%25%36%31%25%36%44%25%36%35%25%33%45,0,1,1
+A-CWE-79-4-6-case,test,1,CWE-79,/api/comment,case,CWE-79-4-6,<IfRaMe sRcDoC='<ScRiPt>aLeRt(6)</sCrIpT>'></IfRaMe>,1,1,1
+A-CWE-79-4-6-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-4-6,&#60;iframe srcdoc='&#60;script&#62;alert(6)&#60;/script&#62;'&#62;&#60;/iframe&#62;,0,1,1
+A-CWE-79-4-7-raw,test,1,CWE-79,/api/comment,raw,CWE-79-4-7,<iframe srcdoc='<script>alert(7)</script>'></iframe>,1,1,1
+A-CWE-79-4-7-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-4-7,%3C%69%66%72%61%6D%65%20%73%72%63%64%6F%63%3D%27%3C%73%63%72%69%70%74%3E%61%6C%65%72%74%28%37%29%3C%2F%73%63%72%69%70%74%3E%27%3E%3C%2F%69%66%72%61%6D%65%3E,0,1,1
+A-CWE-79-4-7-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-4-7,%25%33%43%25%36%39%25%36%36%25%37%32%25%36%31%25%36%44%25%36%35%25%32%30%25%37%33%25%37%32%25%36%33%25%36%34%25%36%46%25%36%33%25%33%44%25%32%37%25%33%43%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%37%25%32%39%25%33%43%25%32%46%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45%25%32%37%25%33%45%25%33%43%25%32%46%25%36%39%25%36%36%25%37%32%25%36%31%25%36%44%25%36%35%25%33%45,0,1,1
+A-CWE-79-4-7-case,test,1,CWE-79,/api/comment,case,CWE-79-4-7,<IfRaMe sRcDoC='<ScRiPt>aLeRt(7)</sCrIpT>'></IfRaMe>,1,1,1
+A-CWE-79-4-7-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-4-7,&#60;iframe srcdoc='&#60;script&#62;alert(7)&#60;/script&#62;'&#62;&#60;/iframe&#62;,0,1,1
+A-CWE-79-4-8-raw,test,1,CWE-79,/api/comment,raw,CWE-79-4-8,<iframe srcdoc='<script>alert(8)</script>'></iframe>,1,1,1
+A-CWE-79-4-8-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-4-8,%3C%69%66%72%61%6D%65%20%73%72%63%64%6F%63%3D%27%3C%73%63%72%69%70%74%3E%61%6C%65%72%74%28%38%29%3C%2F%73%63%72%69%70%74%3E%27%3E%3C%2F%69%66%72%61%6D%65%3E,0,1,1
+A-CWE-79-4-8-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-4-8,%25%33%43%25%36%39%25%36%36%25%37%32%25%36%31%25%36%44%25%36%35%25%32%30%25%37%33%25%37%32%25%36%33%25%36%34%25%36%46%25%36%33%25%33%44%25%32%37%25%33%43%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%38%25%32%39%25%33%43%25%32%46%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45%25%32%37%25%33%45%25%33%43%25%32%46%25%36%39%25%36%36%25%37%32%25%36%31%25%36%44%25%36%35%25%33%45,0,1,1
+A-CWE-79-4-8-case,test,1,CWE-79,/api/comment,case,CWE-79-4-8,<IfRaMe sRcDoC='<ScRiPt>aLeRt(8)</sCrIpT>'></IfRaMe>,1,1,1
+A-CWE-79-4-8-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-4-8,&#60;iframe srcdoc='&#60;script&#62;alert(8)&#60;/script&#62;'&#62;&#60;/iframe&#62;,0,1,1
+A-CWE-79-4-9-raw,test,1,CWE-79,/api/comment,raw,CWE-79-4-9,<iframe srcdoc='<script>alert(9)</script>'></iframe>,1,1,1
+A-CWE-79-4-9-url_1,test,1,CWE-79,/api/comment,url_1,CWE-79-4-9,%3C%69%66%72%61%6D%65%20%73%72%63%64%6F%63%3D%27%3C%73%63%72%69%70%74%3E%61%6C%65%72%74%28%39%29%3C%2F%73%63%72%69%70%74%3E%27%3E%3C%2F%69%66%72%61%6D%65%3E,0,1,1
+A-CWE-79-4-9-url_2,test,1,CWE-79,/api/comment,url_2,CWE-79-4-9,%25%33%43%25%36%39%25%36%36%25%37%32%25%36%31%25%36%44%25%36%35%25%32%30%25%37%33%25%37%32%25%36%33%25%36%34%25%36%46%25%36%33%25%33%44%25%32%37%25%33%43%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45%25%36%31%25%36%43%25%36%35%25%37%32%25%37%34%25%32%38%25%33%39%25%32%39%25%33%43%25%32%46%25%37%33%25%36%33%25%37%32%25%36%39%25%37%30%25%37%34%25%33%45%25%32%37%25%33%45%25%33%43%25%32%46%25%36%39%25%36%36%25%37%32%25%36%31%25%36%44%25%36%35%25%33%45,0,1,1
+A-CWE-79-4-9-case,test,1,CWE-79,/api/comment,case,CWE-79-4-9,<IfRaMe sRcDoC='<ScRiPt>aLeRt(9)</sCrIpT>'></IfRaMe>,1,1,1
+A-CWE-79-4-9-cwe_transform,test,1,CWE-79,/api/comment,cwe_transform,CWE-79-4-9,&#60;iframe srcdoc='&#60;script&#62;alert(9)&#60;/script&#62;'&#62;&#60;/iframe&#62;,0,1,1
+A-CWE-22-0-4-raw,test,1,CWE-22,/api/file,raw,CWE-22-0-4,../../private/record4.txt,1,1,1
+A-CWE-22-0-4-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-0-4,%2E%2E%2F%2E%2E%2F%70%72%69%76%61%74%65%2F%72%65%63%6F%72%64%34%2E%74%78%74,0,1,1
+A-CWE-22-0-4-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-0-4,%25%32%45%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%37%30%25%37%32%25%36%39%25%37%36%25%36%31%25%37%34%25%36%35%25%32%46%25%37%32%25%36%35%25%36%33%25%36%46%25%37%32%25%36%34%25%33%34%25%32%45%25%37%34%25%37%38%25%37%34,0,1,1
+A-CWE-22-0-4-case,test,1,CWE-22,/api/file,case,CWE-22-0-4,../../pRiVaTe/rEcOrD4.tXt,1,1,1
+A-CWE-22-0-4-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-0-4,..\..\private\record4.txt,1,1,1
+A-CWE-22-0-5-raw,test,1,CWE-22,/api/file,raw,CWE-22-0-5,../../private/record5.txt,1,1,1
+A-CWE-22-0-5-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-0-5,%2E%2E%2F%2E%2E%2F%70%72%69%76%61%74%65%2F%72%65%63%6F%72%64%35%2E%74%78%74,0,1,1
+A-CWE-22-0-5-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-0-5,%25%32%45%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%37%30%25%37%32%25%36%39%25%37%36%25%36%31%25%37%34%25%36%35%25%32%46%25%37%32%25%36%35%25%36%33%25%36%46%25%37%32%25%36%34%25%33%35%25%32%45%25%37%34%25%37%38%25%37%34,0,1,1
+A-CWE-22-0-5-case,test,1,CWE-22,/api/file,case,CWE-22-0-5,../../pRiVaTe/rEcOrD5.tXt,1,1,1
+A-CWE-22-0-5-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-0-5,..\..\private\record5.txt,1,1,1
+A-CWE-22-0-6-raw,test,1,CWE-22,/api/file,raw,CWE-22-0-6,../../private/record6.txt,1,1,1
+A-CWE-22-0-6-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-0-6,%2E%2E%2F%2E%2E%2F%70%72%69%76%61%74%65%2F%72%65%63%6F%72%64%36%2E%74%78%74,0,1,1
+A-CWE-22-0-6-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-0-6,%25%32%45%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%37%30%25%37%32%25%36%39%25%37%36%25%36%31%25%37%34%25%36%35%25%32%46%25%37%32%25%36%35%25%36%33%25%36%46%25%37%32%25%36%34%25%33%36%25%32%45%25%37%34%25%37%38%25%37%34,0,1,1
+A-CWE-22-0-6-case,test,1,CWE-22,/api/file,case,CWE-22-0-6,../../pRiVaTe/rEcOrD6.tXt,1,1,1
+A-CWE-22-0-6-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-0-6,..\..\private\record6.txt,1,1,1
+A-CWE-22-0-7-raw,test,1,CWE-22,/api/file,raw,CWE-22-0-7,../../private/record7.txt,1,1,1
+A-CWE-22-0-7-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-0-7,%2E%2E%2F%2E%2E%2F%70%72%69%76%61%74%65%2F%72%65%63%6F%72%64%37%2E%74%78%74,0,1,1
+A-CWE-22-0-7-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-0-7,%25%32%45%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%37%30%25%37%32%25%36%39%25%37%36%25%36%31%25%37%34%25%36%35%25%32%46%25%37%32%25%36%35%25%36%33%25%36%46%25%37%32%25%36%34%25%33%37%25%32%45%25%37%34%25%37%38%25%37%34,0,1,1
+A-CWE-22-0-7-case,test,1,CWE-22,/api/file,case,CWE-22-0-7,../../pRiVaTe/rEcOrD7.tXt,1,1,1
+A-CWE-22-0-7-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-0-7,..\..\private\record7.txt,1,1,1
+A-CWE-22-0-8-raw,test,1,CWE-22,/api/file,raw,CWE-22-0-8,../../private/record8.txt,1,1,1
+A-CWE-22-0-8-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-0-8,%2E%2E%2F%2E%2E%2F%70%72%69%76%61%74%65%2F%72%65%63%6F%72%64%38%2E%74%78%74,0,1,1
+A-CWE-22-0-8-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-0-8,%25%32%45%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%37%30%25%37%32%25%36%39%25%37%36%25%36%31%25%37%34%25%36%35%25%32%46%25%37%32%25%36%35%25%36%33%25%36%46%25%37%32%25%36%34%25%33%38%25%32%45%25%37%34%25%37%38%25%37%34,0,1,1
+A-CWE-22-0-8-case,test,1,CWE-22,/api/file,case,CWE-22-0-8,../../pRiVaTe/rEcOrD8.tXt,1,1,1
+A-CWE-22-0-8-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-0-8,..\..\private\record8.txt,1,1,1
+A-CWE-22-0-9-raw,test,1,CWE-22,/api/file,raw,CWE-22-0-9,../../private/record9.txt,1,1,1
+A-CWE-22-0-9-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-0-9,%2E%2E%2F%2E%2E%2F%70%72%69%76%61%74%65%2F%72%65%63%6F%72%64%39%2E%74%78%74,0,1,1
+A-CWE-22-0-9-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-0-9,%25%32%45%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%37%30%25%37%32%25%36%39%25%37%36%25%36%31%25%37%34%25%36%35%25%32%46%25%37%32%25%36%35%25%36%33%25%36%46%25%37%32%25%36%34%25%33%39%25%32%45%25%37%34%25%37%38%25%37%34,0,1,1
+A-CWE-22-0-9-case,test,1,CWE-22,/api/file,case,CWE-22-0-9,../../pRiVaTe/rEcOrD9.tXt,1,1,1
+A-CWE-22-0-9-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-0-9,..\..\private\record9.txt,1,1,1
+A-CWE-22-1-4-raw,test,1,CWE-22,/api/file,raw,CWE-22-1-4,../restricted/note4.log,1,1,1
+A-CWE-22-1-4-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-1-4,%2E%2E%2F%72%65%73%74%72%69%63%74%65%64%2F%6E%6F%74%65%34%2E%6C%6F%67,0,1,1
+A-CWE-22-1-4-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-1-4,%25%32%45%25%32%45%25%32%46%25%37%32%25%36%35%25%37%33%25%37%34%25%37%32%25%36%39%25%36%33%25%37%34%25%36%35%25%36%34%25%32%46%25%36%45%25%36%46%25%37%34%25%36%35%25%33%34%25%32%45%25%36%43%25%36%46%25%36%37,0,1,1
+A-CWE-22-1-4-case,test,1,CWE-22,/api/file,case,CWE-22-1-4,../ReStRiCtEd/nOtE4.lOg,1,1,1
+A-CWE-22-1-4-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-1-4,..\restricted\note4.log,1,1,1
+A-CWE-22-1-5-raw,test,1,CWE-22,/api/file,raw,CWE-22-1-5,../restricted/note5.log,1,1,1
+A-CWE-22-1-5-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-1-5,%2E%2E%2F%72%65%73%74%72%69%63%74%65%64%2F%6E%6F%74%65%35%2E%6C%6F%67,0,1,1
+A-CWE-22-1-5-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-1-5,%25%32%45%25%32%45%25%32%46%25%37%32%25%36%35%25%37%33%25%37%34%25%37%32%25%36%39%25%36%33%25%37%34%25%36%35%25%36%34%25%32%46%25%36%45%25%36%46%25%37%34%25%36%35%25%33%35%25%32%45%25%36%43%25%36%46%25%36%37,0,1,1
+A-CWE-22-1-5-case,test,1,CWE-22,/api/file,case,CWE-22-1-5,../ReStRiCtEd/nOtE5.lOg,1,1,1
+A-CWE-22-1-5-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-1-5,..\restricted\note5.log,1,1,1
+A-CWE-22-1-6-raw,test,1,CWE-22,/api/file,raw,CWE-22-1-6,../restricted/note6.log,1,1,1
+A-CWE-22-1-6-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-1-6,%2E%2E%2F%72%65%73%74%72%69%63%74%65%64%2F%6E%6F%74%65%36%2E%6C%6F%67,0,1,1
+A-CWE-22-1-6-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-1-6,%25%32%45%25%32%45%25%32%46%25%37%32%25%36%35%25%37%33%25%37%34%25%37%32%25%36%39%25%36%33%25%37%34%25%36%35%25%36%34%25%32%46%25%36%45%25%36%46%25%37%34%25%36%35%25%33%36%25%32%45%25%36%43%25%36%46%25%36%37,0,1,1
+A-CWE-22-1-6-case,test,1,CWE-22,/api/file,case,CWE-22-1-6,../ReStRiCtEd/nOtE6.lOg,1,1,1
+A-CWE-22-1-6-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-1-6,..\restricted\note6.log,1,1,1
+A-CWE-22-1-7-raw,test,1,CWE-22,/api/file,raw,CWE-22-1-7,../restricted/note7.log,1,1,1
+A-CWE-22-1-7-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-1-7,%2E%2E%2F%72%65%73%74%72%69%63%74%65%64%2F%6E%6F%74%65%37%2E%6C%6F%67,0,1,1
+A-CWE-22-1-7-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-1-7,%25%32%45%25%32%45%25%32%46%25%37%32%25%36%35%25%37%33%25%37%34%25%37%32%25%36%39%25%36%33%25%37%34%25%36%35%25%36%34%25%32%46%25%36%45%25%36%46%25%37%34%25%36%35%25%33%37%25%32%45%25%36%43%25%36%46%25%36%37,0,1,1
+A-CWE-22-1-7-case,test,1,CWE-22,/api/file,case,CWE-22-1-7,../ReStRiCtEd/nOtE7.lOg,1,1,1
+A-CWE-22-1-7-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-1-7,..\restricted\note7.log,1,1,1
+A-CWE-22-1-8-raw,test,1,CWE-22,/api/file,raw,CWE-22-1-8,../restricted/note8.log,1,1,1
+A-CWE-22-1-8-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-1-8,%2E%2E%2F%72%65%73%74%72%69%63%74%65%64%2F%6E%6F%74%65%38%2E%6C%6F%67,0,1,1
+A-CWE-22-1-8-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-1-8,%25%32%45%25%32%45%25%32%46%25%37%32%25%36%35%25%37%33%25%37%34%25%37%32%25%36%39%25%36%33%25%37%34%25%36%35%25%36%34%25%32%46%25%36%45%25%36%46%25%37%34%25%36%35%25%33%38%25%32%45%25%36%43%25%36%46%25%36%37,0,1,1
+A-CWE-22-1-8-case,test,1,CWE-22,/api/file,case,CWE-22-1-8,../ReStRiCtEd/nOtE8.lOg,1,1,1
+A-CWE-22-1-8-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-1-8,..\restricted\note8.log,1,1,1
+A-CWE-22-1-9-raw,test,1,CWE-22,/api/file,raw,CWE-22-1-9,../restricted/note9.log,1,1,1
+A-CWE-22-1-9-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-1-9,%2E%2E%2F%72%65%73%74%72%69%63%74%65%64%2F%6E%6F%74%65%39%2E%6C%6F%67,0,1,1
+A-CWE-22-1-9-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-1-9,%25%32%45%25%32%45%25%32%46%25%37%32%25%36%35%25%37%33%25%37%34%25%37%32%25%36%39%25%36%33%25%37%34%25%36%35%25%36%34%25%32%46%25%36%45%25%36%46%25%37%34%25%36%35%25%33%39%25%32%45%25%36%43%25%36%46%25%36%37,0,1,1
+A-CWE-22-1-9-case,test,1,CWE-22,/api/file,case,CWE-22-1-9,../ReStRiCtEd/nOtE9.lOg,1,1,1
+A-CWE-22-1-9-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-1-9,..\restricted\note9.log,1,1,1
+A-CWE-22-2-4-raw,test,1,CWE-22,/api/file,raw,CWE-22-2-4,docs/../../../private/item4.txt,1,1,1
+A-CWE-22-2-4-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-2-4,%64%6F%63%73%2F%2E%2E%2F%2E%2E%2F%2E%2E%2F%70%72%69%76%61%74%65%2F%69%74%65%6D%34%2E%74%78%74,0,1,1
+A-CWE-22-2-4-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-2-4,%25%36%34%25%36%46%25%36%33%25%37%33%25%32%46%25%32%45%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%37%30%25%37%32%25%36%39%25%37%36%25%36%31%25%37%34%25%36%35%25%32%46%25%36%39%25%37%34%25%36%35%25%36%44%25%33%34%25%32%45%25%37%34%25%37%38%25%37%34,0,1,1
+A-CWE-22-2-4-case,test,1,CWE-22,/api/file,case,CWE-22-2-4,dOcS/../../../pRiVaTe/iTeM4.tXt,1,1,1
+A-CWE-22-2-4-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-2-4,docs\..\..\..\private\item4.txt,1,1,1
+A-CWE-22-2-5-raw,test,1,CWE-22,/api/file,raw,CWE-22-2-5,docs/../../../private/item5.txt,1,1,1
+A-CWE-22-2-5-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-2-5,%64%6F%63%73%2F%2E%2E%2F%2E%2E%2F%2E%2E%2F%70%72%69%76%61%74%65%2F%69%74%65%6D%35%2E%74%78%74,0,1,1
+A-CWE-22-2-5-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-2-5,%25%36%34%25%36%46%25%36%33%25%37%33%25%32%46%25%32%45%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%37%30%25%37%32%25%36%39%25%37%36%25%36%31%25%37%34%25%36%35%25%32%46%25%36%39%25%37%34%25%36%35%25%36%44%25%33%35%25%32%45%25%37%34%25%37%38%25%37%34,0,1,1
+A-CWE-22-2-5-case,test,1,CWE-22,/api/file,case,CWE-22-2-5,dOcS/../../../pRiVaTe/iTeM5.tXt,1,1,1
+A-CWE-22-2-5-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-2-5,docs\..\..\..\private\item5.txt,1,1,1
+A-CWE-22-2-6-raw,test,1,CWE-22,/api/file,raw,CWE-22-2-6,docs/../../../private/item6.txt,1,1,1
+A-CWE-22-2-6-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-2-6,%64%6F%63%73%2F%2E%2E%2F%2E%2E%2F%2E%2E%2F%70%72%69%76%61%74%65%2F%69%74%65%6D%36%2E%74%78%74,0,1,1
+A-CWE-22-2-6-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-2-6,%25%36%34%25%36%46%25%36%33%25%37%33%25%32%46%25%32%45%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%37%30%25%37%32%25%36%39%25%37%36%25%36%31%25%37%34%25%36%35%25%32%46%25%36%39%25%37%34%25%36%35%25%36%44%25%33%36%25%32%45%25%37%34%25%37%38%25%37%34,0,1,1
+A-CWE-22-2-6-case,test,1,CWE-22,/api/file,case,CWE-22-2-6,dOcS/../../../pRiVaTe/iTeM6.tXt,1,1,1
+A-CWE-22-2-6-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-2-6,docs\..\..\..\private\item6.txt,1,1,1
+A-CWE-22-2-7-raw,test,1,CWE-22,/api/file,raw,CWE-22-2-7,docs/../../../private/item7.txt,1,1,1
+A-CWE-22-2-7-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-2-7,%64%6F%63%73%2F%2E%2E%2F%2E%2E%2F%2E%2E%2F%70%72%69%76%61%74%65%2F%69%74%65%6D%37%2E%74%78%74,0,1,1
+A-CWE-22-2-7-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-2-7,%25%36%34%25%36%46%25%36%33%25%37%33%25%32%46%25%32%45%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%37%30%25%37%32%25%36%39%25%37%36%25%36%31%25%37%34%25%36%35%25%32%46%25%36%39%25%37%34%25%36%35%25%36%44%25%33%37%25%32%45%25%37%34%25%37%38%25%37%34,0,1,1
+A-CWE-22-2-7-case,test,1,CWE-22,/api/file,case,CWE-22-2-7,dOcS/../../../pRiVaTe/iTeM7.tXt,1,1,1
+A-CWE-22-2-7-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-2-7,docs\..\..\..\private\item7.txt,1,1,1
+A-CWE-22-2-8-raw,test,1,CWE-22,/api/file,raw,CWE-22-2-8,docs/../../../private/item8.txt,1,1,1
+A-CWE-22-2-8-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-2-8,%64%6F%63%73%2F%2E%2E%2F%2E%2E%2F%2E%2E%2F%70%72%69%76%61%74%65%2F%69%74%65%6D%38%2E%74%78%74,0,1,1
+A-CWE-22-2-8-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-2-8,%25%36%34%25%36%46%25%36%33%25%37%33%25%32%46%25%32%45%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%37%30%25%37%32%25%36%39%25%37%36%25%36%31%25%37%34%25%36%35%25%32%46%25%36%39%25%37%34%25%36%35%25%36%44%25%33%38%25%32%45%25%37%34%25%37%38%25%37%34,0,1,1
+A-CWE-22-2-8-case,test,1,CWE-22,/api/file,case,CWE-22-2-8,dOcS/../../../pRiVaTe/iTeM8.tXt,1,1,1
+A-CWE-22-2-8-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-2-8,docs\..\..\..\private\item8.txt,1,1,1
+A-CWE-22-2-9-raw,test,1,CWE-22,/api/file,raw,CWE-22-2-9,docs/../../../private/item9.txt,1,1,1
+A-CWE-22-2-9-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-2-9,%64%6F%63%73%2F%2E%2E%2F%2E%2E%2F%2E%2E%2F%70%72%69%76%61%74%65%2F%69%74%65%6D%39%2E%74%78%74,0,1,1
+A-CWE-22-2-9-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-2-9,%25%36%34%25%36%46%25%36%33%25%37%33%25%32%46%25%32%45%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%37%30%25%37%32%25%36%39%25%37%36%25%36%31%25%37%34%25%36%35%25%32%46%25%36%39%25%37%34%25%36%35%25%36%44%25%33%39%25%32%45%25%37%34%25%37%38%25%37%34,0,1,1
+A-CWE-22-2-9-case,test,1,CWE-22,/api/file,case,CWE-22-2-9,dOcS/../../../pRiVaTe/iTeM9.tXt,1,1,1
+A-CWE-22-2-9-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-2-9,docs\..\..\..\private\item9.txt,1,1,1
+A-CWE-22-3-4-raw,test,1,CWE-22,/api/file,raw,CWE-22-3-4,..\..\restricted\record4.ini,1,1,1
+A-CWE-22-3-4-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-3-4,%2E%2E%5C%2E%2E%5C%72%65%73%74%72%69%63%74%65%64%5C%72%65%63%6F%72%64%34%2E%69%6E%69,0,1,1
+A-CWE-22-3-4-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-3-4,%25%32%45%25%32%45%25%35%43%25%32%45%25%32%45%25%35%43%25%37%32%25%36%35%25%37%33%25%37%34%25%37%32%25%36%39%25%36%33%25%37%34%25%36%35%25%36%34%25%35%43%25%37%32%25%36%35%25%36%33%25%36%46%25%37%32%25%36%34%25%33%34%25%32%45%25%36%39%25%36%45%25%36%39,0,1,1
+A-CWE-22-3-4-case,test,1,CWE-22,/api/file,case,CWE-22-3-4,..\..\rEsTrIcTeD\ReCoRd4.InI,1,1,1
+A-CWE-22-3-4-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-3-4,..\..\restricted\record4.ini,1,1,1
+A-CWE-22-3-5-raw,test,1,CWE-22,/api/file,raw,CWE-22-3-5,..\..\restricted\record5.ini,1,1,1
+A-CWE-22-3-5-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-3-5,%2E%2E%5C%2E%2E%5C%72%65%73%74%72%69%63%74%65%64%5C%72%65%63%6F%72%64%35%2E%69%6E%69,0,1,1
+A-CWE-22-3-5-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-3-5,%25%32%45%25%32%45%25%35%43%25%32%45%25%32%45%25%35%43%25%37%32%25%36%35%25%37%33%25%37%34%25%37%32%25%36%39%25%36%33%25%37%34%25%36%35%25%36%34%25%35%43%25%37%32%25%36%35%25%36%33%25%36%46%25%37%32%25%36%34%25%33%35%25%32%45%25%36%39%25%36%45%25%36%39,0,1,1
+A-CWE-22-3-5-case,test,1,CWE-22,/api/file,case,CWE-22-3-5,..\..\rEsTrIcTeD\ReCoRd5.InI,1,1,1
+A-CWE-22-3-5-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-3-5,..\..\restricted\record5.ini,1,1,1
+A-CWE-22-3-6-raw,test,1,CWE-22,/api/file,raw,CWE-22-3-6,..\..\restricted\record6.ini,1,1,1
+A-CWE-22-3-6-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-3-6,%2E%2E%5C%2E%2E%5C%72%65%73%74%72%69%63%74%65%64%5C%72%65%63%6F%72%64%36%2E%69%6E%69,0,1,1
+A-CWE-22-3-6-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-3-6,%25%32%45%25%32%45%25%35%43%25%32%45%25%32%45%25%35%43%25%37%32%25%36%35%25%37%33%25%37%34%25%37%32%25%36%39%25%36%33%25%37%34%25%36%35%25%36%34%25%35%43%25%37%32%25%36%35%25%36%33%25%36%46%25%37%32%25%36%34%25%33%36%25%32%45%25%36%39%25%36%45%25%36%39,0,1,1
+A-CWE-22-3-6-case,test,1,CWE-22,/api/file,case,CWE-22-3-6,..\..\rEsTrIcTeD\ReCoRd6.InI,1,1,1
+A-CWE-22-3-6-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-3-6,..\..\restricted\record6.ini,1,1,1
+A-CWE-22-3-7-raw,test,1,CWE-22,/api/file,raw,CWE-22-3-7,..\..\restricted\record7.ini,1,1,1
+A-CWE-22-3-7-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-3-7,%2E%2E%5C%2E%2E%5C%72%65%73%74%72%69%63%74%65%64%5C%72%65%63%6F%72%64%37%2E%69%6E%69,0,1,1
+A-CWE-22-3-7-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-3-7,%25%32%45%25%32%45%25%35%43%25%32%45%25%32%45%25%35%43%25%37%32%25%36%35%25%37%33%25%37%34%25%37%32%25%36%39%25%36%33%25%37%34%25%36%35%25%36%34%25%35%43%25%37%32%25%36%35%25%36%33%25%36%46%25%37%32%25%36%34%25%33%37%25%32%45%25%36%39%25%36%45%25%36%39,0,1,1
+A-CWE-22-3-7-case,test,1,CWE-22,/api/file,case,CWE-22-3-7,..\..\rEsTrIcTeD\ReCoRd7.InI,1,1,1
+A-CWE-22-3-7-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-3-7,..\..\restricted\record7.ini,1,1,1
+A-CWE-22-3-8-raw,test,1,CWE-22,/api/file,raw,CWE-22-3-8,..\..\restricted\record8.ini,1,1,1
+A-CWE-22-3-8-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-3-8,%2E%2E%5C%2E%2E%5C%72%65%73%74%72%69%63%74%65%64%5C%72%65%63%6F%72%64%38%2E%69%6E%69,0,1,1
+A-CWE-22-3-8-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-3-8,%25%32%45%25%32%45%25%35%43%25%32%45%25%32%45%25%35%43%25%37%32%25%36%35%25%37%33%25%37%34%25%37%32%25%36%39%25%36%33%25%37%34%25%36%35%25%36%34%25%35%43%25%37%32%25%36%35%25%36%33%25%36%46%25%37%32%25%36%34%25%33%38%25%32%45%25%36%39%25%36%45%25%36%39,0,1,1
+A-CWE-22-3-8-case,test,1,CWE-22,/api/file,case,CWE-22-3-8,..\..\rEsTrIcTeD\ReCoRd8.InI,1,1,1
+A-CWE-22-3-8-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-3-8,..\..\restricted\record8.ini,1,1,1
+A-CWE-22-3-9-raw,test,1,CWE-22,/api/file,raw,CWE-22-3-9,..\..\restricted\record9.ini,1,1,1
+A-CWE-22-3-9-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-3-9,%2E%2E%5C%2E%2E%5C%72%65%73%74%72%69%63%74%65%64%5C%72%65%63%6F%72%64%39%2E%69%6E%69,0,1,1
+A-CWE-22-3-9-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-3-9,%25%32%45%25%32%45%25%35%43%25%32%45%25%32%45%25%35%43%25%37%32%25%36%35%25%37%33%25%37%34%25%37%32%25%36%39%25%36%33%25%37%34%25%36%35%25%36%34%25%35%43%25%37%32%25%36%35%25%36%33%25%36%46%25%37%32%25%36%34%25%33%39%25%32%45%25%36%39%25%36%45%25%36%39,0,1,1
+A-CWE-22-3-9-case,test,1,CWE-22,/api/file,case,CWE-22-3-9,..\..\rEsTrIcTeD\ReCoRd9.InI,1,1,1
+A-CWE-22-3-9-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-3-9,..\..\restricted\record9.ini,1,1,1
+A-CWE-22-4-4-raw,test,1,CWE-22,/api/file,raw,CWE-22-4-4,./../private/note4.cfg,1,1,1
+A-CWE-22-4-4-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-4-4,%2E%2F%2E%2E%2F%70%72%69%76%61%74%65%2F%6E%6F%74%65%34%2E%63%66%67,0,1,1
+A-CWE-22-4-4-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-4-4,%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%37%30%25%37%32%25%36%39%25%37%36%25%36%31%25%37%34%25%36%35%25%32%46%25%36%45%25%36%46%25%37%34%25%36%35%25%33%34%25%32%45%25%36%33%25%36%36%25%36%37,0,1,1
+A-CWE-22-4-4-case,test,1,CWE-22,/api/file,case,CWE-22-4-4,./../PrIvAtE/NoTe4.CfG,1,1,1
+A-CWE-22-4-4-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-4-4,.\..\private\note4.cfg,1,1,1
+A-CWE-22-4-5-raw,test,1,CWE-22,/api/file,raw,CWE-22-4-5,./../private/note5.cfg,1,1,1
+A-CWE-22-4-5-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-4-5,%2E%2F%2E%2E%2F%70%72%69%76%61%74%65%2F%6E%6F%74%65%35%2E%63%66%67,0,1,1
+A-CWE-22-4-5-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-4-5,%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%37%30%25%37%32%25%36%39%25%37%36%25%36%31%25%37%34%25%36%35%25%32%46%25%36%45%25%36%46%25%37%34%25%36%35%25%33%35%25%32%45%25%36%33%25%36%36%25%36%37,0,1,1
+A-CWE-22-4-5-case,test,1,CWE-22,/api/file,case,CWE-22-4-5,./../PrIvAtE/NoTe5.CfG,1,1,1
+A-CWE-22-4-5-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-4-5,.\..\private\note5.cfg,1,1,1
+A-CWE-22-4-6-raw,test,1,CWE-22,/api/file,raw,CWE-22-4-6,./../private/note6.cfg,1,1,1
+A-CWE-22-4-6-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-4-6,%2E%2F%2E%2E%2F%70%72%69%76%61%74%65%2F%6E%6F%74%65%36%2E%63%66%67,0,1,1
+A-CWE-22-4-6-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-4-6,%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%37%30%25%37%32%25%36%39%25%37%36%25%36%31%25%37%34%25%36%35%25%32%46%25%36%45%25%36%46%25%37%34%25%36%35%25%33%36%25%32%45%25%36%33%25%36%36%25%36%37,0,1,1
+A-CWE-22-4-6-case,test,1,CWE-22,/api/file,case,CWE-22-4-6,./../PrIvAtE/NoTe6.CfG,1,1,1
+A-CWE-22-4-6-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-4-6,.\..\private\note6.cfg,1,1,1
+A-CWE-22-4-7-raw,test,1,CWE-22,/api/file,raw,CWE-22-4-7,./../private/note7.cfg,1,1,1
+A-CWE-22-4-7-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-4-7,%2E%2F%2E%2E%2F%70%72%69%76%61%74%65%2F%6E%6F%74%65%37%2E%63%66%67,0,1,1
+A-CWE-22-4-7-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-4-7,%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%37%30%25%37%32%25%36%39%25%37%36%25%36%31%25%37%34%25%36%35%25%32%46%25%36%45%25%36%46%25%37%34%25%36%35%25%33%37%25%32%45%25%36%33%25%36%36%25%36%37,0,1,1
+A-CWE-22-4-7-case,test,1,CWE-22,/api/file,case,CWE-22-4-7,./../PrIvAtE/NoTe7.CfG,1,1,1
+A-CWE-22-4-7-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-4-7,.\..\private\note7.cfg,1,1,1
+A-CWE-22-4-8-raw,test,1,CWE-22,/api/file,raw,CWE-22-4-8,./../private/note8.cfg,1,1,1
+A-CWE-22-4-8-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-4-8,%2E%2F%2E%2E%2F%70%72%69%76%61%74%65%2F%6E%6F%74%65%38%2E%63%66%67,0,1,1
+A-CWE-22-4-8-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-4-8,%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%37%30%25%37%32%25%36%39%25%37%36%25%36%31%25%37%34%25%36%35%25%32%46%25%36%45%25%36%46%25%37%34%25%36%35%25%33%38%25%32%45%25%36%33%25%36%36%25%36%37,0,1,1
+A-CWE-22-4-8-case,test,1,CWE-22,/api/file,case,CWE-22-4-8,./../PrIvAtE/NoTe8.CfG,1,1,1
+A-CWE-22-4-8-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-4-8,.\..\private\note8.cfg,1,1,1
+A-CWE-22-4-9-raw,test,1,CWE-22,/api/file,raw,CWE-22-4-9,./../private/note9.cfg,1,1,1
+A-CWE-22-4-9-url_1,test,1,CWE-22,/api/file,url_1,CWE-22-4-9,%2E%2F%2E%2E%2F%70%72%69%76%61%74%65%2F%6E%6F%74%65%39%2E%63%66%67,0,1,1
+A-CWE-22-4-9-url_2,test,1,CWE-22,/api/file,url_2,CWE-22-4-9,%25%32%45%25%32%46%25%32%45%25%32%45%25%32%46%25%37%30%25%37%32%25%36%39%25%37%36%25%36%31%25%37%34%25%36%35%25%32%46%25%36%45%25%36%46%25%37%34%25%36%35%25%33%39%25%32%45%25%36%33%25%36%36%25%36%37,0,1,1
+A-CWE-22-4-9-case,test,1,CWE-22,/api/file,case,CWE-22-4-9,./../PrIvAtE/NoTe9.CfG,1,1,1
+A-CWE-22-4-9-cwe_transform,test,1,CWE-22,/api/file,cwe_transform,CWE-22-4-9,.\..\private\note9.cfg,1,1,1
+B-normal-0-10,test,0,CWE-89,/api/search,normal,B-normal-0-10,find catalog item 10 in 2026,0,0,0
+B-normal-1-10,test,0,CWE-79,/api/comment,normal,B-normal-1-10,Enjoyed your article number 10.,0,0,0
+B-normal-2-10,test,0,CWE-22,/api/file,normal,B-normal-2-10,docs/chapter_10.md,0,0,0
+B-hard_negative-0-10,test,0,CWE-89,/api/search,hard_negative,B-hard_negative-0-10,"guide to SQL UNION SELECT examples, chapter 10",1,1,1
+B-hard_negative-1-10,test,0,CWE-79,/api/tutorial,hard_negative,B-hard_negative-1-10,HTML tutorial 10: <script>alert(0)</script> is escaped by the server,1,1,0
+B-hard_negative-2-10,test,0,CWE-22,/api/file,hard_negative,B-hard_negative-2-10,docs/../docs/chapter_10.md,1,1,0
+B-normal-0-11,test,0,CWE-89,/api/search,normal,B-normal-0-11,find catalog item 11 in 2026,0,0,0
+B-normal-1-11,test,0,CWE-79,/api/comment,normal,B-normal-1-11,Enjoyed your article number 11.,0,0,0
+B-normal-2-11,test,0,CWE-22,/api/file,normal,B-normal-2-11,docs/chapter_11.md,0,0,0
+B-hard_negative-0-11,test,0,CWE-89,/api/search,hard_negative,B-hard_negative-0-11,"guide to SQL UNION SELECT examples, chapter 11",1,1,1
+B-hard_negative-1-11,test,0,CWE-79,/api/tutorial,hard_negative,B-hard_negative-1-11,HTML tutorial 11: <script>alert(0)</script> is escaped by the server,1,1,0
+B-hard_negative-2-11,test,0,CWE-22,/api/file,hard_negative,B-hard_negative-2-11,docs/../docs/chapter_11.md,1,1,0
+B-normal-0-12,test,0,CWE-89,/api/search,normal,B-normal-0-12,find catalog item 12 in 2026,0,0,0
+B-normal-1-12,test,0,CWE-79,/api/comment,normal,B-normal-1-12,Enjoyed your article number 12.,0,0,0
+B-normal-2-12,test,0,CWE-22,/api/file,normal,B-normal-2-12,docs/chapter_12.md,0,0,0
+B-hard_negative-0-12,test,0,CWE-89,/api/search,hard_negative,B-hard_negative-0-12,"guide to SQL UNION SELECT examples, chapter 12",1,1,1
+B-hard_negative-1-12,test,0,CWE-79,/api/tutorial,hard_negative,B-hard_negative-1-12,HTML tutorial 12: <script>alert(0)</script> is escaped by the server,1,1,0
+B-hard_negative-2-12,test,0,CWE-22,/api/file,hard_negative,B-hard_negative-2-12,docs/../docs/chapter_12.md,1,1,0
+B-normal-0-13,test,0,CWE-89,/api/search,normal,B-normal-0-13,find catalog item 13 in 2026,0,0,0
+B-normal-1-13,test,0,CWE-79,/api/comment,normal,B-normal-1-13,Enjoyed your article number 13.,0,0,0
+B-normal-2-13,test,0,CWE-22,/api/file,normal,B-normal-2-13,docs/chapter_13.md,0,0,0
+B-hard_negative-0-13,test,0,CWE-89,/api/search,hard_negative,B-hard_negative-0-13,"guide to SQL UNION SELECT examples, chapter 13",1,1,1
+B-hard_negative-1-13,test,0,CWE-79,/api/tutorial,hard_negative,B-hard_negative-1-13,HTML tutorial 13: <script>alert(0)</script> is escaped by the server,1,1,0
+B-hard_negative-2-13,test,0,CWE-22,/api/file,hard_negative,B-hard_negative-2-13,docs/../docs/chapter_13.md,1,1,0
+B-normal-0-14,test,0,CWE-89,/api/search,normal,B-normal-0-14,find catalog item 14 in 2026,0,0,0
+B-normal-1-14,test,0,CWE-79,/api/comment,normal,B-normal-1-14,Enjoyed your article number 14.,0,0,0
+B-normal-2-14,test,0,CWE-22,/api/file,normal,B-normal-2-14,docs/chapter_14.md,0,0,0
+B-hard_negative-0-14,test,0,CWE-89,/api/search,hard_negative,B-hard_negative-0-14,"guide to SQL UNION SELECT examples, chapter 14",1,1,1
+B-hard_negative-1-14,test,0,CWE-79,/api/tutorial,hard_negative,B-hard_negative-1-14,HTML tutorial 14: <script>alert(0)</script> is escaped by the server,1,1,0
+B-hard_negative-2-14,test,0,CWE-22,/api/file,hard_negative,B-hard_negative-2-14,docs/../docs/chapter_14.md,1,1,0
+B-normal-0-15,test,0,CWE-89,/api/search,normal,B-normal-0-15,find catalog item 15 in 2026,0,0,0
+B-normal-1-15,test,0,CWE-79,/api/comment,normal,B-normal-1-15,Enjoyed your article number 15.,0,0,0
+B-normal-2-15,test,0,CWE-22,/api/file,normal,B-normal-2-15,docs/chapter_15.md,0,0,0
+B-hard_negative-0-15,test,0,CWE-89,/api/search,hard_negative,B-hard_negative-0-15,"guide to SQL UNION SELECT examples, chapter 15",1,1,1
+B-hard_negative-1-15,test,0,CWE-79,/api/tutorial,hard_negative,B-hard_negative-1-15,HTML tutorial 15: <script>alert(0)</script> is escaped by the server,1,1,0
+B-hard_negative-2-15,test,0,CWE-22,/api/file,hard_negative,B-hard_negative-2-15,docs/../docs/chapter_15.md,1,1,0
+B-normal-0-16,test,0,CWE-89,/api/search,normal,B-normal-0-16,find catalog item 16 in 2026,0,0,0
+B-normal-1-16,test,0,CWE-79,/api/comment,normal,B-normal-1-16,Enjoyed your article number 16.,0,0,0
+B-normal-2-16,test,0,CWE-22,/api/file,normal,B-normal-2-16,docs/chapter_16.md,0,0,0
+B-hard_negative-0-16,test,0,CWE-89,/api/search,hard_negative,B-hard_negative-0-16,"guide to SQL UNION SELECT examples, chapter 16",1,1,1
+B-hard_negative-1-16,test,0,CWE-79,/api/tutorial,hard_negative,B-hard_negative-1-16,HTML tutorial 16: <script>alert(0)</script> is escaped by the server,1,1,0
+B-hard_negative-2-16,test,0,CWE-22,/api/file,hard_negative,B-hard_negative-2-16,docs/../docs/chapter_16.md,1,1,0
+B-normal-0-17,test,0,CWE-89,/api/search,normal,B-normal-0-17,find catalog item 17 in 2026,0,0,0
+B-normal-1-17,test,0,CWE-79,/api/comment,normal,B-normal-1-17,Enjoyed your article number 17.,0,0,0
+B-normal-2-17,test,0,CWE-22,/api/file,normal,B-normal-2-17,docs/chapter_17.md,0,0,0
+B-hard_negative-0-17,test,0,CWE-89,/api/search,hard_negative,B-hard_negative-0-17,"guide to SQL UNION SELECT examples, chapter 17",1,1,1
+B-hard_negative-1-17,test,0,CWE-79,/api/tutorial,hard_negative,B-hard_negative-1-17,HTML tutorial 17: <script>alert(0)</script> is escaped by the server,1,1,0
+B-hard_negative-2-17,test,0,CWE-22,/api/file,hard_negative,B-hard_negative-2-17,docs/../docs/chapter_17.md,1,1,0
+B-normal-0-18,test,0,CWE-89,/api/search,normal,B-normal-0-18,find catalog item 18 in 2026,0,0,0
+B-normal-1-18,test,0,CWE-79,/api/comment,normal,B-normal-1-18,Enjoyed your article number 18.,0,0,0
+B-normal-2-18,test,0,CWE-22,/api/file,normal,B-normal-2-18,docs/chapter_18.md,0,0,0
+B-hard_negative-0-18,test,0,CWE-89,/api/search,hard_negative,B-hard_negative-0-18,"guide to SQL UNION SELECT examples, chapter 18",1,1,1
+B-hard_negative-1-18,test,0,CWE-79,/api/tutorial,hard_negative,B-hard_negative-1-18,HTML tutorial 18: <script>alert(0)</script> is escaped by the server,1,1,0
+B-hard_negative-2-18,test,0,CWE-22,/api/file,hard_negative,B-hard_negative-2-18,docs/../docs/chapter_18.md,1,1,0
+B-normal-0-19,test,0,CWE-89,/api/search,normal,B-normal-0-19,find catalog item 19 in 2026,0,0,0
+B-normal-1-19,test,0,CWE-79,/api/comment,normal,B-normal-1-19,Enjoyed your article number 19.,0,0,0
+B-normal-2-19,test,0,CWE-22,/api/file,normal,B-normal-2-19,docs/chapter_19.md,0,0,0
+B-hard_negative-0-19,test,0,CWE-89,/api/search,hard_negative,B-hard_negative-0-19,"guide to SQL UNION SELECT examples, chapter 19",1,1,1
+B-hard_negative-1-19,test,0,CWE-79,/api/tutorial,hard_negative,B-hard_negative-1-19,HTML tutorial 19: <script>alert(0)</script> is escaped by the server,1,1,0
+B-hard_negative-2-19,test,0,CWE-22,/api/file,hard_negative,B-hard_negative-2-19,docs/../docs/chapter_19.md,1,1,0
+B-normal-0-20,test,0,CWE-89,/api/search,normal,B-normal-0-20,find catalog item 20 in 2026,0,0,0
+B-normal-1-20,test,0,CWE-79,/api/comment,normal,B-normal-1-20,Enjoyed your article number 20.,0,0,0
+B-normal-2-20,test,0,CWE-22,/api/file,normal,B-normal-2-20,docs/chapter_20.md,0,0,0
+B-hard_negative-0-20,test,0,CWE-89,/api/search,hard_negative,B-hard_negative-0-20,"guide to SQL UNION SELECT examples, chapter 20",1,1,1
+B-hard_negative-1-20,test,0,CWE-79,/api/tutorial,hard_negative,B-hard_negative-1-20,HTML tutorial 20: <script>alert(0)</script> is escaped by the server,1,1,0
+B-hard_negative-2-20,test,0,CWE-22,/api/file,hard_negative,B-hard_negative-2-20,docs/../docs/chapter_20.md,1,1,0
+B-normal-0-21,test,0,CWE-89,/api/search,normal,B-normal-0-21,find catalog item 21 in 2026,0,0,0
+B-normal-1-21,test,0,CWE-79,/api/comment,normal,B-normal-1-21,Enjoyed your article number 21.,0,0,0
+B-normal-2-21,test,0,CWE-22,/api/file,normal,B-normal-2-21,docs/chapter_21.md,0,0,0
+B-hard_negative-0-21,test,0,CWE-89,/api/search,hard_negative,B-hard_negative-0-21,"guide to SQL UNION SELECT examples, chapter 21",1,1,1
+B-hard_negative-1-21,test,0,CWE-79,/api/tutorial,hard_negative,B-hard_negative-1-21,HTML tutorial 21: <script>alert(0)</script> is escaped by the server,1,1,0
+B-hard_negative-2-21,test,0,CWE-22,/api/file,hard_negative,B-hard_negative-2-21,docs/../docs/chapter_21.md,1,1,0
+B-normal-0-22,test,0,CWE-89,/api/search,normal,B-normal-0-22,find catalog item 22 in 2026,0,0,0
+B-normal-1-22,test,0,CWE-79,/api/comment,normal,B-normal-1-22,Enjoyed your article number 22.,0,0,0
+B-normal-2-22,test,0,CWE-22,/api/file,normal,B-normal-2-22,docs/chapter_22.md,0,0,0
+B-hard_negative-0-22,test,0,CWE-89,/api/search,hard_negative,B-hard_negative-0-22,"guide to SQL UNION SELECT examples, chapter 22",1,1,1
+B-hard_negative-1-22,test,0,CWE-79,/api/tutorial,hard_negative,B-hard_negative-1-22,HTML tutorial 22: <script>alert(0)</script> is escaped by the server,1,1,0
+B-hard_negative-2-22,test,0,CWE-22,/api/file,hard_negative,B-hard_negative-2-22,docs/../docs/chapter_22.md,1,1,0
+B-normal-0-23,test,0,CWE-89,/api/search,normal,B-normal-0-23,find catalog item 23 in 2026,0,0,0
+B-normal-1-23,test,0,CWE-79,/api/comment,normal,B-normal-1-23,Enjoyed your article number 23.,0,0,0
+B-normal-2-23,test,0,CWE-22,/api/file,normal,B-normal-2-23,docs/chapter_23.md,0,0,0
+B-hard_negative-0-23,test,0,CWE-89,/api/search,hard_negative,B-hard_negative-0-23,"guide to SQL UNION SELECT examples, chapter 23",1,1,1
+B-hard_negative-1-23,test,0,CWE-79,/api/tutorial,hard_negative,B-hard_negative-1-23,HTML tutorial 23: <script>alert(0)</script> is escaped by the server,1,1,0
+B-hard_negative-2-23,test,0,CWE-22,/api/file,hard_negative,B-hard_negative-2-23,docs/../docs/chapter_23.md,1,1,0
+B-normal-0-24,test,0,CWE-89,/api/search,normal,B-normal-0-24,find catalog item 24 in 2026,0,0,0
+B-normal-1-24,test,0,CWE-79,/api/comment,normal,B-normal-1-24,Enjoyed your article number 24.,0,0,0
+B-normal-2-24,test,0,CWE-22,/api/file,normal,B-normal-2-24,docs/chapter_24.md,0,0,0
+B-hard_negative-0-24,test,0,CWE-89,/api/search,hard_negative,B-hard_negative-0-24,"guide to SQL UNION SELECT examples, chapter 24",1,1,1
+B-hard_negative-1-24,test,0,CWE-79,/api/tutorial,hard_negative,B-hard_negative-1-24,HTML tutorial 24: <script>alert(0)</script> is escaped by the server,1,1,0
+B-hard_negative-2-24,test,0,CWE-22,/api/file,hard_negative,B-hard_negative-2-24,docs/../docs/chapter_24.md,1,1,0
+B-normal-0-25,test,0,CWE-89,/api/search,normal,B-normal-0-25,find catalog item 25 in 2026,0,0,0
+B-normal-1-25,test,0,CWE-79,/api/comment,normal,B-normal-1-25,Enjoyed your article number 25.,0,0,0
+B-normal-2-25,test,0,CWE-22,/api/file,normal,B-normal-2-25,docs/chapter_25.md,0,0,0
+B-hard_negative-0-25,test,0,CWE-89,/api/search,hard_negative,B-hard_negative-0-25,"guide to SQL UNION SELECT examples, chapter 25",1,1,1
+B-hard_negative-1-25,test,0,CWE-79,/api/tutorial,hard_negative,B-hard_negative-1-25,HTML tutorial 25: <script>alert(0)</script> is escaped by the server,1,1,0
+B-hard_negative-2-25,test,0,CWE-22,/api/file,hard_negative,B-hard_negative-2-25,docs/../docs/chapter_25.md,1,1,0
+B-normal-0-26,test,0,CWE-89,/api/search,normal,B-normal-0-26,find catalog item 26 in 2026,0,0,0
+B-normal-1-26,test,0,CWE-79,/api/comment,normal,B-normal-1-26,Enjoyed your article number 26.,0,0,0
+B-normal-2-26,test,0,CWE-22,/api/file,normal,B-normal-2-26,docs/chapter_26.md,0,0,0
+B-hard_negative-0-26,test,0,CWE-89,/api/search,hard_negative,B-hard_negative-0-26,"guide to SQL UNION SELECT examples, chapter 26",1,1,1
+B-hard_negative-1-26,test,0,CWE-79,/api/tutorial,hard_negative,B-hard_negative-1-26,HTML tutorial 26: <script>alert(0)</script> is escaped by the server,1,1,0
+B-hard_negative-2-26,test,0,CWE-22,/api/file,hard_negative,B-hard_negative-2-26,docs/../docs/chapter_26.md,1,1,0
+B-normal-0-27,test,0,CWE-89,/api/search,normal,B-normal-0-27,find catalog item 27 in 2026,0,0,0
+B-normal-1-27,test,0,CWE-79,/api/comment,normal,B-normal-1-27,Enjoyed your article number 27.,0,0,0
+B-normal-2-27,test,0,CWE-22,/api/file,normal,B-normal-2-27,docs/chapter_27.md,0,0,0
+B-hard_negative-0-27,test,0,CWE-89,/api/search,hard_negative,B-hard_negative-0-27,"guide to SQL UNION SELECT examples, chapter 27",1,1,1
+B-hard_negative-1-27,test,0,CWE-79,/api/tutorial,hard_negative,B-hard_negative-1-27,HTML tutorial 27: <script>alert(0)</script> is escaped by the server,1,1,0
+B-hard_negative-2-27,test,0,CWE-22,/api/file,hard_negative,B-hard_negative-2-27,docs/../docs/chapter_27.md,1,1,0
+B-normal-0-28,test,0,CWE-89,/api/search,normal,B-normal-0-28,find catalog item 28 in 2026,0,0,0
+B-normal-1-28,test,0,CWE-79,/api/comment,normal,B-normal-1-28,Enjoyed your article number 28.,0,0,0
+B-normal-2-28,test,0,CWE-22,/api/file,normal,B-normal-2-28,docs/chapter_28.md,0,0,0
+B-hard_negative-0-28,test,0,CWE-89,/api/search,hard_negative,B-hard_negative-0-28,"guide to SQL UNION SELECT examples, chapter 28",1,1,1
+B-hard_negative-1-28,test,0,CWE-79,/api/tutorial,hard_negative,B-hard_negative-1-28,HTML tutorial 28: <script>alert(0)</script> is escaped by the server,1,1,0
+B-hard_negative-2-28,test,0,CWE-22,/api/file,hard_negative,B-hard_negative-2-28,docs/../docs/chapter_28.md,1,1,0
+B-normal-0-29,test,0,CWE-89,/api/search,normal,B-normal-0-29,find catalog item 29 in 2026,0,0,0
+B-normal-1-29,test,0,CWE-79,/api/comment,normal,B-normal-1-29,Enjoyed your article number 29.,0,0,0
+B-normal-2-29,test,0,CWE-22,/api/file,normal,B-normal-2-29,docs/chapter_29.md,0,0,0
+B-hard_negative-0-29,test,0,CWE-89,/api/search,hard_negative,B-hard_negative-0-29,"guide to SQL UNION SELECT examples, chapter 29",1,1,1
+B-hard_negative-1-29,test,0,CWE-79,/api/tutorial,hard_negative,B-hard_negative-1-29,HTML tutorial 29: <script>alert(0)</script> is escaped by the server,1,1,0
+B-hard_negative-2-29,test,0,CWE-22,/api/file,hard_negative,B-hard_negative-2-29,docs/../docs/chapter_29.md,1,1,0

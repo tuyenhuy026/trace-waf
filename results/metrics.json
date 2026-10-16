@@ -1,0 +1,385 @@
+{
+  "benchmark": "TRACE-WAF synthetic offline benchmark",
+  "seed": 20261016,
+  "split": "test only (instances 4..9; dev 0..3)",
+  "test_cases": 570,
+  "dataset_sha256": "4f50ab19c6679411fb9702eb7d2c28f8423aa45fe8e5366cb41283723ec3be86",
+  "label_semantics": "synthetic attack-pattern origin; no server-side exploit verification",
+  "systems": "3 toy classifiers; no real WAF and no LLM inference",
+  "interval_note": "Wilson case-level intervals descriptive only; shared templates violate independence",
+  "metrics": [
+    {
+      "strategy": "raw_signature",
+      "cwe": "ALL",
+      "tp": 228,
+      "fn": 222,
+      "fp": 60,
+      "tn": 60,
+      "attack_n": 450,
+      "benign_n": 120,
+      "attack_coverage": 0.5067,
+      "fpr": 0.5,
+      "evasion_robustness": 0.3833,
+      "clean_recall": 1.0,
+      "coverage_wilson95": [
+        0.4606,
+        0.5526
+      ],
+      "fpr_wilson95": [
+        0.4119,
+        0.5881
+      ],
+      "robustness_wilson95": [
+        0.3346,
+        0.4345
+      ],
+      "selection_rule_pass": false
+    },
+    {
+      "strategy": "raw_signature",
+      "cwe": "CWE-89",
+      "tp": 60,
+      "fn": 90,
+      "fp": 20,
+      "tn": 20,
+      "attack_n": 150,
+      "benign_n": 40,
+      "attack_coverage": 0.4,
+      "fpr": 0.5,
+      "evasion_robustness": 0.25,
+      "clean_recall": 1.0,
+      "coverage_wilson95": [
+        0.325,
+        0.48
+      ],
+      "fpr_wilson95": [
+        0.352,
+        0.648
+      ],
+      "robustness_wilson95": [
+        0.1811,
+        0.3344
+      ],
+      "selection_rule_pass": false
+    },
+    {
+      "strategy": "raw_signature",
+      "cwe": "CWE-79",
+      "tp": 78,
+      "fn": 72,
+      "fp": 20,
+      "tn": 20,
+      "attack_n": 150,
+      "benign_n": 40,
+      "attack_coverage": 0.52,
+      "fpr": 0.5,
+      "evasion_robustness": 0.4,
+      "clean_recall": 1.0,
+      "coverage_wilson95": [
+        0.4406,
+        0.5984
+      ],
+      "fpr_wilson95": [
+        0.352,
+        0.648
+      ],
+      "robustness_wilson95": [
+        0.3168,
+        0.4894
+      ],
+      "selection_rule_pass": false
+    },
+    {
+      "strategy": "raw_signature",
+      "cwe": "CWE-22",
+      "tp": 90,
+      "fn": 60,
+      "fp": 20,
+      "tn": 20,
+      "attack_n": 150,
+      "benign_n": 40,
+      "attack_coverage": 0.6,
+      "fpr": 0.5,
+      "evasion_robustness": 0.5,
+      "clean_recall": 1.0,
+      "coverage_wilson95": [
+        0.52,
+        0.675
+      ],
+      "fpr_wilson95": [
+        0.352,
+        0.648
+      ],
+      "robustness_wilson95": [
+        0.4119,
+        0.5881
+      ],
+      "selection_rule_pass": false
+    },
+    {
+      "strategy": "canonical_signature",
+      "cwe": "ALL",
+      "tp": 420,
+      "fn": 30,
+      "fp": 60,
+      "tn": 60,
+      "attack_n": 450,
+      "benign_n": 120,
+      "attack_coverage": 0.9333,
+      "fpr": 0.5,
+      "evasion_robustness": 0.9167,
+      "clean_recall": 1.0,
+      "coverage_wilson95": [
+        0.9064,
+        0.9529
+      ],
+      "fpr_wilson95": [
+        0.4119,
+        0.5881
+      ],
+      "robustness_wilson95": [
+        0.8835,
+        0.941
+      ],
+      "selection_rule_pass": false
+    },
+    {
+      "strategy": "canonical_signature",
+      "cwe": "CWE-89",
+      "tp": 120,
+      "fn": 30,
+      "fp": 20,
+      "tn": 20,
+      "attack_n": 150,
+      "benign_n": 40,
+      "attack_coverage": 0.8,
+      "fpr": 0.5,
+      "evasion_robustness": 0.75,
+      "clean_recall": 1.0,
+      "coverage_wilson95": [
+        0.7289,
+        0.8562
+      ],
+      "fpr_wilson95": [
+        0.352,
+        0.648
+      ],
+      "robustness_wilson95": [
+        0.6656,
+        0.8189
+      ],
+      "selection_rule_pass": false
+    },
+    {
+      "strategy": "canonical_signature",
+      "cwe": "CWE-79",
+      "tp": 150,
+      "fn": 0,
+      "fp": 20,
+      "tn": 20,
+      "attack_n": 150,
+      "benign_n": 40,
+      "attack_coverage": 1.0,
+      "fpr": 0.5,
+      "evasion_robustness": 1.0,
+      "clean_recall": 1.0,
+      "coverage_wilson95": [
+        0.975,
+        1.0
+      ],
+      "fpr_wilson95": [
+        0.352,
+        0.648
+      ],
+      "robustness_wilson95": [
+        0.969,
+        1.0
+      ],
+      "selection_rule_pass": false
+    },
+    {
+      "strategy": "canonical_signature",
+      "cwe": "CWE-22",
+      "tp": 150,
+      "fn": 0,
+      "fp": 20,
+      "tn": 20,
+      "attack_n": 150,
+      "benign_n": 40,
+      "attack_coverage": 1.0,
+      "fpr": 0.5,
+      "evasion_robustness": 1.0,
+      "clean_recall": 1.0,
+      "coverage_wilson95": [
+        0.975,
+        1.0
+      ],
+      "fpr_wilson95": [
+        0.352,
+        0.648
+      ],
+      "robustness_wilson95": [
+        0.969,
+        1.0
+      ],
+      "selection_rule_pass": false
+    },
+    {
+      "strategy": "trace_policy",
+      "cwe": "ALL",
+      "tp": 450,
+      "fn": 0,
+      "fp": 20,
+      "tn": 100,
+      "attack_n": 450,
+      "benign_n": 120,
+      "attack_coverage": 1.0,
+      "fpr": 0.1667,
+      "evasion_robustness": 1.0,
+      "clean_recall": 1.0,
+      "coverage_wilson95": [
+        0.9915,
+        1.0
+      ],
+      "fpr_wilson95": [
+        0.1106,
+        0.2435
+      ],
+      "robustness_wilson95": [
+        0.9894,
+        1.0
+      ],
+      "selection_rule_pass": false
+    },
+    {
+      "strategy": "trace_policy",
+      "cwe": "CWE-89",
+      "tp": 150,
+      "fn": 0,
+      "fp": 20,
+      "tn": 20,
+      "attack_n": 150,
+      "benign_n": 40,
+      "attack_coverage": 1.0,
+      "fpr": 0.5,
+      "evasion_robustness": 1.0,
+      "clean_recall": 1.0,
+      "coverage_wilson95": [
+        0.975,
+        1.0
+      ],
+      "fpr_wilson95": [
+        0.352,
+        0.648
+      ],
+      "robustness_wilson95": [
+        0.969,
+        1.0
+      ],
+      "selection_rule_pass": false
+    },
+    {
+      "strategy": "trace_policy",
+      "cwe": "CWE-79",
+      "tp": 150,
+      "fn": 0,
+      "fp": 0,
+      "tn": 40,
+      "attack_n": 150,
+      "benign_n": 40,
+      "attack_coverage": 1.0,
+      "fpr": 0.0,
+      "evasion_robustness": 1.0,
+      "clean_recall": 1.0,
+      "coverage_wilson95": [
+        0.975,
+        1.0
+      ],
+      "fpr_wilson95": [
+        0.0,
+        0.0876
+      ],
+      "robustness_wilson95": [
+        0.969,
+        1.0
+      ],
+      "selection_rule_pass": true
+    },
+    {
+      "strategy": "trace_policy",
+      "cwe": "CWE-22",
+      "tp": 150,
+      "fn": 0,
+      "fp": 0,
+      "tn": 40,
+      "attack_n": 150,
+      "benign_n": 40,
+      "attack_coverage": 1.0,
+      "fpr": 0.0,
+      "evasion_robustness": 1.0,
+      "clean_recall": 1.0,
+      "coverage_wilson95": [
+        0.975,
+        1.0
+      ],
+      "fpr_wilson95": [
+        0.0,
+        0.0876
+      ],
+      "robustness_wilson95": [
+        0.969,
+        1.0
+      ],
+      "selection_rule_pass": true
+    }
+  ],
+  "synthetic_drift": [
+    {
+      "period": "A_raw_case",
+      "strategy": "raw_signature",
+      "detected": 180,
+      "n": 180,
+      "recall": 1.0
+    },
+    {
+      "period": "A_raw_case",
+      "strategy": "canonical_signature",
+      "detected": 180,
+      "n": 180,
+      "recall": 1.0
+    },
+    {
+      "period": "A_raw_case",
+      "strategy": "trace_policy",
+      "detected": 180,
+      "n": 180,
+      "recall": 1.0
+    },
+    {
+      "period": "B_encoded",
+      "strategy": "raw_signature",
+      "detected": 48,
+      "n": 270,
+      "recall": 0.1778
+    },
+    {
+      "period": "B_encoded",
+      "strategy": "canonical_signature",
+      "detected": 240,
+      "n": 270,
+      "recall": 0.8889
+    },
+    {
+      "period": "B_encoded",
+      "strategy": "trace_policy",
+      "detected": 270,
+      "n": 270,
+      "recall": 1.0
+    }
+  ],
+  "references": [
+    "https://cwe.mitre.org/data/definitions/89.html",
+    "https://cwe.mitre.org/data/definitions/79.html",
+    "https://cwe.mitre.org/data/definitions/22.html"
+  ]
+}

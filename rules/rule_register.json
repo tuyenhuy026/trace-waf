@@ -1,0 +1,35 @@
+[
+  {
+    "rule_id": "TW-001",
+    "cwe": "CWE-89",
+    "evidence": ["https://cwe.mitre.org/data/definitions/89.html"],
+    "scope": "/api/search",
+    "policy": "SQLi token-pattern detection after bounded normalization",
+    "owner": "AppSec owner (assign before production)",
+    "review_state": "prototype_only",
+    "rollback": "disable TW-001, restore prior approved policy",
+    "expiration_days": 30
+  },
+  {
+    "rule_id": "TW-002",
+    "cwe": "CWE-79",
+    "evidence": ["https://cwe.mitre.org/data/definitions/79.html"],
+    "scope": "/api/comment",
+    "policy": "XSS token-pattern detection after bounded normalization",
+    "owner": "AppSec owner (assign before production)",
+    "review_state": "prototype_only",
+    "rollback": "disable TW-002, restore prior approved policy",
+    "expiration_days": 30
+  },
+  {
+    "rule_id": "TW-003",
+    "cwe": "CWE-22",
+    "evidence": ["https://cwe.mitre.org/data/definitions/22.html"],
+    "scope": "/api/file",
+    "policy": "Reject relative paths escaping toy document root",
+    "owner": "AppSec owner (assign before production)",
+    "review_state": "prototype_only",
+    "rollback": "disable TW-003, restore prior approved policy",
+    "expiration_days": 30
+  }
+]

@@ -1,0 +1,13 @@
+strategy,cwe,tp,fn,fp,tn,attack_n,benign_n,attack_coverage,fpr,evasion_robustness,clean_recall,selection_rule_pass
+raw_signature,ALL,228,222,60,60,450,120,0.5067,0.5,0.3833,1.0,False
+raw_signature,CWE-89,60,90,20,20,150,40,0.4,0.5,0.25,1.0,False
+raw_signature,CWE-79,78,72,20,20,150,40,0.52,0.5,0.4,1.0,False
+raw_signature,CWE-22,90,60,20,20,150,40,0.6,0.5,0.5,1.0,False
+canonical_signature,ALL,420,30,60,60,450,120,0.9333,0.5,0.9167,1.0,False
+canonical_signature,CWE-89,120,30,20,20,150,40,0.8,0.5,0.75,1.0,False
+canonical_signature,CWE-79,150,0,20,20,150,40,1.0,0.5,1.0,1.0,False
+canonical_signature,CWE-22,150,0,20,20,150,40,1.0,0.5,1.0,1.0,False
+trace_policy,ALL,450,0,20,100,450,120,1.0,0.1667,1.0,1.0,False
+trace_policy,CWE-89,150,0,20,20,150,40,1.0,0.5,1.0,1.0,False
+trace_policy,CWE-79,150,0,0,40,150,40,1.0,0.0,1.0,1.0,True
+trace_policy,CWE-22,150,0,0,40,150,40,1.0,0.0,1.0,1.0,True

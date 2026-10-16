@@ -1,0 +1,2 @@
+# Offline experimental core: Python >=3.10, standard library only.
+# For regenerating optional charts in the document: matplotlib >=3.5.
