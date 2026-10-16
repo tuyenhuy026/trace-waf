@@ -3,10 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
-\documentclass[
-  10.5pt,
-  letterpaper,
-]{article}
+\documentclass[10pt, a4paper]{article}
 \usepackage{amsmath,amssymb}
 \usepackage{setspace}
 \usepackage{iftex}
@@ -22,9 +19,9 @@
 \usepackage{lmodern}
 \ifPDFTeX\else
   % xetex/luatex font selection
-  \setmainfont[]{Noto Serif}
-  \setsansfont[]{Noto Sans}
-  \setmonofont[]{Noto Sans Mono}
+  \setmainfont{Tinos}
+  \setsansfont{Noto Sans}
+  \setmonofont{Noto Sans Mono}
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -37,13 +34,13 @@
   \IfFileExists{parskip.sty}{%
     \usepackage{parskip}
   }{% else
-    \setlength{\parindent}{0pt}
-    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+    \setlength{\parindent}{4mm}
+    \setlength{\parskip}{0pt}}
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\usepackage[margin=0.91in]{geometry}
+\usepackage[a4paper,top=52mm,bottom=52mm,left=44mm,right=44mm]{geometry}
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -108,11 +105,19 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\setcounter{secnumdepth}{0} % section numbers are included in the source headings
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage{bookmark}
+\usepackage{titlesec}
+\titleformat{\subsection}{\normalfont\bfseries\fontsize{12}{15}\selectfont}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{18pt}{10pt}
+\titleformat{\subsubsection}{\normalfont\bfseries\fontsize{10}{12}\selectfont}{}{0pt}{}
+\titlespacing*{\subsubsection}{0pt}{16pt}{6pt}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.10}
+\pagestyle{plain}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
@@ -127,22 +132,22 @@
 \date{}
 
 \renewcommand{\figurename}{Hình}
+\renewcommand{\tablename}{Bảng}
 \begin{document}
 
-\setstretch{1.17}
-\section{TRACE-WAF: Khung đánh giá ba trục và quản trị sinh luật tường
-lửa ứng dụng web có truy vết CWE/CVE trước kỹ thuật biến đổi né
-tránh}\label{trace-waf-khung-ux111uxe1nh-giuxe1-ba-trux1ee5c-vuxe0-quux1ea3n-trux1ecb-sinh-luux1eadt-tux1b0ux1eddng-lux1eeda-ux1ee9ng-dux1ee5ng-web-cuxf3-truy-vux1ebft-cwecve-trux1b0ux1edbc-kux1ef9-thuux1eadt-biux1ebfn-ux111ux1ed5i-nuxe9-truxe1nh}
-
-\textbf{BÁO CÁO NGHIÊN CỨU HỌC PHẦN: CHÍNH SÁCH VÀ QUẢN TRỊ AN NINH
-MẠNG}\\
-\textbf{Hình thức:} Paper nghiên cứu và thực nghiệm nguyên mẫu ngoại
-tuyến\\
-\textbf{Học viên:} {[}Bổ sung họ tên và mã học viên{]}\\
-\textbf{Ngày hoàn thiện bản thảo:} 16/10/2026
-
-\subsection{Tóm tắt}\label{tuxf3m-tux1eaft}
-
+\setstretch{1.0}
+\begin{center}
+{\bfseries\fontsize{14}{18}\selectfont TRACE-WAF: Khung đánh giá ba trục và quản trị luật WAF có truy vết CWE/CVE\par}
+\vspace{15pt}
+{\bfseries [Họ và tên tác giả]\par}
+{\small [Đơn vị đào tạo / khoa / trường]\par}
+{\small [Email liên hệ]\par}
+{\small\itshape Bài nghiên cứu học phần Chính sách và quản trị an ninh mạng\par}
+\end{center}
+\vspace{12pt}
+\begingroup\fontsize{9}{11}\selectfont
+\begin{list}{}{\setlength{\leftmargin}{10mm}\setlength{\rightmargin}{10mm}\setlength{\topsep}{0pt}\setlength{\parsep}{0pt}}
+\item[]\noindent\textbf{Tóm tắt.} 
 Tường lửa ứng dụng web (Web Application Firewall, WAF) cung cấp một lớp
 phòng thủ trước SQL injection (SQLi), cross-site scripting (XSS) và path
 traversal. Tuy nhiên, hiệu năng phòng thủ không thể kết luận chỉ từ số
@@ -169,6 +174,9 @@ vai trò kiểm soát thay đổi trong quản trị an ninh mạng.
 
 \textbf{Từ khóa:} WAF; CWE; CVE; SQL injection; XSS; path traversal;
 false positive; evasion robustness; LLM; quản trị thay đổi.
+
+\end{list}\endgroup
+\vspace{8pt}
 
 \subsection{1. Giới thiệu}\label{giux1edbi-thiux1ec7u}
 
@@ -280,6 +288,7 @@ thức kiểm thử thống nhất ở mức bài tập} kết hợp ba chỉ s�
 và quy trình phê duyệt; \textbf{không tuyên bố} đây là tiêu chuẩn đầu
 tiên hay rằng cộng đồng chưa có benchmark liên quan.
 
+\par\noindent\begin{center}{\footnotesize\bfseries Bảng 1. Tổng hợp nghiên cứu liên quan và ranh giới đánh giá}\end{center}\nopagebreak
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
@@ -321,7 +330,7 @@ xuất}\label{kiux1ebfn-truxfac-ux111ux1ec1-xuux1ea5t}
 \begin{figure}
 \centering
 \includegraphics[width=0.95\textwidth,height=\textheight]{assets/architecture.png}
-\caption{Hình 1. Kiến trúc TRACE-WAF: bối cảnh và chứng cứ, sinh ứng
+\caption{Kiến trúc TRACE-WAF: bối cảnh và chứng cứ, sinh ứng
 viên, chính sách phát hiện, benchmark ba trục và cổng quản trị.}
 \end{figure}
 
@@ -453,6 +462,7 @@ SQL có chuỗi giống chữ ký, ví dụ mã HTML trên tuyến bài hướng
 định escape, và đường dẫn \texttt{docs/../docs/...} vẫn ở trong phạm vi
 tài liệu.
 
+\par\noindent\begin{center}{\footnotesize\bfseries Bảng 2. Quy mô dữ liệu tổng hợp và phân hoạch kiểm thử}\end{center}\nopagebreak
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
   >{\raggedleft\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
@@ -521,6 +531,7 @@ thực tế.
 \subsubsection{5.1. Đánh giá tổng hợp ba
 trục}\label{ux111uxe1nh-giuxe1-tux1ed5ng-hux1ee3p-ba-trux1ee5c}
 
+\par\noindent\begin{center}{\footnotesize\bfseries Bảng 3. So sánh coverage, FPR và robustness của ba bộ mô phỏng}\end{center}\nopagebreak
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
   >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
@@ -554,7 +565,7 @@ TRACE-Policy & 450 & 20 & 100,00\% & 16,67\% & 100,00\% \\
 \begin{figure}
 \centering
 \includegraphics[width=0.94\textwidth,height=\textheight]{assets/metrics.png}
-\caption{Hình 2. Coverage, FPR và robustness trên 570 trường hợp test
+\caption{Coverage, FPR và robustness trên 570 trường hợp test
 tổng hợp. Tỷ lệ FPR càng thấp càng tốt.}
 \end{figure}
 
@@ -574,6 +585,7 @@ cùng họ mẫu, do đó không được diễn giải như kết quả sản x
 \subsubsection{5.2. Phân rã theo nhóm
 CWE}\label{phuxe2n-ruxe3-theo-nhuxf3m-cwe}
 
+\par\noindent\begin{center}{\footnotesize\bfseries Bảng 4. Kết quả theo nhóm CWE trên tập kiểm thử}\end{center}\nopagebreak
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
   >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
@@ -614,6 +626,7 @@ trường dữ liệu qua kênh tin cậy.
 \subsubsection{5.3. Thử nghiệm synthetic
 drift}\label{thux1eed-nghiux1ec7m-synthetic-drift}
 
+\par\noindent\begin{center}{\footnotesize\bfseries Bảng 5. Đánh giá khả năng phát hiện theo nhóm biểu diễn đầu vào}\end{center}\nopagebreak
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
   >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
@@ -641,11 +654,10 @@ B: URL encoding và biến đổi theo CWE & 270 & 17,78\% & 88,89\% &
 100,00\% \\
 \end{longtable}
 
-\clearpage
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.86\textwidth,height=0.40\textheight,keepaspectratio]{assets/drift.png}
-\caption{Hình 3. Suy giảm recall khi cơ cấu test chuyển từ nhóm biểu
+\caption{Suy giảm recall khi cơ cấu test chuyển từ nhóm biểu
 diễn đơn giản sang nhóm đã biến đổi.}
 \end{figure}
 
@@ -701,6 +713,7 @@ chưa có ánh xạ CVE cụ thể đã được xác thực. Nếu sau này th�
 phải chứa phiên bản sản phẩm, phiên bản lỗ hổng, bước tái tạo trên môi
 trường kiểm soát và mẫu đối chứng âm.
 
+\par\noindent\begin{center}{\footnotesize\bfseries Bảng 6. Kiểm soát quản trị trước khi phê duyệt luật WAF}\end{center}\nopagebreak
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
@@ -816,7 +829,8 @@ triển khai chỉ vì tỷ lệ chặn cao}. Các bước tiếp theo bắt bu�
 tra backend và WAF thực có phép, kiểm định độc lập theo CVE, thí nghiệm
 LLM có đối chứng và canary/rollback có người chịu trách nhiệm.
 
-\subsection{Tài liệu tham khảo}\label{tuxe0i-liux1ec7u-tham-khux1ea3o}
+\subsection{Tài liệu tham khảo}
+\begingroup\fontsize{9}{11}\selectfont\label{tuxe0i-liux1ec7u-tham-khux1ea3o}
 
 {[}1{]} OWASP Foundation. \emph{OWASP Core Rule Set (CRS)}.
 \url{https://owasp.org/projects/crs/} (truy cập 16/10/2026).
@@ -858,6 +872,8 @@ Restricted Directory}. \url{https://cwe.mitre.org/data/definitions/22.html}
 Framework (AI RMF 1.0)}, NIST AI 100-1, 2023. DOI:
 \url{https://doi.org/10.6028/NIST.AI.100-1}.
 
+\endgroup
+
 \subsection{Phụ lục A. Hướng dẫn chạy và đối chiếu kết
 quả}\label{phux1ee5-lux1ee5c-a.-hux1b0ux1edbng-dux1eabn-chux1ea1y-vuxe0-ux111ux1ed1i-chiux1ebfu-kux1ebft-quux1ea3}
 
@@ -872,41 +888,6 @@ liệu và mã nguồn, thực hiện:
 \end{Highlighting}
 \end{Shaded}
 
-Đầu ra dữ liệu: \texttt{results/detailed\_predictions.csv} (570 trường
-hợp), \texttt{results/summary.csv} (12 dòng phân rã theo chiến lược và
-CWE), \texttt{results/metrics.json} (cấu hình, SHA-256, ma trận nhầm lẫn
-và synthetic drift). Có thể tạo lại hình vẽ với
-\texttt{python\ src/plot\_results.py} khi đã cài \texttt{matplotlib}.
-SHA-256 chuẩn của \texttt{detailed\_predictions.csv} theo lần chạy trong
-hồ sơ là
-\textbf{\texttt{4f50ab19c6679411fb9702eb7d2c28f8423aa45fe8e5366cb41283723ec3be86}}.
-Nếu khác hash, phải kiểm tra phiên bản Python, chỉnh sửa mã hoặc dữ
-liệu, không tự thay số trong báo cáo.
-
-\subsection{Phụ lục B. Câu hỏi phản biện và cách trả lời
-ngắn}\label{phux1ee5-lux1ee5c-b.-cuxe2u-hux1ecfi-phux1ea3n-biux1ec7n-vuxe0-cuxe1ch-trux1ea3-lux1eddi-ngux1eafn}
-
-\textbf{B1. Nghiên cứu đã thử nghiệm LLM hay WAF thương mại chưa?} Chưa.
-LLM là nhánh kiến trúc dự kiến; kết quả định lượng ở đây chỉ từ ba bộ
-phát hiện mô phỏng offline.
-
-\textbf{B2. Vì sao TRACE-Policy có 100\% coverage mà chưa thể đưa vào
-sản xuất?} Vì chỉ số đó đo trên họ mẫu tổng hợp hẹp, có thể quá khớp,
-chưa kiểm chứng semantics backend, và FPR 16,67\% cao hơn ngưỡng phê
-duyệt minh họa.
-
-\textbf{B3. Con số 52\% Miggo có chứng minh WAF luôn thất bại?} Không.
-Đó là nghiên cứu do nhà cung cấp công bố trên tập CVE và thiết lập đánh
-giá của họ, chỉ dùng làm động cơ tìm hiểu.
-
-\textbf{B4. Điểm mới của TRACE-WAF nằm ở đâu?} Ở cách đóng gói ba trục
-đánh giá thành một cổng ra quyết định có nhật ký bằng chứng CWE/CVE,
-owner và rollback; không khẳng định tính mới tuyệt đối của từng thành
-phần riêng lẻ.
-
-\textbf{B5. Nếu tiếp tục nghiên cứu, thí nghiệm quyết định nào phải làm
-đầu tiên?} Kiểm chứng trên WAF/CRS được ghim phiên bản và ứng dụng lab
-có phép, kèm corpus benign thực và phép đo theo từng nhóm CWE/CVE độc
-lập.
+Đầu ra gồm \texttt{results/detailed\_predictions.csv} (570 mẫu), \texttt{results/summary.csv} (12 dòng) và \texttt{results/metrics.json} (cấu hình, SHA-256, ma trận nhầm lẫn và synthetic drift). Tái tạo biểu đồ bằng \texttt{python src/plot\_results.py} (cần matplotlib). SHA-256 của \texttt{detailed\_predictions.csv} trong lần chạy này: \texttt{4f50ab19c6679411fb9702eb7d2c28f8423aa45fe8e5366cb41283723ec3be86}. Nếu hash khác, phải kiểm tra mã và dữ liệu trước khi sử dụng kết quả.
 
 \end{document}
