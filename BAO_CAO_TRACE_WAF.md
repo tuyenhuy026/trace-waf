@@ -1,264 +1,288 @@
-# TRACE-WAF: Khung đánh giá ba trục và quản trị sinh luật tường lửa ứng dụng web có truy vết CWE/CVE trước kỹ thuật biến đổi né tránh
+---
+title: "TRACE-WAF: Đánh giá ba trục và quản trị vòng đời luật WAF có truy vết CWE/CVE qua mô phỏng và checkpoint ModSecurity–CRS"
+author: "[Họ và tên tác giả]"
+lang: vi-VN
+---
 
-**BÁO CÁO NGHIÊN CỨU HỌC PHẦN: CHÍNH SÁCH VÀ QUẢN TRỊ AN NINH MẠNG**  
-**Hình thức:** Paper nghiên cứu và thực nghiệm nguyên mẫu ngoại tuyến  
-**Học viên:** [Bổ sung họ tên và mã học viên]  
-**Ngày hoàn thiện bản thảo:** 16/10/2026
+
+**Đơn vị:** [Đơn vị đào tạo / trường]  
+**Email:** [Địa chỉ email]  
+**Loại công trình:** Bài báo nghiên cứu thực nghiệm nguyên mẫu; trạng thái checkpoint ngày 17/10/2026.
 
 ## Tóm tắt
 
-Tường lửa ứng dụng web (Web Application Firewall, WAF) cung cấp một lớp phòng thủ trước SQL injection (SQLi), cross-site scripting (XSS) và path traversal. Tuy nhiên, hiệu năng phòng thủ không thể kết luận chỉ từ số mẫu tấn công bị chặn: các biến đổi biểu diễn đầu vào có thể làm giảm khả năng phát hiện, trong khi luật quá rộng có thể chặn lưu lượng hợp lệ. Nghiên cứu này đề xuất **TRACE-WAF**, một khung quản trị và đánh giá luật WAF theo ba trục **attack coverage, false-positive rate (FPR) và evasion robustness**, gắn với hồ sơ nguồn bằng chứng CWE/CVE và quy trình phê duyệt–theo dõi–rollback. Để kiểm tra tính khả thi của phần đánh giá, nghiên cứu xây dựng một benchmark ngoại tuyến có thể tái lập, gồm 450 mẫu có dấu hiệu tấn công và 120 mẫu hợp lệ trên tập kiểm thử, với ba nhóm CWE-89, CWE-79 và CWE-22. Ba bộ phát hiện quy tắc mô phỏng được so sánh: nhận diện chữ ký thô, chữ ký sau chuẩn hóa và luật có ngữ cảnh tuyến xử lý. Kết quả tương ứng là coverage **50,67% / 93,33% / 100,00%**; FPR **50,00% / 50,00% / 16,67%**; robustness trên biến thể **38,33% / 91,67% / 100,00%**. Mặc dù nguyên mẫu có ngữ cảnh nhận diện toàn bộ mẫu tấn công trong tập thử nghiệm, **nó không đạt ngưỡng FPR 5% được đề xuất cho cổng phê duyệt**. Kết quả chỉ chứng minh khả năng vận hành của phương pháp đo trên dữ liệu tổng hợp, **không** chứng minh hiệu quả với WAF thương mại, CVE thực, hay hệ thống sinh luật bằng LLM. Đóng góp chính là một giao thức đo có truy vết, dữ liệu và mã có thể chạy lại, đồng thời nhấn mạnh vai trò kiểm soát thay đổi trong quản trị an ninh mạng.
+Nghiên cứu đề xuất TRACE-WAF, một quy trình kết hợp sinh mẫu kiểm thử, đề xuất luật phòng thủ và quản trị thay đổi tường lửa ứng dụng web (WAF) theo ba chỉ số: tỷ lệ chặn tấn công có hiệu lực (coverage), tỷ lệ chặn nhầm lưu lượng hợp lệ (false-positive rate, FPR) và khả năng duy trì phát hiện khi biểu diễn đầu vào biến đổi (evasion robustness). Phạm vi bao gồm SQL injection (CWE-89), cross-site scripting (CWE-79), path traversal (CWE-22), truy vết CWE/CVE, mô hình ngôn ngữ và đối chứng không LLM. Khác với mô phỏng ngoại tuyến ban đầu gồm 570 trường hợp được gắn nhãn theo mẫu, checkpoint mới triển khai backend cố ý có lỗi cùng ModSecurity–OWASP CRS trong phòng thí nghiệm cục bộ, kiểm tra hiệu lực bằng oracle của ứng dụng rồi so sánh bảy cấu hình: CRS gốc (B0), tuning cố định không LLM (B1) và năm ứng viên từ kết quả *gpt-6-luna* đã lưu (L1–L5). Trên validation, mỗi cấu hình chặn 14/14 trường hợp tấn công được xác nhận có hiệu lực; trong 30 mẫu dự định tấn công có 16 mẫu không tạo ra tác động trên backend. FPR của B0 là 5/16 (31,25%); FPR của B1 và L1–L5 là 1/16 (6,25%). Mọi cấu hình còn có một hồi quy phản hồi hợp lệ do proxy thay trang lỗi, nên đều không qua cổng nghiệm thu và quyết định vẫn là **NO-GO**. Test độc lập đã khởi chạy nhưng mới lưu 93/104 quan sát của B0, gồm ba bypass thuộc cùng họ SQLi; chưa thể công bố kết quả test hoàn chỉnh cho bảy cấu hình. Chưa có bằng chứng GPT tốt hơn tuning không LLM, chưa xác minh CVE trên sản phẩm bị ảnh hưởng, và chưa thực hiện replay drift hay vòng tự thích nghi. Đóng góp của bài là phân tầng chứng cứ và quy trình quyết định có thể kiểm toán, đồng thời công bố minh bạch các hạng mục chưa hoàn tất.
 
-**Từ khóa:** WAF; CWE; CVE; SQL injection; XSS; path traversal; false positive; evasion robustness; LLM; quản trị thay đổi.
+**Từ khóa:** TRACE-WAF; ModSecurity; OWASP CRS; SQLi; XSS; path traversal; CWE/CVE; gpt-6-luna; coverage; false positive; robustness; rollback.
 
 ## 1. Giới thiệu
 
-### 1.1. Bối cảnh và động cơ
+### 1.1. Vấn đề nghiên cứu
 
-WAF kiểm tra yêu cầu HTTP ở lớp ứng dụng và thường áp dụng các tập luật chữ ký, quy tắc hành vi hoặc mô hình bất thường. OWASP Core Rule Set (CRS) là một nền tảng tham chiếu quan trọng, hỗ trợ phát hiện những nhóm tấn công phổ biến và đồng thời đặt mục tiêu giảm cảnh báo sai [1]. Tuy vậy, một WAF chỉ là lớp phòng thủ bổ sung: khả năng bảo vệ chịu ảnh hưởng của đường đi ứng dụng, cách xử lý tham số, chuẩn hóa chuỗi, cấu hình luật và cơ chế xử lý ở backend [1], [2].
+WAF là lớp phòng vệ đối với các yêu cầu HTTP có dấu hiệu SQL injection, XSS và path traversal, nhưng việc một yêu cầu trả HTTP 403 không tự chứng minh ứng dụng đã được bảo vệ; ngược lại, một yêu cầu HTTP 200 không đồng nghĩa tấn công thành công. Bộ luật OWASP Core Rule Set (CRS) sử dụng các tín hiệu phát hiện và ngưỡng anomaly score, nên điều chỉnh luật luôn tạo ra trao đổi giữa phát hiện và ảnh hưởng tới người dùng hợp lệ [1], [2]. Theo khảo sát do Miggo công bố tháng 12/2025, nhiều trường hợp CVE trong mẫu họ thử có thể vượt cấu hình WAF mặc định; tỷ lệ được công bố là kết quả phụ thuộc tập CVE và điều kiện thử riêng, không phải tỷ lệ tổng quát của thị trường [3]. DEG-WAF và GenSQLi là các hướng liên quan về sinh biến thể và tạo luật có hỗ trợ mô hình [4], [5], nhưng hiệu quả công bố ở các môi trường khác nhau không thể so sánh trực tiếp với nghiên cứu này.
 
-Trong báo cáo công bố ngày 17/12/2025, Miggo cho biết 52% các trường hợp khai thác trong mẫu hơn 360 CVE mà đơn vị khảo sát vượt qua bộ luật WAF mặc định, theo điều kiện đánh giá của họ [3]. Đây là **kết quả do nhà cung cấp công bố trên tập dữ liệu lựa chọn**, không phải ước lượng phổ quát cho tất cả WAF hoặc tất cả CVE. Công bố DEG-WAF của Trần Gia Bảo và cộng sự mô tả việc kết hợp mô hình ngôn ngữ, lấy mẫu theo ngữ pháp và học tăng cường để sinh biến thể đánh giá WAF [4]. Nghiên cứu GenSQLi sử dụng LLM để tạo và xác minh các mẫu SQLi, sau đó tổng hợp luật phòng thủ [5]. Những công trình này thúc đẩy hướng nghiên cứu hai chiều: **sinh trường hợp kiểm thử và đề xuất biện pháp phòng thủ**.
+Bài toán quản trị được đặt ra là: làm thế nào tách **tính hợp lệ của khai thác**, **quyết định WAF**, **tác động tới người dùng**, và **bằng chứng cho thay đổi chính sách**, thay vì chỉ tối đa hóa tỷ lệ chặn của một tập chuỗi? Nghiên cứu sử dụng hai cấp thí nghiệm tách biệt: (i) nguyên mẫu kiểm tra chữ ký ngoại tuyến trước đây; (ii) checkpoint với backend có oracle, WAF/CRS thực trong lab cục bộ. Không gộp số liệu hai cấp thành một benchmark duy nhất.
 
-Vấn đề quản trị xuất hiện khi đánh giá chỉ công bố một tỷ lệ chặn hoặc tỷ lệ bypass. Tăng độ nhạy có thể dẫn đến chặn nhầm người dùng hợp lệ; thêm luật mà thiếu nguồn truy vết, phân công chủ sở hữu và cơ chế rollback có thể tạo rủi ro vận hành. Do đó nghiên cứu đặt trọng tâm vào một giao thức đánh giá và phê duyệt có thể kiểm toán.
+### 1.2. Câu hỏi và đóng góp
 
-### 1.2. Bài toán nghiên cứu
+Bốn câu hỏi dẫn đường: **RQ1**: mẫu do LLM đề xuất có hiệu lực thực trên backend và có vượt đối chứng sinh mẫu xác định dưới ngân sách tương đương hay không? **RQ2**: luật do LLM đề xuất có cải thiện coverage–FPR–robustness so với CRS gốc và tuning không LLM hay không? **RQ3**: cổng nghiệm thu dựa trên bằng chứng, phân tách lỗi, kiểm toán cấu hình và rollback hoạt động tới đâu? **RQ4**: phạm vi tổng quát tới CVE và khả năng chịu thay đổi cơ cấu lưu lượng đã được chứng minh ở mức nào?
 
-Cho một tập trường hợp đầu vào có nhãn, một cơ chế biến đổi biểu diễn và một tập luật WAF, cần xác định **cùng lúc** mức bao phủ tấn công, chi phí chặn nhầm và tính bền vững khi đầu vào được biểu diễn khác đi. Quyết định chấp nhận luật không dựa vào một chỉ số đơn lẻ mà là bộ điều kiện đồng thời, có nguồn bằng chứng, chủ sở hữu và vòng đời thay đổi.
+Bài đóng góp một định nghĩa kết quả dựa trên oracle, sơ đồ quyết định change-control, dữ liệu checkpoint có hash và log theo chính sách, phân tích bảy cấu hình ở validation, cùng kiểm kê những kiểm chứng chưa hoàn tất. Đóng góp này mang tính **khung triển khai và báo cáo bằng chứng**, không tuyên bố mới tuyệt đối về ba chỉ số, về kỹ thuật sinh mẫu hay về WAF.
 
-Ba câu hỏi nghiên cứu được đặt ra:
+### 1.3. Ranh giới chứng cứ
 
-- **RQ1:** Ba chỉ số coverage, FPR và robustness có thể được đặc tả thành quy trình benchmark tái lập và diễn giải được hay không?
-- **RQ2:** Trong môi trường mô phỏng, chuẩn hóa đầu vào và phân luồng chính sách có ảnh hưởng như thế nào đến từng trục đánh giá?
-- **RQ3:** Cần những thành phần quản trị nào để chuyển từ luật ứng viên, kể cả luật do LLM đề xuất, sang quyết định cho phép thử nghiệm hoặc triển khai?
+**Bảng 1. Các mức bằng chứng của nghiên cứu.**
 
-### 1.3. Phạm vi và đóng góp
-
-Nghiên cứu giới hạn vào các dấu hiệu của **CWE-89** (SQL injection), **CWE-79** (XSS) và **CWE-22** (path traversal) theo định nghĩa MITRE [6]–[8]. Phần mã nguồn là một nguyên mẫu **ngoại tuyến**, không gửi yêu cầu đến website hoặc WAF thực, không thực thi nội dung tấn công và không truy vấn LLM. Vì thế, kết quả mô phỏng không được diễn giải là số liệu triển khai sản xuất.
-
-Các đóng góp ở mức bài tập gồm: (i) định nghĩa và quy trình tính toán ba trục đánh giá; (ii) dữ liệu tổng hợp với nhãn, nhóm biến đổi, tuyến ứng dụng và tập giữ lại; (iii) nguyên mẫu ba chính sách để chứng minh trade-off; (iv) sổ đăng ký rule có CWE, chứng cứ, phạm vi, chủ sở hữu, trạng thái và rollback; (v) lộ trình kiểm định LLM trong giai đoạn mở rộng mà không ngộ nhận đã thử nghiệm LLM.
-
-## 2. Cơ sở lý thuyết và nghiên cứu liên quan
-
-### 2.1. CWE, CVE và phạm vi phát hiện WAF
-
-CWE là hệ phân loại **loại điểm yếu**, trong khi CVE định danh một lỗ hổng được công bố trên sản phẩm hoặc thành phần cụ thể. CWE-89 mô tả xử lý không an toàn các ký tự điều khiển trong câu lệnh SQL; CWE-79 liên quan đến dữ liệu không được trung hòa đúng cách khi tạo trang web; CWE-22 mô tả đường dẫn không được giới hạn đúng trong vùng cho phép [6]–[8]. Việc một rule gắn CWE không đồng nghĩa rule bảo vệ được mọi CVE có cùng CWE. Muốn khẳng định bảo vệ CVE, phải có phiên bản ứng dụng, điểm vào, điều kiện kích hoạt và phép thử trên hệ thống có thể tái tạo.
-
-### 2.2. Công trình liên quan và khoảng trống thực hành
-
-**DEG-WAF** sử dụng OPT-125M, mô hình phần thưởng, sinh theo ngữ pháp và tác tử học tăng cường PPO/A2C nhằm khám phá biến thể vượt WAF; các con số bypass công bố phụ thuộc WAF, loại tấn công và thiết lập thử nghiệm [4]. **GenSQLi** kết hợp sinh payload, xác thực với ứng dụng có lỗ hổng và tạo luật; công bố cho biết 514 payload SQLi mới được sinh và 23 luật mới chặn 99% các trường hợp tấn công từng vượt qua WAF trong môi trường nghiên cứu đó [5]. Các kết quả này có ý nghĩa về phương pháp, nhưng **không so sánh trực tiếp** được với số liệu trong bài này vì đối tượng, nhãn, môi trường và mẫu đánh giá khác nhau.
-
-OWASP CRS nêu rõ mối quan hệ giữa ngưỡng anomaly score, paranoia level và false positive. Gia tăng mức phát hiện thường đòi hỏi loại trừ luật hoặc điều chỉnh theo ứng dụng để tránh chặn nhầm [2]. Trong nhóm tài liệu được khảo sát, nghiên cứu này tập trung bổ sung một **giao thức kiểm thử thống nhất ở mức bài tập** kết hợp ba chỉ số với bằng chứng và quy trình phê duyệt; **không tuyên bố** đây là tiêu chuẩn đầu tiên hay rằng cộng đồng chưa có benchmark liên quan.
-
-| Công trình / nguồn | Trọng tâm chính | Giá trị tham chiếu | Ranh giới so với bài này |
-|:--|:--|:--|:--|
-| OWASP CRS [1], [2] | Tập luật, anomaly scoring, tuning FPR | Thực tiễn WAF và chi phí cảnh báo sai | Không phải bộ thí nghiệm đã chạy trong bài |
-| DEG-WAF [4] | LLM + RL để sinh biến thể | Tư duy kiểm thử dưới biến đổi né tránh | Không tái hiện RL/LLM hoặc đo bypass thực |
-| GenSQLi [5] | LLM sinh SQLi và xây dựng luật | Kiến trúc kiểm thử hai chiều | Không tái hiện GPT-4o/ModSecurity |
-| Miggo [3] | So sánh trên tập CVE do nhà cung cấp công bố | Động cơ về giới hạn luật mặc định | Không dùng tỷ lệ 52% làm baseline thực nghiệm |
-| TRACE-WAF (bài này) | Ba trục + truy vết + change control | Giao thức đo và demo tái lập | Chỉ có ba classifier mô phỏng, dữ liệu tổng hợp |
-
-## 3. Thiết kế TRACE-WAF
-
-### 3.1. Kiến trúc đề xuất
-
-![Hình 1. Kiến trúc TRACE-WAF: bối cảnh và chứng cứ, sinh ứng viên, chính sách phát hiện, benchmark ba trục và cổng quản trị.](assets/architecture.png){width=95%}
-
-Kiến trúc phân tách **nguồn bằng chứng**, **trường hợp kiểm thử**, **chính sách phát hiện** và **quyết định triển khai**. Sổ đăng ký chứng cứ lưu `rule_id`, CWE, liên kết CVE nếu đã xác minh, version rule, tuyến áp dụng, nguồn mẫu, chủ sở hữu và phương án rollback. Nguồn có thể là MITRE CWE, cơ sở CVE chính thức, hồ sơ lỗi ứng dụng hoặc log đã được xử lý riêng tư. Dữ liệu đầu vào cần phân loại mức tin cậy và hạn chế thông tin nhận dạng.
-
-Ở nhánh mở rộng, LLM có thể đề xuất biến thể có cấu trúc theo CWE hoặc đề xuất điều kiện phát hiện và giải thích; tuy nhiên đầu ra của LLM là **ứng viên chưa đáng tin cậy**, phải đi qua kiểm tra cú pháp, khử trùng lặp, kiểm tra bảo toàn ý nghĩa, đánh giá false positive và phê duyệt bởi người chịu trách nhiệm. Trong mã thực nghiệm hiện tại, nhánh này được thay bằng **biến đổi xác định theo mẫu** và ba classifier thủ công. Đây là phân biệt bắt buộc giữa **kiến trúc mục tiêu** và **chức năng đã chứng minh**.
-
-### 3.2. Chuẩn hóa biểu diễn và ngữ cảnh
-
-Ba mức chính sách trong nguyên mẫu là:
-
-1. **Raw signature:** so khớp các dấu hiệu SQLi, XSS và dấu `../` hoặc `..\` ngay trên chuỗi đầu vào.
-2. **Canonical signature:** chuẩn hóa có giới hạn qua URL decoding và HTML entity decoding tối đa ba vòng rồi áp dụng cùng tập chữ ký.
-3. **TRACE-Policy:** chuẩn hóa như mức 2; xử lý khoảng trắng và comment mô phỏng trong SQL; giới hạn rule theo tuyến xử lý được proxy tin cậy cung cấp; với đường dẫn, đánh giá xem chuỗi có thoát gốc tài liệu mô phỏng hay không.
-
-Giới hạn ba vòng chuẩn hóa là quyết định kỹ thuật của nguyên mẫu, **không** đảm bảo phù hợp cho mọi ứng dụng. Đầu vào đã giải mã phải được đối chiếu với đúng thứ tự biến đổi của framework và máy chủ thật; ngược lại WAF và backend có thể nhìn thấy các chuỗi khác nhau. Quy tắc cho `/api/tutorial` giả định tầng ứng dụng xuất mã HTML đã escape; giả định này **chưa được kiểm tra bằng backend thật** và không phải giấy phép miễn trừ chung đối với XSS.
-
-### 3.3. Định nghĩa bộ ba chỉ số
-
-Xét tập kiểm thử $D=A\cup B$ với $A$ gồm các chuỗi có dấu hiệu tấn công và $B$ gồm các chuỗi được gắn nhãn hợp lệ. Gọi $f(r)\in\{0,1\}$ là quyết định cho phép (0) hoặc chặn (1). Mô hình báo cáo các chỉ số sau:
-
-$$
-\mathrm{Coverage}=\frac{TP}{TP+FN},\qquad
-\mathrm{FPR}=\frac{FP}{FP+TN}.
-$$
-
-Gọi $A_{\mathrm{trans}}$ là tập trường hợp được tạo ra từ mẫu gốc bằng biến đổi khác `raw`, khi đó:
-
-$$
-\mathrm{Robustness}=\frac{|\{r\in A_{\mathrm{trans}}:f(r)=1\}|}{|A_{\mathrm{trans}}|}.
-$$
-
-Coverage trong báo cáo **là recall trên tập chuỗi được gắn nhãn tấn công**, không phải tỷ lệ bao phủ CVE. Robustness đo khả năng phát hiện các biến thể biểu diễn **đã liệt kê**, không phải khả năng kháng mọi kỹ thuật né tránh. FPR trên tập hard-negative được cố ý làm khó, không tương đương FPR trong lưu lượng sản xuất theo tỷ lệ tự nhiên.
-
-Các chỉ số phải được xuất đồng thời theo từng CWE, lớp biến đổi và tuyến xử lý. Một cổng phê duyệt **minh họa**, không phải tiêu chuẩn ngành, được định nghĩa: coverage ít nhất 90%; FPR không quá 5%; robustness ít nhất 85%. Cổng sử dụng logic AND; không lấy trung bình để một trục cao che giấu một trục thấp.
-
-### 3.4. Quản trị vòng đời rule và vai trò LLM
-
-Quy trình thay đổi rule gồm đề nghị có nguồn; kiểm tra trùng lặp, cú pháp và phạm vi; đánh giá trên tập tấn công và benign giữ lại; xét cổng ba trục; phê duyệt AppSec; triển khai canary có giới hạn; theo dõi drift; rollback khi tác động vượt ngưỡng. Với rule do LLM sinh, cần thêm ghi nhận model/version, prompt template, nhãn nguồn, phiên bản dữ liệu, người duyệt và bản diff rule trước/sau. Mỗi ứng viên nên có hạn xem xét lại để tránh tồn tại vô hạn không được bảo trì.
-
-Các chức năng **Govern–Map–Measure–Manage** trong NIST AI RMF 1.0 tạo khung tham chiếu phù hợp cho việc phân công trách nhiệm, hiểu phạm vi, đo tác động và xử lý rủi ro AI [9]. Trong ngữ cảnh WAF, NIST AI RMF không thay cho quy trình an toàn ứng dụng hoặc phê duyệt bảo mật; nó đóng vai trò bổ trợ khi sử dụng mô hình sinh.
-
-## 4. Phương pháp thực nghiệm
-
-### 4.1. Môi trường và thiết kế dữ liệu
-
-Thực nghiệm chạy bằng **Python 3 tiêu chuẩn**, dùng các biểu thức chính quy và quy tắc xử lý chuỗi nội bộ. Không có máy chủ mục tiêu, ModSecurity, SafeLine, CRS vận hành thực tế, cơ sở dữ liệu, trình duyệt hoặc API LLM. Mã nguồn trong thư mục `src/`, kiểm thử đơn vị trong `tests/`, sổ rule trong `rules/` và đầu ra trong `results/`. Hạt giống định danh `20261016` được lưu để phục vụ truy vết phiên chạy; việc sinh mẫu hiện dùng vòng lặp xác định, không lấy số ngẫu nhiên.
-
-Ba nhóm tấn công mô phỏng xuất phát từ năm dạng mẫu ban đầu cho mỗi CWE, mỗi dạng có mười chỉ số định danh. Mỗi trường hợp gốc tạo năm biểu diễn: `raw`, URL mã hóa một lần, URL mã hóa hai lần, đổi hoa/thường ASCII và một biến đổi theo CWE (comment trong SQL, HTML entity cho XSS, hoặc dấu phân cách đường dẫn). Quy tắc gắn nhãn dựa vào **nguồn sinh mẫu**, không có bộ máy kiểm chứng một payload còn khai thác được backend hay không. Đây là một hạn chế đặc biệt quan trọng đối với các phép biến đổi không bảo toàn ngữ nghĩa trên mọi môi trường.
-
-Tập phát triển lấy các chỉ số 0–3, tập kiểm thử giữ lại lấy 4–9. Các mẫu gốc vẫn cùng họ giữa hai tập, nên sự phân tách này kiểm tra khả năng lặp lại theo định danh chứ **không** chứng minh tổng quát hóa sang ngữ pháp payload chưa thấy. Bộ benign gồm truy vấn tìm kiếm thông thường, bình luận, đường dẫn hợp lệ và ba loại hard-negative: tài liệu SQL có chuỗi giống chữ ký, ví dụ mã HTML trên tuyến bài hướng dẫn đã giả định escape, và đường dẫn `docs/../docs/...` vẫn ở trong phạm vi tài liệu.
-
-| Thành phần | Tập phát triển | Tập kiểm thử báo cáo | Ghi chú |
-|:--|--:|--:|:--|
-| Dấu hiệu tấn công, CWE-89 | 100 | 150 | 5 mẫu × 4 hoặc 6 định danh × 5 biểu diễn |
-| Dấu hiệu tấn công, CWE-79 | 100 | 150 | Gồm XSS token và HTML entity biến đổi |
-| Dấu hiệu tấn công, CWE-22 | 100 | 150 | Gồm biến đổi dấu phân cách đường dẫn |
-| Hợp lệ: normal + hard-negative | 60 | 120 | Mỗi lớp bằng một nửa benign test |
-| **Tổng** | **360** | **570** | Tập test cố định, không sửa kết quả thủ công |
-
-### 4.2. Quy trình đo và kiểm soát tái lập
-
-Chạy `python src/wafbench.py --output results` từ thư mục gốc tạo `detailed_predictions.csv`, `summary.csv` và `metrics.json`. Chạy `python -m unittest discover -s tests -v` kiểm tra tính xác định của mẫu, giải mã hai cấp, chính sách đường dẫn, giả định tuyến hướng dẫn, comment SQL và việc không dùng đích mạng. Chạy `python src/audit_rules.py rules/rule_register.json` xác nhận các rule có trường truy vết bắt buộc. SHA-256 của tệp dự đoán được ghi trong JSON để đối chiếu kết quả.
-
-Chúng tôi báo cáo khoảng Wilson 95% theo từng **trường hợp** như một mô tả thống kê phụ trợ. Vì nhiều mẫu dùng chung biểu thức nền và nhiều biểu diễn của cùng một mẫu, các trường hợp **không độc lập theo nghĩa thống kê**; không sử dụng khoảng này làm bằng chứng ý nghĩa thống kê hay khả năng tổng quát hóa ngoài dữ liệu mô phỏng. Một benchmark chính thức cần phân nhóm theo seed-template hoặc exploit family khi bootstrap và cần tập dữ liệu độc lập theo ứng dụng/CVE.
-
-### 4.3. Kịch bản chuyển dịch biểu diễn (synthetic drift)
-
-Để minh họa vì sao cần theo dõi thay đổi lưu lượng, tập tấn công test được chia thành **giai đoạn A** gồm dạng `raw` và thay đổi hoa/thường, và **giai đoạn B** gồm mã hóa URL và biến đổi theo CWE. Mỗi giai đoạn là một nhóm cố định trong **cùng bộ dữ liệu**, không phải lưu lượng quan sát theo thời gian. Chênh lệch recall vì vậy là thí nghiệm dịch chuyển cơ cấu kiểm thử, không phải ước lượng tỷ lệ drift thực tế.
-
-## 5. Kết quả
-
-### 5.1. Đánh giá tổng hợp ba trục
-
-| Phương án mô phỏng | TP / 450 | FP / 120 | Coverage | FPR | Robustness / 360 |
-|:--|--:|--:|--:|--:|--:|
-| Raw signature | 228 | 60 | 50,67% | 50,00% | 38,33% |
-| Canonical signature | 420 | 60 | 93,33% | 50,00% | 91,67% |
-| TRACE-Policy | 450 | 20 | 100,00% | 16,67% | 100,00% |
-
-![Hình 2. Coverage, FPR và robustness trên 570 trường hợp test tổng hợp. Tỷ lệ FPR càng thấp càng tốt.](assets/metrics.png){width=94%}
-
-Giữa signature thô và signature sau chuẩn hóa, coverage tăng **42,66 điểm phần trăm** và robustness tăng **53,34 điểm phần trăm** nhưng FPR không giảm. TRACE-Policy cải thiện FPR thêm **33,33 điểm phần trăm** so với hai baseline, chủ yếu vì phân biệt ví dụ HTML hợp lệ ở tuyến hướng dẫn và chuẩn hóa đường dẫn trở về cùng gốc; tuy nhiên 20 trường hợp benign chứa tài liệu SQL vẫn bị chặn nhầm.
-
-Để thể hiện độ bất định mô tả, các khoảng Wilson 95% theo trường hợp cho TRACE-Policy lần lượt là **[99,15%; 100,00%]** với coverage, **[11,06%; 24,35%]** với FPR và **[98,94%; 100,00%]** với robustness. Các khoảng này không xử lý sự phụ thuộc cùng họ mẫu, do đó không được diễn giải như kết quả sản xuất.
-
-### 5.2. Phân rã theo nhóm CWE
-
-| CWE | Coverage raw | Coverage sau chuẩn hóa | Coverage TRACE | FPR TRACE |
-|:--|--:|--:|--:|--:|
-| CWE-89 / SQLi | 40,00% | 80,00% | 100,00% | 50,00% |
-| CWE-79 / XSS | 52,00% | 100,00% | 100,00% | 0,00% |
-| CWE-22 / Path traversal | 60,00% | 100,00% | 100,00% | 0,00% |
-
-Chênh lệch giữa các CWE cho thấy một tỷ lệ tổng hợp có thể che giấu loại lỗi đặc biệt khó. Ở mô phỏng này, chuẩn hóa chuỗi vẫn bỏ sót 30 mẫu SQLi comment-separated; TRACE-Policy bổ sung bước xử lý comment nên không bỏ sót các mẫu thuộc họ đã tạo. Ngược lại, việc chặn tài liệu SQL có các cụm `UNION SELECT` trong nội dung tìm kiếm tạo ra 20 false positive. Không nên thêm ngoại lệ theo chính văn bản do người dùng gửi để giải quyết nhanh, bởi điều đó có thể biến dữ liệu người dùng thành tín hiệu bỏ qua bảo vệ. Cần kiểm chứng ngữ cảnh xử lý thực và phân tách trường dữ liệu qua kênh tin cậy.
-
-### 5.3. Thử nghiệm synthetic drift
-
-| Hỗn hợp đầu vào tấn công | Số mẫu | Raw signature | Canonical signature | TRACE-Policy |
-|:--|--:|--:|--:|--:|
-| A: raw và thay đổi hoa/thường | 180 | 100,00% | 100,00% | 100,00% |
-| B: URL encoding và biến đổi theo CWE | 270 | 17,78% | 88,89% | 100,00% |
-
-![Hình 3. Suy giảm recall khi cơ cấu test chuyển từ nhóm biểu diễn đơn giản sang nhóm đã biến đổi.](assets/drift.png){width=92%}
-
-Khi chuyển sang nhóm biến đổi B, raw signature giảm **82,22 điểm phần trăm** so với A. Kết quả hỗ trợ yêu cầu đo robustness tách biệt khỏi coverage trung bình và đặt tín hiệu giám sát thay đổi tỷ trọng biến đổi. Tuy nhiên một hệ thống triển khai phải phân biệt drift hợp lệ do thay đổi client với hành vi né tránh, đồng thời xét false positive trước khi tự cập nhật luật.
-
-### 5.4. Quyết định qua cổng phê duyệt
-
-Không phương án nào thỏa đồng thời điều kiện coverage $\geq 90\%$, FPR $\leq 5\%$ và robustness $\geq 85\%$ trên tập test này. Raw signature không đạt coverage và robustness; canonical signature không đạt FPR; TRACE-Policy **không đạt FPR**, mặc dù đạt hai điều kiện còn lại. Quyết định quản trị đúng là **không tự động đưa bất cứ phương án nào vào sản xuất** dựa trên thí nghiệm này. Điều kiện FPR 5% chỉ là ngưỡng minh họa của nghiên cứu; tổ chức vận hành cần định nghĩa mức độ chịu rủi ro theo tác động kinh doanh và phân bố lưu lượng thực.
-
-## 6. Bàn luận về chính sách và quản trị an ninh mạng
-
-### 6.1. Vì sao kết quả phát hiện cao chưa đủ để triển khai
-
-Trong tập thử, TRACE-Policy chặn tất cả 450 mẫu dấu hiệu tấn công nhưng đồng thời chặn 20/120 mẫu hợp lệ. Nếu chỉ trình bày attack recall 100%, người quản trị có thể đánh giá sai tác động tới người dùng. FPR được đo trên các hard-negative cố tình xuất hiện dày đặc, do đó không suy diễn rằng 16,67% request hợp lệ ngoài sản xuất sẽ bị chặn. Đồng thời, chỉ số **0 FN** trong một không gian biến đổi hẹp cũng không chứng minh tồn tại phòng thủ hoàn hảo.
-
-Một triển khai thực cần thu thập lưu lượng benign theo nhiều mùa, phân tích nhóm đường dẫn, loại người dùng, thời điểm cao điểm, khả năng hợp lệ hóa backend và trường dữ liệu được phép chứa code. Quyết định canary nên dựa vào số request bị chặn, tác động giao dịch, dấu vết rule match và mức ưu tiên ứng dụng. Luật sinh tự động chỉ nên bắt đầu ở chế độ phát hiện hoặc shadow, có người phê duyệt trước khi block.
-
-### 6.2. Sổ luật có bằng chứng và kiểm toán
-
-`rules/rule_register.json` chứa ba mục `TW-001` đến `TW-003`, tương ứng CWE-89, CWE-79 và CWE-22. Mỗi mục có nguồn CWE, tuyến áp dụng, mô tả chính sách, chủ sở hữu cần được chỉ định, trạng thái `prototype_only`, hướng dẫn rollback và hạn xem xét lại 30 ngày. Mục này mới là **sổ chứng cứ kỹ thuật ở cấp CWE**, chưa có ánh xạ CVE cụ thể đã được xác thực. Nếu sau này thêm CVE, hồ sơ phải chứa phiên bản sản phẩm, phiên bản lỗ hổng, bước tái tạo trên môi trường kiểm soát và mẫu đối chứng âm.
-
-| Điểm kiểm soát | Bằng chứng tối thiểu | Vai trò quyết định |
+| Cấp | Nội dung có thể khẳng định | Trạng thái |
 |:--|:--|:--|
-| Nguồn gốc | CWE, CVE nếu đã xác minh, phiên bản dữ liệu và rule | Nghiên cứu / Threat Intel |
-| Hợp lệ kỹ thuật | Kiểm thử cú pháp, route, backend semantics | AppSec / Application Owner |
-| Rủi ro người dùng | FPR theo endpoint, canary và rollback | Product Owner / SRE |
-| Triển khai | Biên bản duyệt, phiên bản, TTL, log thay đổi | Security Change Manager |
-| LLM (nếu sử dụng) | Model version, prompt, filter, người review | AI Governance / AppSec |
+| S0 | Bộ so khớp mô phỏng nhận diện dấu hiệu trên dữ liệu tổng hợp | Đã có kết quả từ thực nghiệm cũ |
+| S1 | Oracle xác minh ảnh hưởng của mẫu trên backend lab | Đã có trên dev/validation và phần B0 test |
+| S2 | CRS thực chặn hay chuyển tiếp cùng yêu cầu trên lab | Đã có trên validation; test chưa đầy đủ |
+| S3 | Một CVE cụ thể trên phiên bản phần mềm có lỗi và bản vá | Chưa có chứng cứ tái lập của dự án |
+| S4 | Drift theo thời gian, chính sách tự thích nghi và canary sản xuất | Chưa kiểm chứng |
 
-### 6.3. Chính sách tự thích nghi theo drift
+CWE là danh mục **loại điểm yếu**, còn CVE nhận diện **lỗ hổng cụ thể** gắn với sản phẩm và phiên bản [6]–[8]. Việc một payload CWE-22 đọc được tệp thử trong `lab/backend.py` không được gọi là thực nghiệm trên một CVE.
 
-Drift nên được hiểu theo nhiều nguồn: (i) tỷ trọng kiểu mã hóa/định dạng đầu vào; (ii) phân bố endpoint và tham số; (iii) tỷ lệ match theo rule; (iv) xác nhận chặn nhầm từ đội vận hành; (v) thay đổi backend hoặc bản vá. Có thể đặt cảnh báo khi robustness trên một bộ regression cố định suy giảm từ ngưỡng cổng, song không được tự động tăng paranoia level hoặc chặn rộng chỉ vì thấy chuỗi lạ. Thiết kế phù hợp là **observe → triage → propose → offline validation → approve → canary → rollback if needed**.
+## 2. Cơ sở liên quan và kiến trúc TRACE-WAF
 
-### 6.4. An toàn dữ liệu và an toàn của LLM
+### 2.1. Nền tảng kỹ thuật và công trình liên quan
 
-Khi tích hợp LLM, nội dung log HTTP có thể chứa PII, token hoặc dữ liệu kinh doanh; cần loại bỏ hoặc thay thế định danh trước khi sử dụng và hạn chế lưu giữ theo chính sách tổ chức. Prompt chứa các mẫu HTTP từ bên ngoài là dữ liệu không tin cậy; không trao quyền để LLM tự sửa luật hoặc gửi lưu lượng vào mục tiêu không được cấp phép. Luật đề xuất phải qua kiểm tra độc lập để hạn chế overblocking, rule shadowing, parser differential và phụ thuộc vào câu trả lời sinh thiếu bằng chứng. Đặc biệt không dùng cụm từ “bảo vệ CVE” nếu chỉ đã kiểm tra các chuỗi liên quan CWE.
+OWASP CRS cung cấp tập luật thực tiễn nhưng cần điều chỉnh phù hợp ứng dụng để giảm cảnh báo sai; paranoia level và ngưỡng anomaly không thể thay cho kiểm chứng chức năng [1], [2]. DEG-WAF nghiên cứu sinh mẫu né tránh bằng mô hình và học tăng cường; GenSQLi liên kết sinh payload SQLi với đề xuất phòng thủ [4], [5]. TRACE-WAF kế thừa câu hỏi đánh giá hai chiều nhưng bổ sung yêu cầu oracle và sổ chứng cứ thay đổi. Nghiên cứu **không** thực hiện lại thuật toán DEG-WAF/GenSQLi và **không** coi các kết quả bên ngoài là số đo cơ sở của checkpoint.
 
-## 7. Hạn chế và đe dọa đối với tính hợp lệ
+### 2.2. Kiến trúc dự kiến và phần đã hiện thực
 
-**Tính hợp lệ cấu trúc:** Mẫu được gắn nhãn bằng nguồn sinh, không bằng kết quả thực thi trên ứng dụng có lỗ hổng. Một chuỗi bị đánh dấu là dấu hiệu tấn công không đồng nghĩa nó thực sự gây khai thác trong bất cứ backend nào. Biến đổi HTML entity hoặc dấu gạch ngược phụ thuộc parser và nền tảng.
+![Hình 1. Kiến trúc khái niệm TRACE-WAF; các bước LLM, CVE và thích nghi chính sách là thành phần thiết kế, không mặc nhiên là kết quả đã kiểm nghiệm.](assets/architecture.png){width=83%}
 
-**Tính hợp lệ nội tại:** Các quy tắc được viết bằng tay cùng không gian mẫu đơn giản; tham số hóa bằng số không tạo ra payload family độc lập. Tỷ lệ phát hiện 100% của TRACE-Policy vì vậy dễ bị lạc quan; chính sách `/api/tutorial` có giả định xuất HTML đã escape, chưa được thực nghiệm backend xác nhận. Thử nghiệm không chứng minh lợi ích của LLM hay khả năng sinh rule bằng LLM.
+Chu trình thiết kế bao gồm: chứng cứ CWE/CVE và ngữ cảnh endpoint → sinh mẫu xác định hoặc đề xuất từ LLM → kiểm tra schema, ngân sách, trùng lặp → oracle backend trực tiếp → qua WAF → tính ba chỉ số và phân rã lỗi → cổng duyệt chính sách → quan sát drift, canary và rollback. Đầu ra mô hình được coi là **dữ liệu không đáng tin**, chỉ được biên dịch từ schema hạn chế; không nhận cấu hình ModSecurity tùy ý do LLM xuất trực tiếp.
 
-**Tính hợp lệ bên ngoài:** Không có WAF thương mại, OWASP CRS chạy thật, kiểm chứng CVE, HTTP normalization stack hay lưu lượng hợp lệ thực. Không có đối chiếu latency, chi phí tính toán, throughput, rule conflict hoặc tỷ lệ base-rate trong sản xuất. Không thể so sánh định lượng kết quả này với DEG-WAF, GenSQLi hay Miggo.
+Phần đã có trong repository gồm backend lab, runner quan sát, trình biên dịch các đề xuất luật có whitelist tuyến và kích thước regex, cơ chế freeze bằng SHA-256, kiểm tra cú pháp Apache, khởi động lại WAF cho từng ứng viên, nhãn `X-Trace-Policy`, log backend/CRS và rollback. Phần chưa có bằng chứng là kiểm chứng CVE thật, tự cập nhật theo drift, kiểm định trên lưu lượng sản xuất và phê duyệt độc lập nhiều vai trò.
 
-**Tính hợp lệ thống kê:** Có 570 case test nhưng chỉ một số ít họ mẫu; các biến thể phụ thuộc cùng nguồn nên khoảng Wilson và số lượng quan sát không phản ánh số đơn vị độc lập. Thiết kế mở rộng phải tách biệt theo họ khai thác, CVE/ứng dụng, thời gian, nhãn xác thực và báo cáo sai số theo cụm.
+### 2.3. Đối chứng và cấu hình có kiểm soát
 
-## 8. Hướng phát triển và kế hoạch nghiên cứu tiếp theo
+Backend lab chạy từ image `python:3.12-slim`; WAF dùng `owasp/modsecurity-crs:apache` và log validation ghi CRS **4.30.0**. Hai endpoint chỉ bind vào loopback (`127.0.0.1:18080` cho backend, `127.0.0.1:18081` cho WAF), dữ liệu oracle được đánh dấu tổng hợp. CRS dùng blocking paranoia 1, inbound anomaly threshold 5 và outbound threshold 100. Kiểu cấu hình này là bản chụp của lab, không chứng minh mọi lần chạy dùng chính xác image digest khi pull lại tag chưa cố định; manifest còn ghi digest quan sát tại thời điểm chạy.
 
-Giai đoạn 1 là tích hợp **WAF thực trong lab được cấp phép**, ưu tiên ModSecurity với phiên bản OWASP CRS được ghim; mô hình hóa luồng HTTP và ghi đầy đủ cả request–response để xác thực semantics. Giai đoạn 2 bổ sung benign traffic có đồng ý và dữ liệu độc lập theo ứng dụng; tạo phép thử CVE đã có môi trường tái lập để liên kết CWE–CVE thực chứng. Giai đoạn 3 mới thêm **LLM sinh ứng viên** ở chế độ offline, so sánh với generator không dùng LLM trên cùng ngân sách, mẫu và tiêu chuẩn đánh giá. Giai đoạn 4 đo đường cong trade-off theo threshold, độ trễ, thời gian duyệt, tỷ lệ rollback và khả năng drift.
+Bảy ứng viên đã được tạo **trước khi** khảo sát validation: B0 là CRS mặc định của lab, B1 là tuning định trước không LLM; L1–L5 là năm cấu hình được biên dịch từ kết quả `gpt-6-luna` lưu từ lượt trước. Một lần sửa bộ biên dịch biểu diễn dấu ngoặc kép được kiểm thử cú pháp rồi **replay phản hồi đã lưu**, không có năm lần sinh mới độc lập. Trên nhánh LLM chỉ dùng alias `gpt-6-luna` cho nghiên cứu chính; các record thử kết nối model khác nếu tồn tại ở lịch sử repository không được đưa vào so sánh và không bị xóa khỏi hồ sơ.
 
-Tiêu chí để kết luận một đề xuất LLM tốt hơn heuristic phải gồm (1) mức tăng ba chỉ số trên tập độc lập, (2) tỷ lệ mẫu sinh thực sự hợp lệ với backend, (3) chi phí và độ trễ sinh/tuning, (4) khả năng giải thích–truy vết, (5) ảnh hưởng vận hành khi áp dụng vào quy trình có người phê duyệt. Không có những đối chứng này thì chỉ có thể gọi đó là **đề xuất kiến trúc**.
+## 3. Phương pháp, dữ liệu và định nghĩa phép đo
 
-## 9. Kết luận
+### 3.1. Phân tách các bộ dữ liệu
 
-Bài nghiên cứu đề xuất TRACE-WAF như một cách nối kết hai mục tiêu thường bị tách rời: đánh giá an toàn kỹ thuật của luật WAF và quản trị vòng đời rule có nguồn truy vết. Nguyên mẫu offline cung cấp kết quả tái lập cho ba trục coverage, FPR và robustness trên dữ liệu tổng hợp của SQLi, XSS và path traversal. Chuẩn hóa và chính sách theo tuyến cải thiện việc phát hiện các mẫu biến đổi trong tập đã tạo, nhưng FPR của phương án tốt nhất vẫn **16,67%**, cao hơn ngưỡng 5% minh họa. Đây là kết quả quan trọng của góc nhìn quản trị: **không phê duyệt triển khai chỉ vì tỷ lệ chặn cao**. Các bước tiếp theo bắt buộc gồm kiểm tra backend và WAF thực có phép, kiểm định độc lập theo CVE, thí nghiệm LLM có đối chứng và canary/rollback có người chịu trách nhiệm.
+Nghiên cứu không thay thế mô phỏng cũ bằng lab mới. **Mô phỏng S0** gồm 570 trường hợp kiểm thử (450 chuỗi gắn dấu hiệu tấn công và 120 mẫu hợp lệ), so sánh ba bộ phân loại do người viết xây dựng. Tại cấp này, “tấn công” là **nhãn theo nguồn sinh**, chưa có oracle thực thi; 570 hàng không phải 570 khai thác CVE độc lập.
+
+**Corpus checkpoint** `results/checkpoint/corpus.json` gồm 196 hàng nền, chia dev 46, validation 46 và test 104 hàng. Dev bổ sung 24 mẫu ứng viên GPT vượt kiểm tra đầu vào để có 70 quan sát trong lần baseline dev. Validation gồm 30 ứng viên dự định tấn công theo heuristic và 16 trường hợp benign; test đã khóa gồm 60 ứng viên tấn công heuristic và 44 benign. Dữ liệu có 6 cặp đầu vào giống hệt xuất hiện ở các split khác nhau; việc gán tên family khác nhau không đủ chứng minh độc lập ngữ nghĩa. Trong test, audit còn báo 4 trùng lặp nội nguồn; không được xem số lượng hàng là số họ khai thác độc lập.
+
+**Bảng 2. Quy mô các tập checkpoint; không nhầm mẫu dự định tấn công với mẫu có hiệu lực.**
+
+| Tập | Tấn công heuristic dự định | Mẫu GPT được nhận | Benign | Tổng |
+|:--|--:|--:|--:|--:|
+| Dev được quan sát | 30 | 24 | 16 | 70 |
+| Validation | 30 | 0 | 16 | 46 |
+| Test đã khóa | 60 | 0 | 44 | 104 |
+
+Mỗi CWE có các biến thể raw, URL-encoded, double-encoded và biến đổi riêng (ví dụ khoảng trắng/comment, case/HTML entity, các thành phần path). Những biến thể khác hình thức nhưng chung nguồn không được xem là phép thử thống kê độc lập. Nhãn CWE gắn theo **ngữ cảnh tuyến kiểm thử**; một benign chứa ký tự giống XSS trong `/search` vẫn được phân nhóm theo tuyến khi thống kê, không phải bằng chứng nó là một trường hợp SQLi.
+
+### 3.2. Oracle hiệu lực, xác nhận WAF và phân lớp lỗi
+
+Với mỗi case, runner gửi yêu cầu trực tiếp tới backend và qua WAF trong lab. Tác động trên `/sql` đòi hỏi xuất hiện marker dữ liệu ẩn trong kết quả SQL; trên `/xss` dùng trình duyệt theo cửa sổ quan sát hữu hạn để xem sự kiện đánh dấu; trên `/file` cần đọc được chuỗi canary ở ngoài thư mục public nhưng **bên trong fixture bị giới hạn**. Nếu một mẫu dự định tấn công không tạo hiệu lực ở đường trực tiếp, nó được phân loại `invalid_attack`, không nằm trong mẫu số coverage/bypass. Một phản hồi 403 chỉ được xem là WAF chặn nếu thiếu dấu echo `X-Trace-Request` của backend; log CRS có thể củng cố kết luận. Lỗi 5xx, exception, không xác nhận được tác động hoặc thiếu phản hồi là `uncertain`, không được biến thành block thành công.
+
+Ở phía benign, đáp ứng kỳ vọng phải trùng status và body chuẩn hóa so với backend. `false_positive` là trường hợp WAF chặn một yêu cầu benign; `benign_regression` là trường hợp yêu cầu không bị WAF chặn nhưng nội dung/status bị biến đổi. Hai loại lỗi **không hoán đổi**. Trên validation có phản hồi backend 404 `not found` nhưng proxy thay thành trang HTML `404 Not Found` vì `PROXY_ERROR_OVERRIDE=on`; đây là hồi quy chức năng, không phải một `false_positive` do WAF chặn và cũng không phải lỗi kết nối.
+
+### 3.3. Ba trục và quy tắc phê duyệt
+
+Gọi $A_v$ là các mẫu tấn công có tác động được oracle xác nhận trên backend trực tiếp và có kết quả WAF xác định; $A_t\subseteq A_v$ là các biến thể được gắn nhãn *transformed*; $B$ là các benign có kết quả xác định. Tính:
+
+$$
+\mathrm{Coverage}=\frac{N_{\mathrm{blocked,valid}}}{N_{\mathrm{valid\ attack}}}.
+$$
+
+$$
+\mathrm{FPR}=\frac{N_{\mathrm{false\ positive}}}{N_{\mathrm{evaluable\ benign}}}.
+$$
+
+$$
+\mathrm{Robustness}=\frac{N_{\mathrm{blocked,transformed}}}{N_{\mathrm{valid\ transformed}}}.
+$$
+
+Trong mã checkpoint, benign regression vẫn nằm trong mẫu số FPR nhưng được kiểm tra bởi một **cổng chất lượng độc lập**. Giá trị null cần được giữ khi không có mẫu phù hợp. Các giá trị 100% robustness trên ít mẫu có hiệu lực không chứng minh WAF bất khả vượt qua; mọi biến thể không có tác động đã bị loại khỏi mẫu số.
+
+Ngưỡng thí nghiệm đã xác lập trước validation: coverage $\geq 90\%$, FPR $\leq 5\%$, robustness $\geq 85\%$, có mẫu hợp lệ và benign ở cả ba CWE, không có quan sát không chắc chắn, và **không có benign functional regression**. Ngưỡng 5% là giả định nội bộ cho nghiên cứu, không phải chuẩn công nghiệp hoặc giấy phép deploy. Chính sách chỉ đủ điều kiện test tiếp nếu đi qua toàn bộ cổng; ngay cả sau đó test độc lập cũng không tự tạo phê duyệt production.
+
+### 3.4. Khóa ứng viên, kiểm toán và vòng đời test
+
+`results/checkpoint/rule-study/20261016T170642475819Z/frozen-plan.json` liệt kê B0, B1, L1–L5 và SHA-256 của từng file `.conf`, đồng thời ghi SHA corpus, compiler, chứng cứ dev và nguồn replay. SHA-256 của *toàn bộ file kế hoạch* trong `frozen-plan.sha256` là `80897b18898c5e90285e47de12f5de3acd4f14cf620cf802380537a2f592f5a3`. `results/checkpoint/final-test/test-protocol.json` kế thừa danh sách băm, quy định `api_calls=0`, `selection_allowed=false` và NO-GO từ validation. Mọi thay đổi ứng viên theo quan sát test sẽ làm hỏng tính tiền đăng ký của đánh giá; nghiên cứu này **không đề xuất chỉnh/tuning lại** L1–L5 hoặc B1 để tối ưu kết quả.
+
+## 4. Kết quả mô phỏng ngoại tuyến trước checkpoint (S0)
+
+**Bảng 3. Kết quả S0 trên 570 trường hợp tổng hợp, không phải số đo lab WAF.**
+
+| Bộ nhận diện mô phỏng | Coverage mẫu gắn nhãn | FPR mẫu benign | Robustness biến thể |
+|:--|--:|--:|--:|
+| Raw signature | 50,67% | 50,00% | 38,33% |
+| Canonical signature | 93,33% | 50,00% | 91,67% |
+| TRACE-Policy mô phỏng | 100,00% | 16,67% | 100,00% |
+
+![Hình 2. Chỉ số của ba bộ phát hiện mô phỏng S0; không sử dụng làm kết quả ModSecurity/CRS hay LLM.](assets/metrics.png){width=79%}
+
+S0 mô tả cơ chế chuẩn hóa/áp ngữ cảnh giúp tăng độ nhạy trên các mẫu do cùng tác giả xây dựng. Nó không có bước kiểm chứng khai thác trên backend thật, không chạy WAF thương mại hoặc LLM, và FPR chịu ảnh hưởng bởi tập hard-negative tổng hợp. Do đó con số 100% trong S0 và các con số ở checkpoint không so sánh trực tiếp như cùng một benchmark. Trạng thái S0 được giữ để bảo toàn lịch sử nghiên cứu, không được trình bày thành chứng cứ hoàn thành nghiên cứu CVE.
+
+## 5. Checkpoint thực nghiệm ModSecurity–CRS (S1–S2)
+
+### 5.1. Sinh mẫu GPT có oracle ở dev
+
+Năm record đề xuất payload với alias `gpt-6-luna` được lưu từ đợt trước, mỗi lượt được yêu cầu tối đa 12 ứng viên. Audit cho thấy **2/5** phản hồi có danh sách đúng 12 ứng viên theo schema và **3/5** trả cấu trúc không đáp ứng ngân sách yêu cầu; không có gọi lại để “sửa” kết quả. Hai lượt hợp lệ cung cấp **24** case được nhận vào dev, trong đó chỉ **3/24** tạo tác động backend (đều ở nhóm XSS) và đều bị CRS chặn; **21/24** không có tác động được xác nhận. Với đối chứng heuristic trên dev, **14/30** trường hợp có tác động và bị chặn; đây không phải so sánh đồng ngân sách hoặc độc lập họ mẫu tuyệt đối. Các record GPT đã lưu trong `results/checkpoint/llm/payload-gpt-6-luna-*.json` được giữ nguyên.
+
+Các dữ kiện này không chứng minh GPT sinh mẫu tốt hơn heuristic: số lượt hợp lệ thấp, định dạng câu trả lời thất bại ba lần, phụ thuộc vào seed dev, ngân sách mẫu khác nhau, và tỷ lệ mẫu thực sự có hiệu lực thấp. Chỉ dựa vào tỷ lệ chặn 100% **trong ba mẫu GPT có hiệu lực** sẽ gây hiểu lầm vì đã bỏ qua 21 mẫu không có hiệu lực; số bypass được xác minh của nhóm GPT ở dev là 0 trong 3 mẫu hợp lệ, không phải “không thể bypass CRS”.
+
+### 5.2. Kết quả validation của bảy chính sách
+
+Validation của lượt `20261016T170642475819Z` đã hoàn tất cho cả bảy phương án, tổng cộng 46 case/phương án: 14 tấn công có hiệu lực, 16 tấn công không có hiệu lực, 16 benign. Không có observation `uncertain` được ghi trong summary; tất cả ứng viên đều qua syntax và activation. Bảng 4 đối chiếu đúng mẫu số dựa trên oracle.
+
+**Bảng 4. Kết quả validation cố định trên 46 case cho từng policy.**
+
+| Chính sách | Chặn / attack hợp lệ | FP / benign | FPR | Benign regression | Gate |
+|:--|:--:|:--:|--:|:--:|:--:|
+| B0 — CRS gốc | 14/14 | 5/16 | 31,25% | 1 | NO-GO |
+| B1 — heuristic cố định | 14/14 | 1/16 | 6,25% | 1 | NO-GO |
+| L1 — gpt-6-luna | 14/14 | 1/16 | 6,25% | 1 | NO-GO |
+| L2 — gpt-6-luna | 14/14 | 1/16 | 6,25% | 1 | NO-GO |
+| L3 — gpt-6-luna | 14/14 | 1/16 | 6,25% | 1 | NO-GO |
+| L4 — gpt-6-luna | 14/14 | 1/16 | 6,25% | 1 | NO-GO |
+| L5 — gpt-6-luna | 14/14 | 1/16 | 6,25% | 1 | NO-GO |
+
+Coverage và robustness ghi nhận của cả bảy là 100% **trên những mẫu có tác động được xác nhận của validation**, không phải 100% trên 30 mẫu định hướng tấn công và không phải một kết luận về tập test. B1 cải thiện FPR so với B0 trên tập nhỏ này; L1–L5 **không cải thiện hơn B1 ở bất kỳ chỉ số nào của cổng phê duyệt**. Số lượt L1–L5 cũng không tương ứng năm mẫu sinh độc lập ở giai đoạn replay compiler, vì chúng dùng lại năm phản hồi lưu trước đó. Không có ứng viên đạt FPR $\leq 5\%$ hoặc loại bỏ được hồi quy 404.
+
+### 5.3. Phân rã theo CWE và nhóm lỗi
+
+**Bảng 5. Phân rã theo CWE tại validation; phân nhóm benign dựa vào tuyến kiểm thử.**
+
+| Nhóm gán theo tuyến | Attack hợp lệ bị chặn (mọi cấu hình) | B0: FP / benign | B1, L1–L5: FP / benign |
+|:--|:--:|:--:|:--:|
+| CWE-89 / SQLi | 6/6 | 2/6 | 0/6 |
+| CWE-79 / XSS | 4/4 | 2/6 | 0/6 |
+| CWE-22 / traversal | 4/4 | 1/4 | 1/4 |
+
+Trong 30 ý định tấn công, có **16 invalid_attack** gồm 4 SQLi, 6 XSS và 6 traversal. Chúng không tạo tác động khi đi thẳng vào backend theo oracle và do đó không thể là bằng chứng WAF chống được khai thác. Đối với benign, B0 có 5 false positive: hai trên `/search`, hai trên `/docs` và một trên `/file`. B1 cùng L1–L5 loại bỏ được bốn lần chặn nhầm tại các tuyến mà giá trị `q` được HTML-escape, nhưng vẫn chặn `validation-benign-file-2` (đọc `../public/readme.txt` hợp lệ trong fixture) với status 403, trong khi trực tiếp backend trả `PUBLIC_DOCUMENT` và status 200. Đây là ví dụ cụ thể về rule quá rộng trên ngữ nghĩa path.
+
+Một trường hợp khác `validation-benign-file-3` yêu cầu tệp không tồn tại: backend trả `404` với body `not found`, còn qua proxy cũng trả `404` nhưng là trang HTML lỗi của Apache. Do thiếu tương đương body với backend, runner phân loại `benign_regression=1` cho **mọi** ứng viên, không tự gán thành FPR. Dấu `PROXY_ERROR_OVERRIDE=on` trong manifest là một giải thích kỹ thuật phù hợp, song để khẳng định nguồn gây biến đổi có tính nhân quả hoàn toàn vẫn nên kiểm chứng A/B proxy có kiểm soát ở vòng nghiên cứu khác, không chỉnh cấu hình trong lượt khóa hiện tại.
+
+### 5.4. Đối chiếu log, rollback và lỗi hạ tầng
+
+Các `*-validation/observations.jsonl` ghi request ID, hiệu lực trực tiếp, status WAF, dấu echo backend và nhãn kết quả; `backend-logs.json` chứa yêu cầu mà backend thực nhận; `waf-logs.json` ghi cảnh báo CRS, ngưỡng và quyết định chặn. Ví dụ log WAF có `942100` cho phát hiện SQLi, `949110` cho inbound anomaly score vượt ngưỡng và HTTP 403. Phải đối chiếu theo request/transaction, không gắn một quy tắc CRS vào một case chỉ vì trùng thời gian hoặc cùng status. Trong validation, các summary đánh dấu `complete=true`, `uncertain_rows=0`; không có bằng chứng cho lỗi 5xx của các case được tính. `rollback.json` xác nhận `attempted=true`, `restored=true`, với hash file gốc `98b3b9c70039268487d31bb2caff2b08a63e2da0c0bf1a2144e233d804317df8` sau toàn bộ lượt validation.
+
+Rollback trên đây chỉ được kiểm chứng **sau validation**. Không thể mặc nhiên khẳng định WAF đã được khôi phục sau tiến trình final test bị gián đoạn: repository hiện thiếu bản ghi `final-test/rollback.json`. Do đó trạng thái vận hành của host gốc phải được kiểm tra độc lập trước mọi can thiệp mới. Nếu mất đồng bộ log hoặc không truy vết được transaction, phải báo `uncertain`, không coi như “đã chặn”.
+
+### 5.5. Final test đã khóa nhưng bị ngắt: phân biệt chứng cứ và hạng mục dở dang
+
+Tệp `results/checkpoint/final-test/test-protocol.json` có `api_calls=0`, `selection_allowed=false`, liệt kê đủ B0, B1, L1–L5 với rule hash đúng frozen-plan. Dữ liệu cho thấy cú pháp và kích hoạt B0 thành công (`B0-syntax.json`, `B0-activate.json`), đã tạo corpus test 104 case và lưu **93 quan sát** trong `B0-test/observations.jsonl`. Repository **chưa có** summary B0 test, bản ghi đủ 104 quan sát, log WAF/backend cuối của test, dữ liệu test B1–L5, hoặc rollback của final test. Vì vậy checkpoint test **chưa nghiệm thu hoàn thành**, không được đặt cột kết quả cuối cùng cho tất cả bảy chính sách.
+
+Trong **93 quan sát B0 đã lưu**, số đếm theo nhãn là 25 `blocked_attack`, 3 `bypass`, 32 `invalid_attack`, 23 `true_negative` và 10 `false_positive`. Ba bypass cùng thuộc họ SQLi `test-sql-0` ở ba biến thể raw, comments và tab; trên đường trực tiếp **và qua WAF** đều trả status 200 và có dấu hiệu đọc marker `TRACE_SQL_SECRET`. Đây là bằng chứng sơ bộ quan trọng rằng B0 có thể bị vượt qua trên một họ mẫu của test trong lab; không phải ba lỗ hổng độc lập, không phải CVE, và không chứng minh kết quả của B1 hay L1–L5. Cả 60 case tấn công theo thứ tự test có bản ghi trong 93 hàng, nhưng 11 benign cuối còn thiếu; tỷ lệ FPR/test và cổng nghiệm thu không được công bố khi phép đo bị ngắt.
+
+**Không chạy lại `lab/run_final_test.py` như một phép thử mới** để che mất gián đoạn: script hiện hành tạo thư mục output với `exist_ok=False`, và test đã được nhìn thấy một phần. Phương án có tính toàn vẹn là bảo toàn 93 hàng cùng toàn bộ hash, xác minh host/rollback, chỉ khôi phục các quan sát chưa có nếu có một cơ chế resume append-only được kiểm chứng trước, giữ nguyên rule và thứ tự, đồng thời công khai sự cố. Nếu không thể xác minh khả năng resume, phải đánh dấu test thiếu thay vì chạy lại và lựa chọn chính sách theo các kết quả đã nhìn thấy. Không dùng chính các bypass B0 để sửa luật của bất kỳ ứng viên nào trong vòng đánh giá này.
+
+## 6. Phân tích chuyển dịch cơ cấu dữ liệu và drift
+
+Báo cáo S0 trước đây gọi một bảng tách nhóm là “synthetic drift”: với 180 mẫu biểu diễn đơn giản (nhóm A), các tỷ lệ phát hiện raw/canonical/TRACE đều 100%; với 270 mẫu có biến đổi biểu diễn (nhóm B), ba tỷ lệ lần lượt là 17,78% / 88,89% / 100%. Cách gọi chính xác là **phân tích tĩnh theo nhóm và chuyển dịch cơ cấu mẫu**, không phải temporal replay. Không có luồng thời gian, không có WAF chạy lại theo một chuỗi phân bố mới, không có vòng tự sửa rule được đo.
+
+![Hình 3. Minh họa sự khác biệt giữa hai cơ cấu mẫu tổng hợp S0; đây không phải dữ liệu vận hành theo thời gian.](assets/drift.png){width=78%}
+
+Ở checkpoint ModSecurity, validation có 30 mẫu heuristic/16 benign, test khóa có 60 mẫu heuristic/44 benign; tỷ trọng benign tăng từ 34,8% lên 42,3% do **thiết kế corpus**, không chứng minh sự thay đổi phân bố của một hệ thống vận hành. Hai tập còn chia sẻ sáu đầu vào trùng khớp ở mức corpus toàn bộ. Kết quả subgroup hoặc thay đổi mẫu số có thể được dùng để **đề xuất cảnh báo drift**, nhưng không đủ gọi là replay có kiểm soát. Phép kiểm định sau này cần giữ chính sách bất biến, phát lại các đợt traffic có dấu thời gian/nguồn, so sánh accuracy và FPR theo nhóm, rồi mới kiểm nghiệm từng bước *observe → diagnose → propose → review → validate → canary → rollback*. Không tuyên bố TRACE-WAF đã chứng minh khả năng tự thích nghi.
+
+## 7. Nghiên cứu tình huống CVE-2024-23334: phương án tái lập, chưa kiểm chứng
+
+Để nối từ CWE-22 đến một sản phẩm có CVE thực, nghiên cứu chọn **CVE-2024-23334**, path traversal trong `aiohttp` khi ứng dụng cấu hình phục vụ static với `follow_symlinks=True`. Advisory xác định các phiên bản từ `1.0.5` đến trước `3.9.2` bị ảnh hưởng; phiên bản `3.9.2` chứa bản sửa [10], [11]. Điều kiện kích hoạt này là đặc trưng của *sản phẩm và cấu hình*; **không** đồng nhất với endpoint `/file` của backend Python tự viết. Thực nghiệm tại repository hiện không chứa phiên bản `aiohttp` bị ảnh hưởng và không có log chứng minh khai thác CVE qua CRS.
+
+Giao thức tình huống đề xuất là dựng hai container cô lập có cùng nội dung tệp canary giả ngoài static root nhưng trong không gian container: phiên bản bị ảnh hưởng `aiohttp==3.9.1` và bản vá `aiohttp==3.9.2`; ứng dụng dùng đúng đường `web.static(..., follow_symlinks=True)`. Với mỗi phiên bản, đo đồng thời direct backend và qua cùng WAF/CRS đã cố định; dùng request giữ nguyên đường dẫn và các biến thể mã hóa, ghi status, body hash, marker canary, WAF transaction ID, server version, image digest và response origin. Phép đối chứng bản vá phải chứng minh cùng truy vấn không đọc canary sau vá. Ma trận bốn ô là (phiên bản có lỗi, direct), (có lỗi, qua WAF), (đã vá, direct), (đã vá, qua WAF). Không dự đoán ô nào thành công dựa trên URI đơn thuần.
+
+**Trạng thái thực hiện tại thời điểm khóa báo cáo: CHƯA HOÀN THÀNH.** Nguồn công khai xác nhận mô tả CVE và ranh giới phiên bản, không thay thế được việc chạy trong lab do nghiên cứu quản lý. Không có kết quả `HTTP status`, canary hoặc WAF trace của ma trận trên trong repository. Vì vậy không tính một CVE là đã “được bảo vệ” hay “bypass được WAF”; trường này chỉ là nghiên cứu tình huống được chuẩn bị về thiết kế. Kể cả khi tái lập thành công, một CVE path traversal duy nhất cũng không đại diện mọi CVE hay ba nhóm CWE.
+
+## 8. Chính sách, kiểm toán và quyết định quản trị
+
+Một rule có thể có coverage cao mà vẫn gây hại do chặn tài liệu hợp lệ, lỗi trang, phản hồi proxy thay đổi, hoặc phạm vi áp dụng quá rộng. Cổng phê duyệt cần lưu `rule_id`, CWE, `cve_id` **chỉ khi đã tái lập**, phiên bản ứng dụng/CRS, hash của policy và corpus, nguồn ứng viên (heuristic hay `gpt-6-luna`), dữ liệu oracle, người chịu trách nhiệm, hạn xem xét, kế hoạch thu hồi và log phê duyệt. Các trường trong `rules/rule_register.json` ban đầu ở cấp CWE là sổ luật nguyên mẫu, chưa biến thành kết quả xác minh CVE.
+
+**Bảng 6. Điểm kiểm soát thay đổi và trách nhiệm minh họa.**
+
+| Điểm kiểm soát | Bằng chứng bắt buộc | Trách nhiệm minh họa |
+|:--|:--|:--|
+| Truy vết nguồn | CWE, CVE nếu xác thực, phiên bản, provenance, checksum | AppSec / nghiên cứu |
+| An toàn đề xuất LLM | Alias, prompt version, raw response, schema, compiler, giới hạn route/rule | AI governance / AppSec |
+| Oracle và phản hồi | Direct effect, WAF effect, backend echo, WAF transaction | Người đo kiểm |
+| Tác động người dùng | FPR, benign regression, phân rã theo endpoint/CWE, canary | Application owner / SRE |
+| Quản lý thay đổi | Bản kế hoạch đóng băng, ký duyệt, rollout, rollback test và hậu sự cố | Change manager |
+
+Chỉ sử dụng nội dung request và log tổng hợp của lab; với dữ liệu thật cần xóa hoặc che PII/token, kiểm soát quyền và không đưa log không tin cậy vào prompt với quyền cập nhật rule. LLM là tác nhân **đề xuất** chứ không có quyền tự disable CRS hoặc publish vào production. Chỉ số báo cáo phải có mẫu số, sự kiện ngoại lệ và tình trạng completeness; không tự hợp thức hóa một ứng viên sau khi quan sát test.
+
+Quyết định của checkpoint: **NO-GO đối với triển khai và không có ứng viên được chọn**. Điều này không phủ nhận thử nghiệm đã chạy ở validation; nó tách “kiểm chứng cơ chế pipeline” khỏi “đủ chứng cứ vận hành” và “được cấp quyền deploy”. Sự cố test bị ngắt và chưa xác minh rollback sau test còn là một điểm chặn riêng về quản trị thay đổi.
+
+## 9. Bảng nghiệm thu checkpoint, hạn chế và nghiên cứu tiếp theo
+
+### 9.1. Nghiệm thu theo chứng cứ
+
+**Bảng 7. Nghiệm thu checkpoint theo mức độ hoàn chỉnh của chứng cứ.**
+
+| Hạng mục | Bằng chứng hiện có | Kết luận nghiệm thu |
+|:--|:--|:--|
+| Giữ SQLi, XSS và path traversal | Corpus, oracle ba tuyến CWE-89/79/22 | ĐẠT trong lab giới hạn |
+| Giữ kết quả S0 không sửa | `results/`, 570 mẫu mô phỏng | ĐẠT, tách khỏi checkpoint |
+| LLM sinh mẫu có đối chứng | 5 record GPT; 2 lượt đúng schema; 24 dev case; heuristic control | MỘT PHẦN, chưa đồng ngân sách/độc lập |
+| LLM đề xuất luật; B0/B1/L1–L5 | 7 policy đóng băng, validation complete | ĐẠT ở validation |
+| Phân rã CWE/false positive/lỗi proxy | 7 summary, observation, log | ĐẠT ở validation |
+| Cổng ba trục và quyết định | Gate minh họa, cả 7 NO-GO | ĐẠT về áp dụng chính sách |
+| Rollback validation | `rollback.json` và hash nguồn | ĐẠT ở validation |
+| Khóa test không chọn lại | `frozen-plan`, `test-protocol` | ĐẠT về kế hoạch |
+| Test một lần cả 7 phương án | 93/104 observation B0; B1–L5 chưa có | CHƯA ĐẠT |
+| Rollback sau final test | Chưa có tệp rollback final | CHƯA XÁC MINH |
+| CVE gắn sản phẩm/phiên bản | Phân tích advisory aiohttp; không có lab trace | CHƯA ĐẠT |
+| Drift replay và adaptive loop | Chỉ tách nhóm tĩnh / so cơ cấu corpus | CHƯA ĐẠT |
+| Phê duyệt production độc lập | Chưa có canary và owner phê duyệt | KHÔNG ÁP DỤNG; NO-GO |
+
+### 9.2. Đe dọa đối với tính hợp lệ
+
+**Cấu trúc phép đo.** Oracle SQL chỉ kiểm tra marker, oracle XSS phụ thuộc trình duyệt và cửa sổ thời gian quan sát, oracle traversal giới hạn fixture; không bao phủ mọi hành vi khai thác. Mẫu invalid không thể được xem là mẫu bypass thất bại. Số lượng bên trong mỗi CWE còn rất nhỏ (validation lần lượt 6, 4 và 4 tấn công có hiệu lực), nên điểm phần trăm dễ dao động. “Robustness 100%” là tỷ lệ có điều kiện trên những biến thể có hiệu lực, không phải phủ mọi không gian biến đổi.
+
+**Nội tại và thống kê.** Các case có quan hệ template với nhau, corpus audit phát hiện sáu đầu vào trùng giữa split và bốn trùng trong test; chưa có tách độc lập theo ứng dụng/CVE. Năm cấu hình GPT không phải năm model độc lập; replay compiler không phải sinh lại mô hình. Ngân sách sinh mẫu không cân bằng: 24 ứng viên GPT được chấp nhận vs 30 biến thể heuristic ở dev, chỉ hai lượt GPT tuân thủ schema, và chưa có so sánh ngang chi phí/độ trễ. Không áp dụng kiểm định ý nghĩa thống kê đối với các biến thể phụ thuộc.
+
+**Bên ngoài và vận hành.** Lab chạy các fixture có chủ đích, dùng CRS với tag image quan sát tại một thời điểm; không có lưu lượng người dùng, phân bố base-rate ngoài đời, tuyến nghiệp vụ, CVE tái lập hoặc vòng canary. Ghi nhận 404 proxy thay trang lỗi phụ thuộc cấu hình host; không được quy toàn bộ lỗi 404 cho WAF rule. Hơn nữa lượt test bị gián đoạn, chưa có 7 bộ kết quả cuối cùng và chưa có xác minh rollback cuối.
+
+### 9.3. Công việc mở, không viết lại lịch sử
+
+Để tiếp tục có trách nhiệm, trước hết đóng băng bản sao bất biến của `final-test`, đối chiếu 93 observation B0 với manifest/case ID và xác định 11 case thiếu, bảo toàn hash và tất cả bằng chứng; kiểm tra cấu hình `active-rules.conf`, policy header và khôi phục baseline trên host gốc với log công khai. Chỉ cho phép khôi phục phần thiếu bằng một runner append-only được chứng minh không gửi lại các case đã hoàn tất; nếu không bảo đảm tính một lần, công bố thí nghiệm bị ngắt, không thay các hàng quan sát bằng kết quả mới. Sau đó cần thực hiện tình huống CVE cô lập, lưu body canary và bản vá; kiểm tra replay theo phân bố định trước; và thiết kế vòng review của người có thẩm quyền. Các pha sau phải có pre-registration và tập độc lập, không sử dụng test hiện đã xem để tối ưu luật.
+
+## 10. Kết luận
+
+Checkpoint TRACE-WAF đã chuyển được một phần đề tài từ mô phỏng dấu hiệu sang đo hành vi trên backend có oracle và ModSecurity–OWASP CRS trong lab, đồng thời thực thi được quản lý bằng chứng, validation bảy chính sách và rollback. Ở validation, tuning heuristic không LLM và năm cấu hình từ `gpt-6-luna` có **cùng** coverage, robustness, FPR và cùng hồi quy benign; không có chứng cứ mô hình vượt đối chứng. Cả bảy bị loại bởi FPR và hồi quy chức năng. Test cuối hiện bị gián đoạn: trong 93 hàng B0 có ba bypass cùng họ SQLi nhưng chưa thể xác nhận kết quả bảy phương án. CVE-2024-23334 là đề xuất nghiên cứu tình huống, **chưa** được tái lập bởi nghiên cứu; drift hiện chỉ là phân tích cơ cấu, **chưa** có replay/tự thích nghi. Kết luận khoa học thích hợp là **NO-GO và nghiệm thu theo cấp chứng cứ**, không phải tuyên bố hoàn thành đầy đủ đề tài hay khả năng triển khai production.
 
 ## Tài liệu tham khảo
 
-[1] OWASP Foundation. *OWASP Core Rule Set (CRS)*. https://owasp.org/projects/crs/ (truy cập 16/10/2026).
+[1] OWASP Foundation. *OWASP Core Rule Set (CRS).* <https://owasp.org/projects/crs/> (truy cập 17/10/2026).
 
-[2] OWASP CRS Project. *CRS Documentation: Anomaly Scoring, Paranoia Levels, False Positives and Tuning*. https://coreruleset.org/docs/index.print (truy cập 16/10/2026).
+[2] OWASP CRS Project. *CRS Documentation: Anomaly Scoring, Paranoia Levels, False Positives and Tuning.* <https://coreruleset.org/docs/index.print> (truy cập 17/10/2026).
 
-[3] Miggo Security. *Beat the Bypass: A Benchmark Study of WAF Weaknesses and AI Mitigation*, thông cáo và báo cáo công bố 17/12/2025. https://www.miggo.io/reports-webinar/benchmark-study-of-waf-weakness-and-ai-mitigation (truy cập 16/10/2026).
+[3] Miggo Security. *Beat the Bypass: A Benchmark Study of WAF Weaknesses and AI Mitigation*, 17/12/2025. <https://www.miggo.io/reports-webinar/benchmark-study-of-waf-weakness-and-ai-mitigation>.
 
-[4] T. G. Bao, D. C. Duc, và P. T. Duy. *Generating evasive payloads for assessing Web Application Firewalls with Reinforcement Learning and Pre-trained Language Models*. Journal of Science and Technology on Information Security, 2025. DOI: https://doi.org/10.54654/isj.v2i25.1128.
+[4] T. G. Bao, D. C. Duc, P. T. Duy. *Generating evasive payloads for assessing Web Application Firewalls with Reinforcement Learning and Pre-trained Language Models.* Journal of Science and Technology on Information Security, 2025. <https://doi.org/10.54654/isj.v2i25.1128>.
 
-[5] V. Babaey và A. Ravindran. *GenSQLi: A Generative Artificial Intelligence Framework for Automatically Securing Web Application Firewalls Against Structured Query Language Injection Attacks*. Future Internet, 17(1), 8, 2025. DOI: https://doi.org/10.3390/fi17010008.
+[5] V. Babaey, A. Ravindran. *GenSQLi: A Generative Artificial Intelligence Framework for Automatically Securing Web Application Firewalls Against Structured Query Language Injection Attacks.* Future Internet 17(1), 8 (2025). <https://doi.org/10.3390/fi17010008>.
 
-[6] MITRE. *CWE-89: Improper Neutralization of Special Elements used in an SQL Command*. https://cwe.mitre.org/data/definitions/89.html (truy cập 16/10/2026).
+[6] MITRE. *CWE-89: Improper Neutralization of Special Elements used in an SQL Command.* <https://cwe.mitre.org/data/definitions/89.html>.
 
-[7] MITRE. *CWE-79: Improper Neutralization of Input During Web Page Generation*. https://cwe.mitre.org/data/definitions/79.html (truy cập 16/10/2026).
+[7] MITRE. *CWE-79: Improper Neutralization of Input During Web Page Generation.* <https://cwe.mitre.org/data/definitions/79.html>.
 
-[8] MITRE. *CWE-22: Improper Limitation of a Pathname to a Restricted Directory*. https://cwe.mitre.org/data/definitions/22.html (truy cập 16/10/2026).
+[8] MITRE. *CWE-22: Improper Limitation of a Pathname to a Restricted Directory.* <https://cwe.mitre.org/data/definitions/22.html>.
 
-[9] E. Tabassi, NIST. *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*, NIST AI 100-1, 2023. DOI: https://doi.org/10.6028/NIST.AI.100-1.
+[9] NIST. *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*, NIST AI 100-1 (2023). <https://doi.org/10.6028/NIST.AI.100-1>.
 
-## Phụ lục A. Hướng dẫn chạy và đối chiếu kết quả
+[10] aio-libs. *GHSA-5h86-8mv2-jq9f: aiohttp is vulnerable to directory traversal* (2024; cập nhật 2026). <https://github.com/advisories/GHSA-5h86-8mv2-jq9f>.
 
-Yêu cầu Python từ 3.10, không cần kết nối Internet. Tại thư mục chứa tài liệu và mã nguồn, thực hiện:
+[11] MITRE. *CVE-2024-23334: aiohttp follow_symlinks directory traversal.* <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-23334>.
 
-```bash
-python src/wafbench.py --output results
-python -m unittest discover -s tests -v
-python src/audit_rules.py rules/rule_register.json
-```
+[12] TRACE-WAF repository. *Checkpoint protocol, rule-study frozen plan, validation summaries và final-test artefacts*, bản đọc ngày 17/10/2026. <https://github.com/tuyenhuy026/trace-waf/tree/master/results/checkpoint>.
 
-Đầu ra dữ liệu: `results/detailed_predictions.csv` (570 trường hợp), `results/summary.csv` (12 dòng phân rã theo chiến lược và CWE), `results/metrics.json` (cấu hình, SHA-256, ma trận nhầm lẫn và synthetic drift). Có thể tạo lại hình vẽ với `python src/plot_results.py` khi đã cài `matplotlib`. SHA-256 chuẩn của `detailed_predictions.csv` theo lần chạy trong hồ sơ là **`4f50ab19c6679411fb9702eb7d2c28f8423aa45fe8e5366cb41283723ec3be86`**. Nếu khác hash, phải kiểm tra phiên bản Python, chỉnh sửa mã hoặc dữ liệu, không tự thay số trong báo cáo.
+## Phụ lục A. Định danh và dấu vết tái lập
 
-## Phụ lục B. Câu hỏi phản biện và cách trả lời ngắn
+Checkpoint chính: `results/checkpoint/rule-study/20261016T170642475819Z` (không chỉnh sửa). Frozen-plan SHA-256: `80897b18898c5e90285e47de12f5de3acd4f14cf620cf802380537a2f592f5a3`. Corpus SHA-256: `2b96fbdf944bcb06f8d4918b063dc16e9e318091dcf8740e9e3b9538b3d7c707`. Original active rules SHA-256 của validation rollback: `98b3b9c70039268487d31bb2caff2b08a63e2da0c0bf1a2144e233d804317df8`. Dữ liệu final-test B0 hiện chỉ có 93 hàng trong `observations.jsonl` trên tổng số 104 hàng của `cases.json`. Những đường dẫn này là **đường dẫn bên trong repository**, không phải cam kết đã được chạy lại tại thời điểm biên soạn báo cáo.
 
-**B1. Nghiên cứu đã thử nghiệm LLM hay WAF thương mại chưa?** Chưa. LLM là nhánh kiến trúc dự kiến; kết quả định lượng ở đây chỉ từ ba bộ phát hiện mô phỏng offline.
+File kết quả validation mỗi ứng viên có `summary.json`, `observations.jsonl`, `backend-logs.json`, `waf-logs.json`, `manifest.json` và `input-audit.json`. Cần kiểm tra hash của quan sát so với trường `observations_sha256` trước khi trích xuất thống kê; không nhập chung số liệu của các lượt `rule-study` khác hoặc thay thế phần final-test bị thiếu bằng validation.
 
-**B2. Vì sao TRACE-Policy có 100% coverage mà chưa thể đưa vào sản xuất?** Vì chỉ số đó đo trên họ mẫu tổng hợp hẹp, có thể quá khớp, chưa kiểm chứng semantics backend, và FPR 16,67% cao hơn ngưỡng phê duyệt minh họa.
+## Phụ lục B. Nguyên tắc diễn giải kết quả test bị gián đoạn
 
-**B3. Con số 52% Miggo có chứng minh WAF luôn thất bại?** Không. Đó là nghiên cứu do nhà cung cấp công bố trên tập CVE và thiết lập đánh giá của họ, chỉ dùng làm động cơ tìm hiểu.
-
-**B4. Điểm mới của TRACE-WAF nằm ở đâu?** Ở cách đóng gói ba trục đánh giá thành một cổng ra quyết định có nhật ký bằng chứng CWE/CVE, owner và rollback; không khẳng định tính mới tuyệt đối của từng thành phần riêng lẻ.
-
-**B5. Nếu tiếp tục nghiên cứu, thí nghiệm quyết định nào phải làm đầu tiên?** Kiểm chứng trên WAF/CRS được ghim phiên bản và ứng dụng lab có phép, kèm corpus benign thực và phép đo theo từng nhóm CWE/CVE độc lập.
+Bản ghi B0-test hiện có 25 chặn tấn công, 3 bypass, 32 invalid attack, 23 true negative và 10 false positive. Tổng đúng 93 bản ghi, chưa phải kết quả end-to-end của protocol. Vì 11 bản ghi benign còn thiếu, mẫu số benign đang bị cắt ở cuối chuỗi; không nên so sánh tỷ lệ FP từng thời điểm với validation hoặc các cấu hình LLM chưa chạy test. Ba bypass chung một seed family là tín hiệu nghiên cứu, không suy diễn ba CVE hay ba trường hợp độc lập. Mọi báo cáo bổ sung về test phải chỉ ra đường dẫn, mã băm, phiên bản WAF, thứ tự và cơ chế khôi phục đo có thể kiểm toán; nếu không có bằng chứng đáp ứng, trạng thái là **incomplete**.
