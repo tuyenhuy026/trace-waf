@@ -1,0 +1,19 @@
+{
+  "purpose": "Continue original B0 journal and test five frozen model candidates plus fixed heuristic",
+  "started_utc": "2026-10-16T23:51:47.623562+00:00",
+  "source_plan_sha256": "80897b18898c5e90285e47de12f5de3acd4f14cf620cf802380537a2f592f5a3",
+  "corpus_sha256": "2b96fbdf944bcb06f8d4918b063dc16e9e318091dcf8740e9e3b9538b3d7c707",
+  "origin_partial_count": 93,
+  "expected_count_per_policy": 104,
+  "api_calls": 0,
+  "tuning_allowed": false,
+  "selection_allowed": false,
+  "final_validation_decision": "NO_GO",
+  "method": "B0 session interruption is a limitation, not an independent whole run",
+  "original_journal_sha256": "993dd4c88b63b72fabc56eaaa47b3718ec3a85d58a6e4855af1ee9d00c4c8860",
+  "original_cases_sha256": "504c16374c078ffc8a957af2d68dc3c29ff9d3241a2fbb25864041442035dfa8",
+  "original_manifest_sha256": "b26f4edc27c0d1d3777df41dd2310c3d7507ddca2fb727ae078cc8c1f4dd325e",
+  "initial_active_rules_sha256": "75dab9ab7d49c82d4f2c8b48b5920d906857bcc67c8166a05d79a513fd104202",
+  "runner_sha256": "29b3aad4fd87168e4254cbbb8998ee0b4f9bd078672af760df9fffe49623e3f9",
+  "python": "3.12.12 (main, Oct 31 2025, 23:14:57) [Clang 21.1.4 ]"
+}

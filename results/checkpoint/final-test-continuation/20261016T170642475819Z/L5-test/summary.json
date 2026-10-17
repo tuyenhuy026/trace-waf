@@ -1,0 +1,448 @@
+{
+  "split": "test",
+  "rows": 104,
+  "unique_within_source_rows": 100,
+  "outcomes": {
+    "bypass": 3,
+    "invalid_attack": 32,
+    "blocked_attack": 25,
+    "true_negative": 38,
+    "false_positive": 5,
+    "benign_regression": 1
+  },
+  "metrics_case_weighted": [
+    {
+      "source": "ALL",
+      "cwe": "ALL",
+      "rows": 104,
+      "counts": {
+        "bypass": 3,
+        "invalid_attack": 32,
+        "blocked_attack": 25,
+        "true_negative": 38,
+        "false_positive": 5,
+        "benign_regression": 1
+      },
+      "valid_evaluable_attacks": 28,
+      "valid_evaluable_benign": 44,
+      "coverage": 0.892857,
+      "bypass_rate": 0.107143,
+      "fpr": 0.113636,
+      "robustness": 0.875,
+      "benign_regressions": 1
+    },
+    {
+      "source": "ALL",
+      "cwe": "CWE-89",
+      "rows": 40,
+      "counts": {
+        "bypass": 3,
+        "invalid_attack": 8,
+        "blocked_attack": 9,
+        "true_negative": 18,
+        "false_positive": 2
+      },
+      "valid_evaluable_attacks": 12,
+      "valid_evaluable_benign": 20,
+      "coverage": 0.75,
+      "bypass_rate": 0.25,
+      "fpr": 0.1,
+      "robustness": 0.75,
+      "benign_regressions": 0
+    },
+    {
+      "source": "ALL",
+      "cwe": "CWE-79",
+      "rows": 40,
+      "counts": {
+        "blocked_attack": 8,
+        "invalid_attack": 12,
+        "true_negative": 18,
+        "false_positive": 2
+      },
+      "valid_evaluable_attacks": 8,
+      "valid_evaluable_benign": 20,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": 0.1,
+      "robustness": 1.0,
+      "benign_regressions": 0
+    },
+    {
+      "source": "ALL",
+      "cwe": "CWE-22",
+      "rows": 24,
+      "counts": {
+        "blocked_attack": 8,
+        "invalid_attack": 12,
+        "true_negative": 2,
+        "false_positive": 1,
+        "benign_regression": 1
+      },
+      "valid_evaluable_attacks": 8,
+      "valid_evaluable_benign": 4,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": 0.25,
+      "robustness": 1.0,
+      "benign_regressions": 1
+    },
+    {
+      "source": "curated",
+      "cwe": "ALL",
+      "rows": 44,
+      "counts": {
+        "true_negative": 38,
+        "false_positive": 5,
+        "benign_regression": 1
+      },
+      "valid_evaluable_attacks": 0,
+      "valid_evaluable_benign": 44,
+      "coverage": null,
+      "bypass_rate": null,
+      "fpr": 0.113636,
+      "robustness": null,
+      "benign_regressions": 1
+    },
+    {
+      "source": "curated",
+      "cwe": "CWE-89",
+      "rows": 20,
+      "counts": {
+        "true_negative": 18,
+        "false_positive": 2
+      },
+      "valid_evaluable_attacks": 0,
+      "valid_evaluable_benign": 20,
+      "coverage": null,
+      "bypass_rate": null,
+      "fpr": 0.1,
+      "robustness": null,
+      "benign_regressions": 0
+    },
+    {
+      "source": "curated",
+      "cwe": "CWE-79",
+      "rows": 20,
+      "counts": {
+        "true_negative": 18,
+        "false_positive": 2
+      },
+      "valid_evaluable_attacks": 0,
+      "valid_evaluable_benign": 20,
+      "coverage": null,
+      "bypass_rate": null,
+      "fpr": 0.1,
+      "robustness": null,
+      "benign_regressions": 0
+    },
+    {
+      "source": "curated",
+      "cwe": "CWE-22",
+      "rows": 4,
+      "counts": {
+        "true_negative": 2,
+        "false_positive": 1,
+        "benign_regression": 1
+      },
+      "valid_evaluable_attacks": 0,
+      "valid_evaluable_benign": 4,
+      "coverage": null,
+      "bypass_rate": null,
+      "fpr": 0.25,
+      "robustness": null,
+      "benign_regressions": 1
+    },
+    {
+      "source": "heuristic",
+      "cwe": "ALL",
+      "rows": 60,
+      "counts": {
+        "bypass": 3,
+        "invalid_attack": 32,
+        "blocked_attack": 25
+      },
+      "valid_evaluable_attacks": 28,
+      "valid_evaluable_benign": 0,
+      "coverage": 0.892857,
+      "bypass_rate": 0.107143,
+      "fpr": null,
+      "robustness": 0.875,
+      "benign_regressions": 0
+    },
+    {
+      "source": "heuristic",
+      "cwe": "CWE-89",
+      "rows": 20,
+      "counts": {
+        "bypass": 3,
+        "invalid_attack": 8,
+        "blocked_attack": 9
+      },
+      "valid_evaluable_attacks": 12,
+      "valid_evaluable_benign": 0,
+      "coverage": 0.75,
+      "bypass_rate": 0.25,
+      "fpr": null,
+      "robustness": 0.75,
+      "benign_regressions": 0
+    },
+    {
+      "source": "heuristic",
+      "cwe": "CWE-79",
+      "rows": 20,
+      "counts": {
+        "blocked_attack": 8,
+        "invalid_attack": 12
+      },
+      "valid_evaluable_attacks": 8,
+      "valid_evaluable_benign": 0,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": null,
+      "robustness": 1.0,
+      "benign_regressions": 0
+    },
+    {
+      "source": "heuristic",
+      "cwe": "CWE-22",
+      "rows": 20,
+      "counts": {
+        "blocked_attack": 8,
+        "invalid_attack": 12
+      },
+      "valid_evaluable_attacks": 8,
+      "valid_evaluable_benign": 0,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": null,
+      "robustness": 1.0,
+      "benign_regressions": 0
+    }
+  ],
+  "metrics_deduplicated": [
+    {
+      "source": "ALL",
+      "cwe": "ALL",
+      "rows": 100,
+      "counts": {
+        "bypass": 3,
+        "invalid_attack": 32,
+        "blocked_attack": 21,
+        "true_negative": 38,
+        "false_positive": 5,
+        "benign_regression": 1
+      },
+      "valid_evaluable_attacks": 24,
+      "valid_evaluable_benign": 44,
+      "coverage": 0.875,
+      "bypass_rate": 0.125,
+      "fpr": 0.113636,
+      "robustness": 0.833333,
+      "benign_regressions": 1
+    },
+    {
+      "source": "ALL",
+      "cwe": "CWE-89",
+      "rows": 40,
+      "counts": {
+        "bypass": 3,
+        "invalid_attack": 8,
+        "blocked_attack": 9,
+        "true_negative": 18,
+        "false_positive": 2
+      },
+      "valid_evaluable_attacks": 12,
+      "valid_evaluable_benign": 20,
+      "coverage": 0.75,
+      "bypass_rate": 0.25,
+      "fpr": 0.1,
+      "robustness": 0.75,
+      "benign_regressions": 0
+    },
+    {
+      "source": "ALL",
+      "cwe": "CWE-79",
+      "rows": 36,
+      "counts": {
+        "blocked_attack": 4,
+        "invalid_attack": 12,
+        "true_negative": 18,
+        "false_positive": 2
+      },
+      "valid_evaluable_attacks": 4,
+      "valid_evaluable_benign": 20,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": 0.1,
+      "robustness": null,
+      "benign_regressions": 0
+    },
+    {
+      "source": "ALL",
+      "cwe": "CWE-22",
+      "rows": 24,
+      "counts": {
+        "blocked_attack": 8,
+        "invalid_attack": 12,
+        "true_negative": 2,
+        "false_positive": 1,
+        "benign_regression": 1
+      },
+      "valid_evaluable_attacks": 8,
+      "valid_evaluable_benign": 4,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": 0.25,
+      "robustness": 1.0,
+      "benign_regressions": 1
+    },
+    {
+      "source": "curated",
+      "cwe": "ALL",
+      "rows": 44,
+      "counts": {
+        "true_negative": 38,
+        "false_positive": 5,
+        "benign_regression": 1
+      },
+      "valid_evaluable_attacks": 0,
+      "valid_evaluable_benign": 44,
+      "coverage": null,
+      "bypass_rate": null,
+      "fpr": 0.113636,
+      "robustness": null,
+      "benign_regressions": 1
+    },
+    {
+      "source": "curated",
+      "cwe": "CWE-89",
+      "rows": 20,
+      "counts": {
+        "true_negative": 18,
+        "false_positive": 2
+      },
+      "valid_evaluable_attacks": 0,
+      "valid_evaluable_benign": 20,
+      "coverage": null,
+      "bypass_rate": null,
+      "fpr": 0.1,
+      "robustness": null,
+      "benign_regressions": 0
+    },
+    {
+      "source": "curated",
+      "cwe": "CWE-79",
+      "rows": 20,
+      "counts": {
+        "true_negative": 18,
+        "false_positive": 2
+      },
+      "valid_evaluable_attacks": 0,
+      "valid_evaluable_benign": 20,
+      "coverage": null,
+      "bypass_rate": null,
+      "fpr": 0.1,
+      "robustness": null,
+      "benign_regressions": 0
+    },
+    {
+      "source": "curated",
+      "cwe": "CWE-22",
+      "rows": 4,
+      "counts": {
+        "true_negative": 2,
+        "false_positive": 1,
+        "benign_regression": 1
+      },
+      "valid_evaluable_attacks": 0,
+      "valid_evaluable_benign": 4,
+      "coverage": null,
+      "bypass_rate": null,
+      "fpr": 0.25,
+      "robustness": null,
+      "benign_regressions": 1
+    },
+    {
+      "source": "heuristic",
+      "cwe": "ALL",
+      "rows": 56,
+      "counts": {
+        "bypass": 3,
+        "invalid_attack": 32,
+        "blocked_attack": 21
+      },
+      "valid_evaluable_attacks": 24,
+      "valid_evaluable_benign": 0,
+      "coverage": 0.875,
+      "bypass_rate": 0.125,
+      "fpr": null,
+      "robustness": 0.833333,
+      "benign_regressions": 0
+    },
+    {
+      "source": "heuristic",
+      "cwe": "CWE-89",
+      "rows": 20,
+      "counts": {
+        "bypass": 3,
+        "invalid_attack": 8,
+        "blocked_attack": 9
+      },
+      "valid_evaluable_attacks": 12,
+      "valid_evaluable_benign": 0,
+      "coverage": 0.75,
+      "bypass_rate": 0.25,
+      "fpr": null,
+      "robustness": 0.75,
+      "benign_regressions": 0
+    },
+    {
+      "source": "heuristic",
+      "cwe": "CWE-79",
+      "rows": 16,
+      "counts": {
+        "blocked_attack": 4,
+        "invalid_attack": 12
+      },
+      "valid_evaluable_attacks": 4,
+      "valid_evaluable_benign": 0,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": null,
+      "robustness": null,
+      "benign_regressions": 0
+    },
+    {
+      "source": "heuristic",
+      "cwe": "CWE-22",
+      "rows": 20,
+      "counts": {
+        "blocked_attack": 8,
+        "invalid_attack": 12
+      },
+      "valid_evaluable_attacks": 8,
+      "valid_evaluable_benign": 0,
+      "coverage": 1.0,
+      "bypass_rate": 0.0,
+      "fpr": null,
+      "robustness": 1.0,
+      "benign_regressions": 0
+    }
+  ],
+  "complete": true,
+  "uncertain_rows": 0,
+  "input_audit": {
+    "corpus_sha256": "2b96fbdf944bcb06f8d4918b063dc16e9e318091dcf8740e9e3b9538b3d7c707",
+    "corpus_rows": 196,
+    "shared_exact_inputs_across_splits": 6,
+    "note": "Disjoint family identifiers do not prove semantic family independence.",
+    "api_calls": [],
+    "rejected_llm_cases": [],
+    "selected_rows": 104,
+    "within_source_duplicates": 4
+  },
+  "derived_utc": "2026-10-17T00:03:56.649470+00:00",
+  "observations_sha256": "34da14a698e47bb2be454dff5b913acad27f706c4da5a8b12de27261c8002a72",
+  "source_label": "frozen_heldout_test"
+}

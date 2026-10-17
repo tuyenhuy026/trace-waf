@@ -1,0 +1,59 @@
+name: trace-cve-2024-23334
+services:
+  vuln:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        AIOHTTP_VERSION: "3.9.1"
+    ports:
+      - "127.0.0.1:18190:8080"
+    networks: [cve_lab]
+    read_only: true
+    security_opt: [no-new-privileges:true]
+  fixed:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        AIOHTTP_VERSION: "3.9.2"
+    ports:
+      - "127.0.0.1:18191:8080"
+    networks: [cve_lab]
+    read_only: true
+    security_opt: [no-new-privileges:true]
+  waf-vuln:
+    image: owasp/modsecurity-crs:apache
+    environment:
+      BACKEND: http://vuln:8080
+      SERVER_NAME: localhost
+      MODSEC_RULE_ENGINE: "On"
+      BLOCKING_PARANOIA: "1"
+      ANOMALY_INBOUND: "5"
+      ANOMALY_OUTBOUND: "100"
+      MODSEC_AUDIT_ENGINE: "On"
+      MODSEC_AUDIT_LOG: /dev/stdout
+      PROXY_ERROR_OVERRIDE: "on"
+    ports:
+      - "127.0.0.1:18192:8080"
+    depends_on: [vuln]
+    networks: [cve_lab]
+  waf-fixed:
+    image: owasp/modsecurity-crs:apache
+    environment:
+      BACKEND: http://fixed:8080
+      SERVER_NAME: localhost
+      MODSEC_RULE_ENGINE: "On"
+      BLOCKING_PARANOIA: "1"
+      ANOMALY_INBOUND: "5"
+      ANOMALY_OUTBOUND: "100"
+      MODSEC_AUDIT_ENGINE: "On"
+      MODSEC_AUDIT_LOG: /dev/stdout
+      PROXY_ERROR_OVERRIDE: "on"
+    ports:
+      - "127.0.0.1:18193:8080"
+    depends_on: [fixed]
+    networks: [cve_lab]
+networks:
+  cve_lab:
+    internal: true

@@ -1,0 +1,64 @@
+{
+  "started_utc": "20261016T172150527345Z",
+  "split": "test",
+  "preflight_only": false,
+  "policy_id": "B0",
+  "python": "3.12.12 (main, Oct 31 2025, 23:14:57) [Clang 21.1.4 ]",
+  "platform": "macOS-15.8.1-x86_64-i386-64bit",
+  "browser": "155.0.8059.80",
+  "browser_window_ms": 750,
+  "corpus_sha256": "2b96fbdf944bcb06f8d4918b063dc16e9e318091dcf8740e9e3b9538b3d7c707",
+  "script_sha256": "b57de18a3a6a365af3c7f016805bb73364fec13d6350fba1c34cd7476d53d05c",
+  "backend_sha256": "2013a3a86a9d0d358698d37055ad94495287c60758e2876505b04ce0d7d0d1b6",
+  "compose_sha256": "7fd034e4e485743cf0cf0a58e5d42be82ddc805238700380956bb6796103d999",
+  "active_rules_sha256": "75dab9ab7d49c82d4f2c8b48b5920d906857bcc67c8166a05d79a513fd104202",
+  "compose_ps": {
+    "command": [
+      "docker",
+      "compose",
+      "-f",
+      "lab/compose.yaml",
+      "ps",
+      "--format",
+      "json"
+    ],
+    "returncode": 0,
+    "stdout": "{\"Command\":\"\\\"python /app/backend…\\\"\",\"CreatedAt\":\"2026-10-16 23:42:22 +0700 +07\",\"Engine\":\"\",\"ExitCode\":0,\"Health\":\"\",\"ID\":\"4d9901ca25fe\",\"Image\":\"python:3.12-slim\",\"Labels\":\"desktop.docker.io/binds/0/SourceKind=hostFile,desktop.docker.io/binds/0/Target=/app/backend.py,desktop.docker.io/ports.scheme=v2,com.docker.compose.image=sha256:2b4f19dae3a777dfc3b76730bda1e82e1f66ab2a2686fa93ca78edbfb4f04ffe,com.docker.compose.replace=backend-1,desktop.docker.io/ports/8000/tcp=127.0.0.1:18080,com.docker.compose.config-hash=e25569f539d29ecc0b0149393ac9dd5d1a548c4f744a668fb486ed319aeefc5b,com.docker.compose.service=backend,com.docker.compose.version=5.5.1,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/Users/tuyen/Downloads/TRACE_WAF_HO_SO_NGHIEN_CUU/lab/compose.yaml,com.docker.compose.project.working_dir=/Users/tuyen/Downloads/TRACE_WAF_HO_SO_NGHIEN_CUU/lab,com.docker.compose.project=trace-checkpoint,desktop.docker.io/binds/0/Source=/Users/tuyen/Downloads/TRACE_WAF_HO_SO_NGHIEN_CUU/lab/backend.py\",\"LocalVolumes\":\"0\",\"Mounts\":\"/host_mnt/User…\",\"Name\":\"trace-checkpoint-backend-1\",\"Names\":\"trace-checkpoint-backend-1\",\"Networks\":\"trace-checkpoint_access,trace-checkpoint_trace\",\"Ports\":\"127.0.0.1:18080-\\u003e8000/tcp\",\"Project\":\"trace-checkpoint\",\"Publishers\":[{\"URL\":\"127.0.0.1\",\"TargetPort\":8000,\"PublishedPort\":18080,\"Protocol\":\"tcp\"}],\"RunningFor\":\"39 minutes ago\",\"Service\":\"backend\",\"Size\":\"0B\",\"State\":\"running\",\"Status\":\"Up 39 minutes\"}\n{\"Command\":\"\\\"/docker-entrypoint.…\\\"\",\"CreatedAt\":\"2026-10-17 00:21:47 +0700 +07\",\"Engine\":\"\",\"ExitCode\":0,\"Health\":\"starting\",\"ID\":\"55eacb18b496\",\"Image\":\"owasp/modsecurity-crs:apache\",\"Labels\":\"com.docker.compose.oneoff=False,com.docker.compose.project=trace-checkpoint,desktop.docker.io/ports/8080/tcp=127.0.0.1:18081,com.docker.compose.container-number=1,desktop.docker.io/binds/0/Target=/etc/modsecurity.d/owasp-crs/rules/REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf,org.opencontainers.image.source=https://github.com/coreruleset/modsecurity-crs-docker,com.docker.compose.depends_on=,com.docker.compose.project.config_files=/Users/tuyen/Downloads/TRACE_WAF_HO_SO_NGHIEN_CUU/lab/compose.yaml,com.docker.compose.project.working_dir=/Users/tuyen/Downloads/TRACE_WAF_HO_SO_NGHIEN_CUU/lab,desktop.docker.io/binds/0/Source=/Users/tuyen/Downloads/TRACE_WAF_HO_SO_NGHIEN_CUU/lab/active-rules.conf,desktop.docker.io/ports.scheme=v2,maintainer=Felipe Zipitria \\u003cfelipe.zipitria@owasp.org\\u003e,com.docker.compose.image=sha256:8362d99291c29fac48f7fcd6b97582ff5449809caa32df42dbf76a1bc6e5ce6d,com.docker.compose.replace=waf-1,com.docker.compose.service=waf,com.docker.compose.version=5.5.1,desktop.docker.io/binds/0/SourceKind=hostFile,com.docker.compose.config-hash=b2e51ed0f9b1c1a0ce9eb99d5cc9bbfb8af0b570de6b4ac4c1d773dd90d91e09\",\"LocalVolumes\":\"0\",\"Mounts\":\"/host_mnt/User…\",\"Name\":\"trace-checkpoint-waf-1\",\"Names\":\"trace-checkpoint-waf-1\",\"Networks\":\"trace-checkpoint_access,trace-checkpoint_trace\",\"Ports\":\"127.0.0.1:18081-\\u003e8080/tcp\",\"Project\":\"trace-checkpoint\",\"Publishers\":[{\"URL\":\"127.0.0.1\",\"TargetPort\":8080,\"PublishedPort\":18081,\"Protocol\":\"tcp\"}],\"RunningFor\":\"7 seconds ago\",\"Service\":\"waf\",\"Size\":\"0B\",\"State\":\"running\",\"Status\":\"Up 4 seconds (health: starting)\"}\n",
+    "stderr": ""
+  },
+  "images": {
+    "command": [
+      "docker",
+      "image",
+      "inspect",
+      "python:3.12-slim",
+      "owasp/modsecurity-crs:apache",
+      "--format",
+      "{{.Id}} {{json .RepoDigests}}"
+    ],
+    "returncode": 0,
+    "stdout": "sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1 [\"python@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1\"]\nsha256:497251aeb7bba3711616142af62497736f1f802db7dde2ad3956fdacbbb93879 [\"owasp/modsecurity-crs@sha256:497251aeb7bba3711616142af62497736f1f802db7dde2ad3956fdacbbb93879\"]\n",
+    "stderr": ""
+  },
+  "running_containers": {
+    "command": [
+      "docker",
+      "inspect",
+      "trace-checkpoint-backend-1",
+      "trace-checkpoint-waf-1",
+      "--format",
+      "{{.Name}} image={{.Image}} env={{json .Config.Env}} mounts={{json .Mounts}}"
+    ],
+    "returncode": 0,
+    "stdout": "/trace-checkpoint-backend-1 image=sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1 env=[\"PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\",\"LANG=C.UTF-8\",\"GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305\",\"PYTHON_VERSION=3.12.15\",\"PYTHON_SHA256=c2c4321961fab0fb999d66e0cecf521c2ab3994c7992873ea99e306c1094fd5a\"] mounts=[{\"Type\":\"bind\",\"Source\":\"/Users/tuyen/Downloads/TRACE_WAF_HO_SO_NGHIEN_CUU/lab/backend.py\",\"Destination\":\"/app/backend.py\",\"Mode\":\"ro\",\"RW\":false,\"Propagation\":\"rprivate\"}]\n/trace-checkpoint-waf-1 image=sha256:497251aeb7bba3711616142af62497736f1f802db7dde2ad3956fdacbbb93879 env=[\"MODSEC_AUDIT_LOG=/dev/stdout\",\"BLOCKING_PARANOIA=1\",\"SERVER_NAME=localhost\",\"ANOMALY_INBOUND=5\",\"ANOMALY_OUTBOUND=100\",\"MODSEC_AUDIT_ENGINE=On\",\"BACKEND=http://backend:8000\",\"MODSEC_RULE_ENGINE=On\",\"PATH=/usr/local/apache2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\",\"HTTPD_PREFIX=/usr/local/apache2\",\"HTTPD_VERSION=2.4.69\",\"HTTPD_SHA256=c5e6ebc66e349b87d7fc6916ae7cc2a808ed348003de134cf9e9d89d3e2cc73d\",\"HTTPD_PATCHES=\",\"ACCESSLOG=/var/log/apache2/access.log\",\"APACHE_ALWAYS_TLS_REDIRECT=off\",\"APACHE_ERRORLOG_FORMAT=\\\"[%{u}t] [%-m:%l] [pid %P:tid %T] %7F: %E: [client\\\\ %a] %M% ,\\\\ referer\\\\ %{Referer}i\\\"\",\"APACHE_LOGFORMAT=\\\"%h %l %u %t \\\\\\\"%r\\\\\\\" %>s %b \\\\\\\"%{Referer}i\\\\\\\" \\\\\\\"%{User-agent}i\\\\\\\"\\\"\",\"APACHE_METRICS_LOGFORMAT=\\\"%h %l %u %t \\\\\\\"%r\\\\\\\" %>s %b \\\\\\\"%{Referer}i\\\\\\\" \\\\\\\"%{User-agent}i\\\\\\\"\\\"\",\"BACKEND_WS=ws://localhost:8081\",\"ERRORLOG=/proc/self/fd/2\",\"H2_DIRECT=on\",\"H2_PROTOCOLS=h2 h2c http/1.1\",\"HSTS_MAX_AGE=off\",\"LOGLEVEL=warn\",\"METRICS_ALLOW_FROM=127.0.0.0/255.0.0.0 ::1/128\",\"METRICS_DENY_FROM=All\",\"METRICSLOG=/dev/null\",\"MODSEC_ARGUMENT_SEPARATOR=&\",\"MODSEC_ARGUMENTS_LIMIT=1000\",\"MODSEC_AUDIT_LOG_FORMAT=JSON\",\"MODSEC_AUDIT_LOG_PARTS=ABIJDEFHZ\",\"MODSEC_AUDIT_LOG_RELEVANT_STATUS=^(?:5|4(?!04))\",\"MODSEC_AUDIT_LOG_TYPE=Serial\",\"MODSEC_COOKIE_FORMAT=0\",\"MODSEC_AUDIT_STORAGE_DIR=/var/log/modsecurity/audit/\",\"MODSEC_DATA_DIR=/tmp/modsecurity/data\",\"MODSEC_DEBUG_LOG=/dev/null\",\"MODSEC_DEBUG_LOGLEVEL=0\",\"MODSEC_DEFAULT_PHASE1_ACTION=phase:1,pass,log,tag:'${MODSEC_TAG}'\",\"MODSEC_DEFAULT_PHASE2_ACTION=phase:2,pass,log,tag:'${MODSEC_TAG}'\",\"MODSEC_DISABLE_BACKEND_COMPRESSION=On\",\"MODSEC_PCRE_MATCH_LIMIT=100000\",\"MODSEC_PCRE_MATCH_LIMIT_RECURSION=100000\",\"MODSEC_REQ_BODY_ACCESS=on\",\"MODSEC_REQ_BODY_JSON_DEPTH_LIMIT=512\",\"MODSEC_REQ_BODY_LIMIT=13107200\",\"MODSEC_REQ_BODY_LIMIT_ACTION=Reject\",\"MODSEC_REQ_BODY_NOFILES_LIMIT=131072\",\"MODSEC_RESP_BODY_ACCESS=on\",\"MODSEC_RESP_BODY_LIMIT=1048576\",\"MODSEC_RESP_BODY_LIMIT_ACTION=ProcessPartial\",\"MODSEC_RESP_BODY_MIMETYPE=text/plain text/html text/xml\",\"MODSEC_SERVER_SIGNATURE=Apache\",\"MODSEC_STATUS_ENGINE=Off\",\"MODSEC_TAG=modsecurity\",\"MODSEC_TMP_DIR=/tmp/modsecurity/tmp\",\"MODSEC_TMP_SAVE_UPLOADED_FILES=on\",\"MODSEC_UNICODE_MAPPING=20127\",\"MODSEC_UPLOAD_DIR=/tmp/modsecurity/upload\",\"MODSEC_UPLOAD_FILE_MODE=0600\",\"MODSEC_UPLOAD_KEEP_FILES=RelevantOnly\",\"MUTEX=default\",\"PORT=8080\",\"PROXY_ERROR_OVERRIDE=on\",\"PROXY_PRESERVE_HOST=on\",\"PROXY_SSL_CA_CERT_FILE=/etc/ssl/certs/ca-certificates.crt\",\"PROXY_SSL_CERT_KEY_FILE=/usr/local/apache2/conf/proxy.key\",\"PROXY_SSL_CERT_FILE=/usr/local/apache2/conf/proxy.crt\",\"PROXY_SSL_CHECK_PEER_NAME=off\",\"PROXY_SSL_CIPHERS=ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384\",\"PROXY_SSL=off\",\"PROXY_SSL_PROTOCOLS=all -SSLv3 -TLSv1 -TLSv1.1\",\"PROXY_SSL_VERIFY=none\",\"PROXY_TIMEOUT=60\",\"REMOTEIP_INT_PROXY=10.1.0.0/16\",\"REMOTEIP_HEADER=X-Forwarded-For\",\"REQ_HEADER_FORWARDED_PROTO=https\",\"REQUEST_READ_TIMEOUT_BODY=20\",\"REQUEST_READ_TIMEOUT_BODY_MIN_RATE=500\",\"REQUEST_READ_TIMEOUT_HEADER=20-40\",\"REQUEST_READ_TIMEOUT_HEADER_MIN_RATE=500\",\"SERVER_ADMIN=root@localhost\",\"SERVER_SIGNATURE=Off\",\"SERVER_TOKENS=Prod\",\"SSL_CERT_KEY_FILE=/usr/local/apache2/conf/server.key\",\"SSL_CERT_FILE=/usr/local/apache2/conf/server.crt\",\"SSL_CIPHERS=ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384\",\"SSL_ENGINE=on\",\"SSL_HONOR_CIPHER_ORDER=on\",\"SSL_OCSP_STAPLING=On\",\"SSL_PORT=8443\",\"SSL_PROTOCOLS=all -SSLv3 -TLSv1 -TLSv1.1\",\"SSL_SESSION_TICKETS=off\",\"TIMEOUT=60\",\"WORKER_CONNECTIONS=400\",\"X_FRAME_OPTIONS=SAMEORIGIN\"] mounts=[{\"Type\":\"bind\",\"Source\":\"/Users/tuyen/Downloads/TRACE_WAF_HO_SO_NGHIEN_CUU/lab/active-rules.conf\",\"Destination\":\"/etc/modsecurity.d/owasp-crs/rules/REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf\",\"Mode\":\"ro\",\"RW\":false,\"Propagation\":\"rprivate\"}]\n",
+    "stderr": ""
+  },
+  "limitations": [
+    "Browser renders captured response with all subsequent networking blocked.",
+    "Observation window is bounded; not proof of absence of all browser execution.",
+    "SQL oracle checks marker output, not arbitrary data extraction or every SQLi impact.",
+    "403 classification requires fixture behavior and should be corroborated with saved WAF logs.",
+    "No CVE reproduction or production generalization is implied.",
+    "Latency is sequential lab HTTP wall time, not throughput or causal WAF overhead."
+  ]
+}

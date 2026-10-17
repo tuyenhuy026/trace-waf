@@ -1,0 +1,17 @@
+{
+  "command": [
+    "docker",
+    "compose",
+    "-f",
+    "lab/compose.yaml",
+    "exec",
+    "-T",
+    "waf",
+    "httpd",
+    "-t"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "Syntax OK\n",
+  "utc": "2026-10-16T23:52:10.406273+00:00"
+}

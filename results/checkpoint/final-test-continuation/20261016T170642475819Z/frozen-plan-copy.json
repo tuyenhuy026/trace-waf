@@ -1,0 +1,74 @@
+{
+  "created_utc": "2026-10-16T17:06:42.485190+00:00",
+  "candidates": [
+    {
+      "id": "B0",
+      "source": "stock_crs",
+      "rule_sha256": "75dab9ab7d49c82d4f2c8b48b5920d906857bcc67c8166a05d79a513fd104202"
+    },
+    {
+      "id": "B1",
+      "source": "fixed_heuristic",
+      "rule_sha256": "b80730cdd94bb16f7bc1e12236b4f9d2f332af4f79522eb8bf531e5d3be2cab0"
+    },
+    {
+      "id": "L1",
+      "source": "gpt-6-luna",
+      "rule_sha256": "f2d6b67bdba3d0206bceead4278d20969ec52caf9d96520ad2dc9876ab875b77"
+    },
+    {
+      "id": "L2",
+      "source": "gpt-6-luna",
+      "rule_sha256": "fed9967f0f17994b4d1801ebde3175b048bee3c903861e911ee6a45373ea8cc4"
+    },
+    {
+      "id": "L3",
+      "source": "gpt-6-luna",
+      "rule_sha256": "e5d3084e17f9e2390c990b2b83f3f784a1385fa52f87e088eb0e4fc62fac950a"
+    },
+    {
+      "id": "L4",
+      "source": "gpt-6-luna",
+      "rule_sha256": "b84b46b7d488759678c3e67d4af60b299a1a00ace948b019c563caef8f2a9723"
+    },
+    {
+      "id": "L5",
+      "source": "gpt-6-luna",
+      "rule_sha256": "a6b08e0a89b1499be588e7f8d16feb6e41c7b613c4bcea8fc4fad1d46641dff3"
+    }
+  ],
+  "rejected": [],
+  "dev_evidence_sha256": "493207f844e4957322716168f081d49122a550f2fa6844c902e13ec0b8bf0102",
+  "corpus_sha256": "2b96fbdf944bcb06f8d4918b063dc16e9e318091dcf8740e9e3b9538b3d7c707",
+  "selection": "passing validation gate; min FPR, max coverage, then ID",
+  "gate": "coverage>=.90, FPR<=.05, robustness>=.85; all CWEs present; no uncertainty or functional regression",
+  "test_accessed": false,
+  "model": "gpt-6-luna",
+  "replicates": 5,
+  "compiler_version": "2-quote-token-serialization",
+  "compiler_sha256": "e3992660463914b10b4c2f85ce8e533fab014a6c57855e88bb215947f64f3030",
+  "replayed_from": "/Users/tuyen/Downloads/TRACE_WAF_HO_SO_NGHIEN_CUU/results/checkpoint/rule-study/20261016T170028748633Z",
+  "source_responses": [
+    {
+      "file": "rule-gpt-6-luna-0.json",
+      "sha256": "83b5b3803294d06663fd606e1af3d59d3635f6dc10978cd040ba3659d5da0092"
+    },
+    {
+      "file": "rule-gpt-6-luna-1.json",
+      "sha256": "0216a876d4e431c58b90cd702b4497b79e9d4d7dedf70ef75522dc5dbdbcb457"
+    },
+    {
+      "file": "rule-gpt-6-luna-2.json",
+      "sha256": "70be6f7da19bc86ba0b57b08c56645925db98bb2286780571ec8c79553a852b3"
+    },
+    {
+      "file": "rule-gpt-6-luna-3.json",
+      "sha256": "936644274c05042ccbbc7f415151b96db4df7e9f76217e286dc241a19dfab1ee"
+    },
+    {
+      "file": "rule-gpt-6-luna-4.json",
+      "sha256": "2ba022f22f39876e475e55f6c4128da7e830c2edeafd01101ca7d32b492b4c95"
+    }
+  ],
+  "interpretation": "Compiler correction replay, not five new independent model generations"
+}

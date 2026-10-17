@@ -1,0 +1,17 @@
+{
+  "command": [
+    "docker",
+    "compose",
+    "-f",
+    "lab/compose.yaml",
+    "up",
+    "-d",
+    "--no-deps",
+    "--force-recreate",
+    "waf"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": " Container trace-checkpoint-waf-1 Recreate \n Container trace-checkpoint-waf-1 Recreated \n Container trace-checkpoint-waf-1 Starting \n Container trace-checkpoint-waf-1 Started \n",
+  "utc": "2026-10-17T00:08:31.497433+00:00"
+}

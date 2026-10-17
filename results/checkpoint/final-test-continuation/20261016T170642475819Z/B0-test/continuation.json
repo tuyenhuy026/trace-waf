@@ -1,0 +1,6 @@
+{
+  "source_partial_journal_sha256": "993dd4c88b63b72fabc56eaaa47b3718ec3a85d58a6e4855af1ee9d00c4c8860",
+  "source_partial_rows": 93,
+  "continuation_started_utc": "2026-10-16T23:51:47.629093+00:00",
+  "note": "Initial B0 rows copied byte-for-byte."
+}

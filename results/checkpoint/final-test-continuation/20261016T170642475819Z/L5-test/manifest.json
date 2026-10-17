@@ -1,0 +1,11 @@
+{
+  "split": "test",
+  "policy_id": "L5",
+  "active_rules_sha256": "a6b08e0a89b1499be588e7f8d16feb6e41c7b613c4bcea8fc4fad1d46641dff3",
+  "corpus_sha256": "2b96fbdf944bcb06f8d4918b063dc16e9e318091dcf8740e9e3b9538b3d7c707",
+  "runner_sha256": "29b3aad4fd87168e4254cbbb8998ee0b4f9bd078672af760df9fffe49623e3f9",
+  "baseline_functions_sha256": "b57de18a3a6a365af3c7f016805bb73364fec13d6350fba1c34cd7476d53d05c",
+  "utc": "2026-10-16T23:51:47.655675+00:00",
+  "api_calls": 0,
+  "note": "Frozen candidate, one measurement per case, no test-based tuning."
+}

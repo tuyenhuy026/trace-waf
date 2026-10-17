@@ -1,0 +1,198 @@
+{
+  "started_utc": "2026-10-17T00:06:15.451649+00:00",
+  "status": "REPLAY_FINISHED",
+  "claim_level": "controlled live replay of validation inputs, not temporal production drift",
+  "autonomous_self_adaptation_demonstrated": false,
+  "human_approval_flag": true,
+  "source_corpus_sha256": "2b96fbdf944bcb06f8d4918b063dc16e9e318091dcf8740e9e3b9538b3d7c707",
+  "frozen_plan_sha256": "80897b18898c5e90285e47de12f5de3acd4f14cf620cf802380537a2f592f5a3",
+  "policies": {
+    "B0": "75dab9ab7d49c82d4f2c8b48b5920d906857bcc67c8166a05d79a513fd104202",
+    "B1": "b80730cdd94bb16f7bc1e12236b4f9d2f332af4f79522eb8bf531e5d3be2cab0"
+  },
+  "windows": {
+    "A_raw_weighted": {
+      "size": 22,
+      "intended_attack": 6,
+      "benign": 16,
+      "variant_counts": {
+        "raw": 6,
+        "benign": 16
+      },
+      "transformed_fraction_of_intended_attacks": 0.0,
+      "not_temporal_production_drift": true
+    },
+    "B_transformed_weighted": {
+      "size": 40,
+      "intended_attack": 24,
+      "benign": 16,
+      "variant_counts": {
+        "percent": 6,
+        "double_percent": 6,
+        "comments": 2,
+        "tab": 2,
+        "tag_case": 2,
+        "entities": 2,
+        "backslash": 2,
+        "extra_dot": 2,
+        "benign": 16
+      },
+      "transformed_fraction_of_intended_attacks": 1.0,
+      "not_temporal_production_drift": true
+    }
+  },
+  "records": [
+    {
+      "policy_id": "B0",
+      "window": "A_raw_weighted",
+      "distribution": {
+        "size": 22,
+        "intended_attack": 6,
+        "benign": 16,
+        "variant_counts": {
+          "raw": 6,
+          "benign": 16
+        },
+        "transformed_fraction_of_intended_attacks": 0.0,
+        "not_temporal_production_drift": true
+      },
+      "rows": 22,
+      "outcomes": {
+        "blocked_attack": 6,
+        "true_negative": 10,
+        "false_positive": 5,
+        "benign_regression": 1
+      },
+      "coverage": 1.0,
+      "robustness": null,
+      "fpr": 0.3125,
+      "benign_regressions": 1,
+      "uncertain_rows": 0,
+      "source": "LIVE_REPLAY_OF_VALIDATION_INPUTS",
+      "journal_sha256": "66a1655b9f53a93511922ec875985f9cf3bbeafd5117904f60aa74e9906fe2da"
+    },
+    {
+      "policy_id": "B0",
+      "window": "B_transformed_weighted",
+      "distribution": {
+        "size": 40,
+        "intended_attack": 24,
+        "benign": 16,
+        "variant_counts": {
+          "percent": 6,
+          "double_percent": 6,
+          "comments": 2,
+          "tab": 2,
+          "tag_case": 2,
+          "entities": 2,
+          "backslash": 2,
+          "extra_dot": 2,
+          "benign": 16
+        },
+        "transformed_fraction_of_intended_attacks": 1.0,
+        "not_temporal_production_drift": true
+      },
+      "rows": 40,
+      "outcomes": {
+        "invalid_attack": 16,
+        "blocked_attack": 8,
+        "true_negative": 10,
+        "false_positive": 5,
+        "benign_regression": 1
+      },
+      "coverage": 1.0,
+      "robustness": 1.0,
+      "fpr": 0.3125,
+      "benign_regressions": 1,
+      "uncertain_rows": 0,
+      "source": "LIVE_REPLAY_OF_VALIDATION_INPUTS",
+      "journal_sha256": "d2ccc4d7ffba90d7d3982d810a0eac2db714656deb44c192cdc5e45defe6698f"
+    },
+    {
+      "policy_id": "B1",
+      "window": "A_raw_weighted",
+      "distribution": {
+        "size": 22,
+        "intended_attack": 6,
+        "benign": 16,
+        "variant_counts": {
+          "raw": 6,
+          "benign": 16
+        },
+        "transformed_fraction_of_intended_attacks": 0.0,
+        "not_temporal_production_drift": true
+      },
+      "rows": 22,
+      "outcomes": {
+        "blocked_attack": 6,
+        "true_negative": 14,
+        "false_positive": 1,
+        "benign_regression": 1
+      },
+      "coverage": 1.0,
+      "robustness": null,
+      "fpr": 0.0625,
+      "benign_regressions": 1,
+      "uncertain_rows": 0,
+      "source": "LIVE_REPLAY_OF_VALIDATION_INPUTS",
+      "journal_sha256": "4ecf626a55ac7208ebf27fe1e5dce17fd900467fddcba6c341cbc17ebd0b4262"
+    },
+    {
+      "policy_id": "B1",
+      "window": "B_transformed_weighted",
+      "distribution": {
+        "size": 40,
+        "intended_attack": 24,
+        "benign": 16,
+        "variant_counts": {
+          "percent": 6,
+          "double_percent": 6,
+          "comments": 2,
+          "tab": 2,
+          "tag_case": 2,
+          "entities": 2,
+          "backslash": 2,
+          "extra_dot": 2,
+          "benign": 16
+        },
+        "transformed_fraction_of_intended_attacks": 1.0,
+        "not_temporal_production_drift": true
+      },
+      "rows": 40,
+      "outcomes": {
+        "invalid_attack": 16,
+        "blocked_attack": 8,
+        "true_negative": 14,
+        "false_positive": 1,
+        "benign_regression": 1
+      },
+      "coverage": 1.0,
+      "robustness": 1.0,
+      "fpr": 0.0625,
+      "benign_regressions": 1,
+      "uncertain_rows": 0,
+      "source": "LIVE_REPLAY_OF_VALIDATION_INPUTS",
+      "journal_sha256": "4f95fbb9d87b1e7fc56f9efcbb0b478379ad0d21694c45a395ee7ce27ec70567"
+    }
+  ],
+  "adaptation_proposal": "use pre-frozen B1 for lab canary; never tune on replay",
+  "business_gate": {
+    "coverage_min": 0.9,
+    "fpr_max": 0.05,
+    "robustness_min": 0.85,
+    "no_benign_regression": true
+  },
+  "production_decision": "NO_GO",
+  "canary_decision": "LAB_NO_GO_ROLLBACK",
+  "composition_shift": 1.0,
+  "synthetic_alert": true,
+  "lab_canary_evaluated": true,
+  "canary_gate_pass": false,
+  "rollback": {
+    "attempted": true,
+    "restored": true,
+    "original_sha256": "98b3b9c70039268487d31bb2caff2b08a63e2da0c0bf1a2144e233d804317df8",
+    "active_rules_sha256": "98b3b9c70039268487d31bb2caff2b08a63e2da0c0bf1a2144e233d804317df8",
+    "utc": "2026-10-17T00:08:32.518841+00:00"
+  }
+}

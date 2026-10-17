@@ -1,0 +1,17 @@
+{
+  "command": [
+    "docker",
+    "compose",
+    "-f",
+    "lab/compose.yaml",
+    "logs",
+    "--no-color",
+    "--since",
+    "2026-10-16T23:51:54.061505+00:00",
+    "backend"
+  ],
+  "exit_code": 0,
+  "stdout": "backend-1  | {\"request_id\": \"trace-20261016T172150527345Z-93-direct\", \"message\": \"\\\"GET /docs?q=docs%2Fchapter.md HTTP/1.1\\\" 200 -\"}\nbackend-1  | {\"request_id\": \"trace-20261016T172150527345Z-93-waf\", \"message\": \"\\\"GET /docs?q=docs%2Fchapter.md HTTP/1.1\\\" 200 -\"}\nbackend-1  | {\"request_id\": \"trace-20261016T172150527345Z-94-direct\", \"message\": \"\\\"GET /search?q=%3Cdetails+open%3Eguide%3C%2Fdetails%3E HTTP/1.1\\\" 200 -\"}\nbackend-1  | {\"request_id\": \"trace-20261016T172150527345Z-94-waf\", \"message\": \"\\\"GET /search?q=%3Cdetails+open%3Eguide%3C%2Fdetails%3E HTTP/1.1\\\" 200 -\"}\nbackend-1  | {\"request_id\": \"trace-20261016T172150527345Z-95-direct\", \"message\": \"\\\"GET /docs?q=%3Cdetails+open%3Eguide%3C%2Fdetails%3E HTTP/1.1\\\" 200 -\"}\nbackend-1  | {\"request_id\": \"trace-20261016T172150527345Z-95-waf\", \"message\": \"\\\"GET /docs?q=%3Cdetails+open%3Eguide%3C%2Fdetails%3E HTTP/1.1\\\" 200 -\"}\nbackend-1  | {\"request_id\": \"trace-20261016T172150527345Z-96-direct\", \"message\": \"\\\"GET /search?q=SELECT+%2A+FROM+users HTTP/1.1\\\" 200 -\"}\nbackend-1  | {\"request_id\": \"trace-20261016T172150527345Z-96-waf\", \"message\": \"\\\"GET /search?q=SELECT+%2A+FROM+users HTTP/1.1\\\" 200 -\"}\nbackend-1  | {\"request_id\": \"trace-20261016T172150527345Z-97-direct\", \"message\": \"\\\"GET /docs?q=SELECT+%2A+FROM+users HTTP/1.1\\\" 200 -\"}\nbackend-1  | {\"request_id\": \"trace-20261016T172150527345Z-97-waf\", \"message\": \"\\\"GET /docs?q=SELECT+%2A+FROM+users HTTP/1.1\\\" 200 -\"}\nbackend-1  | {\"request_id\": \"trace-20261016T172150527345Z-98-direct\", \"message\": \"\\\"GET /search?q=backslash+%5C+guide HTTP/1.1\\\" 200 -\"}\nbackend-1  | {\"request_id\": \"trace-20261016T172150527345Z-98-waf\", \"message\": \"\\\"GET /search?q=backslash+%5C+guide HTTP/1.1\\\" 200 -\"}\nbackend-1  | {\"request_id\": \"trace-20261016T172150527345Z-99-direct\", \"message\": \"\\\"GET /docs?q=backslash+%5C+guide HTTP/1.1\\\" 200 -\"}\nbackend-1  | {\"request_id\": \"trace-20261016T172150527345Z-99-waf\", \"message\": \"\\\"GET /docs?q=backslash+%5C+guide HTTP/1.1\\\" 200 -\"}\nbackend-1  | {\"request_id\": \"trace-20261016T172150527345Z-100-direct\", \"message\": \"\\\"GET /file?q=readme.txt HTTP/1.1\\\" 200 -\"}\nbackend-1  | {\"request_id\": \"trace-20261016T172150527345Z-100-waf\", \"message\": \"\\\"GET /file?q=readme.txt HTTP/1.1\\\" 200 -\"}\nbackend-1  | {\"request_id\": \"trace-20261016T172150527345Z-101-direct\", \"message\": \"\\\"GET /file?q=.%2Freadme.txt HTTP/1.1\\\" 200 -\"}\nbackend-1  | {\"request_id\": \"trace-20261016T172150527345Z-101-waf\", \"message\": \"\\\"GET /file?q=.%2Freadme.txt HTTP/1.1\\\" 200 -\"}\nbackend-1  | {\"request_id\": \"trace-20261016T172150527345Z-102-direct\", \"message\": \"\\\"GET /file?q=..%2Fpublic%2Freadme.txt HTTP/1.1\\\" 200 -\"}\nbackend-1  | {\"request_id\": \"trace-20261016T172150527345Z-103-direct\", \"message\": \"\\\"GET /file?q=missing.txt HTTP/1.1\\\" 404 -\"}\nbackend-1  | {\"request_id\": \"trace-20261016T172150527345Z-103-waf\", \"message\": \"\\\"GET /file?q=missing.txt HTTP/1.1\\\" 404 -\"}\n",
+  "stderr": "",
+  "utc": "2026-10-16T23:52:10.108337+00:00"
+}
