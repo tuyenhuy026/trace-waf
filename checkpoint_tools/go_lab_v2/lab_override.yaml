@@ -1,0 +1,6 @@
+services:
+  waf:
+    environment:
+      # Separate experimental intervention: preserve backend 404 bodies when possible.
+      # Both heuristic B1 and LLM G2 use this identical proxy configuration.
+      PROXY_ERROR_OVERRIDE: "off"

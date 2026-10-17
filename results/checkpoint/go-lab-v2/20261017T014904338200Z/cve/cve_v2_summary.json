@@ -1,0 +1,467 @@
+{
+  "started": "2026-10-17T01:49:04.338931+00:00",
+  "experiment": "CVE-2024-23334-local-synthetic",
+  "status": "CVE_CONFIRMED_WAF_NOT_CONFIRMED",
+  "expected_versions": {
+    "vuln": "3.9.1",
+    "fixed": "3.9.2"
+  },
+  "compose_sha256": "a661a3194b497505890f26546e5a7e1df7e1594207708eeefdc177def453a1e9",
+  "public_controls": {
+    "vuln_direct": true,
+    "fixed_direct": true,
+    "vuln_waf": true,
+    "fixed_waf": true
+  },
+  "records": [
+    {
+      "label": "public",
+      "service": "vuln_direct",
+      "uri": "/static/public.txt",
+      "rid": "trace-cve-v2-public-vuln_direct",
+      "result": {
+        "status": 200,
+        "text": "TRACE_CVE_PUBLIC_OK\n",
+        "sha256": "dd6798a1163042a646a4b172a6b73714db86b28c465e347b2947d3c16b7ef8a5",
+        "marker": false,
+        "echo": "trace-cve-v2-public-vuln_direct",
+        "content_type": "text/plain"
+      }
+    },
+    {
+      "label": "public",
+      "service": "fixed_direct",
+      "uri": "/static/public.txt",
+      "rid": "trace-cve-v2-public-fixed_direct",
+      "result": {
+        "status": 200,
+        "text": "TRACE_CVE_PUBLIC_OK\n",
+        "sha256": "dd6798a1163042a646a4b172a6b73714db86b28c465e347b2947d3c16b7ef8a5",
+        "marker": false,
+        "echo": "trace-cve-v2-public-fixed_direct",
+        "content_type": "text/plain"
+      }
+    },
+    {
+      "label": "public",
+      "service": "vuln_waf",
+      "uri": "/static/public.txt",
+      "rid": "trace-cve-v2-public-vuln_waf",
+      "result": {
+        "status": 200,
+        "text": "TRACE_CVE_PUBLIC_OK\n",
+        "sha256": "dd6798a1163042a646a4b172a6b73714db86b28c465e347b2947d3c16b7ef8a5",
+        "marker": false,
+        "echo": "trace-cve-v2-public-vuln_waf",
+        "content_type": "text/plain"
+      }
+    },
+    {
+      "label": "public",
+      "service": "fixed_waf",
+      "uri": "/static/public.txt",
+      "rid": "trace-cve-v2-public-fixed_waf",
+      "result": {
+        "status": 200,
+        "text": "TRACE_CVE_PUBLIC_OK\n",
+        "sha256": "dd6798a1163042a646a4b172a6b73714db86b28c465e347b2947d3c16b7ef8a5",
+        "marker": false,
+        "echo": "trace-cve-v2-public-fixed_waf",
+        "content_type": "text/plain"
+      }
+    },
+    {
+      "label": "raw_dotdot",
+      "service": "vuln_direct",
+      "uri": "/static/../trace-only-cve-marker.txt",
+      "rid": "trace-cve-v2-raw_dotdot-vuln_direct",
+      "result": {
+        "status": 200,
+        "text": "TRACE_CVE_2024_23334_SYNTHETIC_MARKER\n",
+        "sha256": "d17ecb4ef07c1612298a47196072af2aff1aa54c15cafa4fa3c75069cd70a0c4",
+        "marker": true,
+        "echo": "trace-cve-v2-raw_dotdot-vuln_direct",
+        "content_type": "text/plain"
+      }
+    },
+    {
+      "label": "raw_dotdot",
+      "service": "fixed_direct",
+      "uri": "/static/../trace-only-cve-marker.txt",
+      "rid": "trace-cve-v2-raw_dotdot-fixed_direct",
+      "result": {
+        "status": 404,
+        "text": "404: Not Found",
+        "sha256": "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed",
+        "marker": false,
+        "echo": "trace-cve-v2-raw_dotdot-fixed_direct",
+        "content_type": "text/plain; charset=utf-8"
+      }
+    },
+    {
+      "label": "raw_dotdot",
+      "service": "vuln_waf",
+      "uri": "/static/../trace-only-cve-marker.txt",
+      "rid": "trace-cve-v2-raw_dotdot-vuln_waf",
+      "result": {
+        "status": 403,
+        "text": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
+        "sha256": "ab768623070128ccef048c88def86155dbe776c3d8db423cc8fa89432673d8a8",
+        "marker": false,
+        "echo": null,
+        "content_type": "text/html; charset=iso-8859-1"
+      },
+      "audit": {
+        "matched": false,
+        "rules": [],
+        "has_crs_block": false
+      }
+    },
+    {
+      "label": "raw_dotdot",
+      "service": "fixed_waf",
+      "uri": "/static/../trace-only-cve-marker.txt",
+      "rid": "trace-cve-v2-raw_dotdot-fixed_waf",
+      "result": {
+        "status": 403,
+        "text": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
+        "sha256": "ab768623070128ccef048c88def86155dbe776c3d8db423cc8fa89432673d8a8",
+        "marker": false,
+        "echo": null,
+        "content_type": "text/html; charset=iso-8859-1"
+      }
+    },
+    {
+      "label": "encoded_dotdot",
+      "service": "vuln_direct",
+      "uri": "/static/%2e%2e/trace-only-cve-marker.txt",
+      "rid": "trace-cve-v2-encoded_dotdot-vuln_direct",
+      "result": {
+        "status": 200,
+        "text": "TRACE_CVE_2024_23334_SYNTHETIC_MARKER\n",
+        "sha256": "d17ecb4ef07c1612298a47196072af2aff1aa54c15cafa4fa3c75069cd70a0c4",
+        "marker": true,
+        "echo": "trace-cve-v2-encoded_dotdot-vuln_direct",
+        "content_type": "text/plain"
+      }
+    },
+    {
+      "label": "encoded_dotdot",
+      "service": "fixed_direct",
+      "uri": "/static/%2e%2e/trace-only-cve-marker.txt",
+      "rid": "trace-cve-v2-encoded_dotdot-fixed_direct",
+      "result": {
+        "status": 404,
+        "text": "404: Not Found",
+        "sha256": "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed",
+        "marker": false,
+        "echo": "trace-cve-v2-encoded_dotdot-fixed_direct",
+        "content_type": "text/plain; charset=utf-8"
+      }
+    },
+    {
+      "label": "encoded_dotdot",
+      "service": "vuln_waf",
+      "uri": "/static/%2e%2e/trace-only-cve-marker.txt",
+      "rid": "trace-cve-v2-encoded_dotdot-vuln_waf",
+      "result": {
+        "status": 403,
+        "text": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
+        "sha256": "ab768623070128ccef048c88def86155dbe776c3d8db423cc8fa89432673d8a8",
+        "marker": false,
+        "echo": null,
+        "content_type": "text/html; charset=iso-8859-1"
+      },
+      "audit": {
+        "matched": false,
+        "rules": [],
+        "has_crs_block": false
+      }
+    },
+    {
+      "label": "encoded_dotdot",
+      "service": "fixed_waf",
+      "uri": "/static/%2e%2e/trace-only-cve-marker.txt",
+      "rid": "trace-cve-v2-encoded_dotdot-fixed_waf",
+      "result": {
+        "status": 403,
+        "text": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
+        "sha256": "ab768623070128ccef048c88def86155dbe776c3d8db423cc8fa89432673d8a8",
+        "marker": false,
+        "echo": null,
+        "content_type": "text/html; charset=iso-8859-1"
+      }
+    },
+    {
+      "label": "encoded_slash",
+      "service": "vuln_direct",
+      "uri": "/static/..%2ftrace-only-cve-marker.txt",
+      "rid": "trace-cve-v2-encoded_slash-vuln_direct",
+      "result": {
+        "status": 200,
+        "text": "TRACE_CVE_2024_23334_SYNTHETIC_MARKER\n",
+        "sha256": "d17ecb4ef07c1612298a47196072af2aff1aa54c15cafa4fa3c75069cd70a0c4",
+        "marker": true,
+        "echo": "trace-cve-v2-encoded_slash-vuln_direct",
+        "content_type": "text/plain"
+      }
+    },
+    {
+      "label": "encoded_slash",
+      "service": "fixed_direct",
+      "uri": "/static/..%2ftrace-only-cve-marker.txt",
+      "rid": "trace-cve-v2-encoded_slash-fixed_direct",
+      "result": {
+        "status": 404,
+        "text": "404: Not Found",
+        "sha256": "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed",
+        "marker": false,
+        "echo": "trace-cve-v2-encoded_slash-fixed_direct",
+        "content_type": "text/plain; charset=utf-8"
+      }
+    },
+    {
+      "label": "encoded_slash",
+      "service": "vuln_waf",
+      "uri": "/static/..%2ftrace-only-cve-marker.txt",
+      "rid": "trace-cve-v2-encoded_slash-vuln_waf",
+      "result": {
+        "status": 404,
+        "text": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found on this server.</p>\n</body></html>\n",
+        "sha256": "9448f8a1159c9b14e3e1b9d8eab1a6ddf88d26e1f888a34cef430c756e4e6e1e",
+        "marker": false,
+        "echo": null,
+        "content_type": "text/html; charset=iso-8859-1"
+      },
+      "audit": {
+        "matched": false,
+        "rules": [],
+        "has_crs_block": false
+      }
+    },
+    {
+      "label": "encoded_slash",
+      "service": "fixed_waf",
+      "uri": "/static/..%2ftrace-only-cve-marker.txt",
+      "rid": "trace-cve-v2-encoded_slash-fixed_waf",
+      "result": {
+        "status": 404,
+        "text": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found on this server.</p>\n</body></html>\n",
+        "sha256": "9448f8a1159c9b14e3e1b9d8eab1a6ddf88d26e1f888a34cef430c756e4e6e1e",
+        "marker": false,
+        "echo": null,
+        "content_type": "text/html; charset=iso-8859-1"
+      }
+    },
+    {
+      "label": "encoded_dotdot_slash",
+      "service": "vuln_direct",
+      "uri": "/static/%2e%2e%2ftrace-only-cve-marker.txt",
+      "rid": "trace-cve-v2-encoded_dotdot_slash-vuln_direct",
+      "result": {
+        "status": 200,
+        "text": "TRACE_CVE_2024_23334_SYNTHETIC_MARKER\n",
+        "sha256": "d17ecb4ef07c1612298a47196072af2aff1aa54c15cafa4fa3c75069cd70a0c4",
+        "marker": true,
+        "echo": "trace-cve-v2-encoded_dotdot_slash-vuln_direct",
+        "content_type": "text/plain"
+      }
+    },
+    {
+      "label": "encoded_dotdot_slash",
+      "service": "fixed_direct",
+      "uri": "/static/%2e%2e%2ftrace-only-cve-marker.txt",
+      "rid": "trace-cve-v2-encoded_dotdot_slash-fixed_direct",
+      "result": {
+        "status": 404,
+        "text": "404: Not Found",
+        "sha256": "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed",
+        "marker": false,
+        "echo": "trace-cve-v2-encoded_dotdot_slash-fixed_direct",
+        "content_type": "text/plain; charset=utf-8"
+      }
+    },
+    {
+      "label": "encoded_dotdot_slash",
+      "service": "vuln_waf",
+      "uri": "/static/%2e%2e%2ftrace-only-cve-marker.txt",
+      "rid": "trace-cve-v2-encoded_dotdot_slash-vuln_waf",
+      "result": {
+        "status": 404,
+        "text": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found on this server.</p>\n</body></html>\n",
+        "sha256": "9448f8a1159c9b14e3e1b9d8eab1a6ddf88d26e1f888a34cef430c756e4e6e1e",
+        "marker": false,
+        "echo": null,
+        "content_type": "text/html; charset=iso-8859-1"
+      },
+      "audit": {
+        "matched": false,
+        "rules": [],
+        "has_crs_block": false
+      }
+    },
+    {
+      "label": "encoded_dotdot_slash",
+      "service": "fixed_waf",
+      "uri": "/static/%2e%2e%2ftrace-only-cve-marker.txt",
+      "rid": "trace-cve-v2-encoded_dotdot_slash-fixed_waf",
+      "result": {
+        "status": 404,
+        "text": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found on this server.</p>\n</body></html>\n",
+        "sha256": "9448f8a1159c9b14e3e1b9d8eab1a6ddf88d26e1f888a34cef430c756e4e6e1e",
+        "marker": false,
+        "echo": null,
+        "content_type": "text/html; charset=iso-8859-1"
+      }
+    }
+  ],
+  "waf_classification": {
+    "raw_dotdot": "WAF_INCONCLUSIVE_PROXY_OR_OTHER",
+    "encoded_dotdot": "WAF_INCONCLUSIVE_PROXY_OR_OTHER",
+    "encoded_slash": "WAF_INCONCLUSIVE_PROXY_OR_OTHER",
+    "encoded_dotdot_slash": "WAF_INCONCLUSIVE_PROXY_OR_OTHER"
+  },
+  "docker_ps": {
+    "cmd": [
+      "docker",
+      "compose",
+      "-f",
+      "/Users/tuyen/Downloads/TRACE_WAF_HO_SO_NGHIEN_CUU/checkpoint_tools/go_lab_v2/cve_compose.yaml",
+      "ps",
+      "--all"
+    ],
+    "returncode": 0,
+    "stdout": "NAME                             IMAGE                          COMMAND                  SERVICE     CREATED         STATUS                                     PORTS\ntrace-cve-23334-v2-fixed-1       trace-cve-23334-v2-fixed       \"python /lab/server.…\"   fixed       3 seconds ago   Up 2 seconds                               127.0.0.1:18191->8080/tcp\ntrace-cve-23334-v2-vuln-1        trace-cve-23334-v2-vuln        \"python /lab/server.…\"   vuln        3 seconds ago   Up 2 seconds                               127.0.0.1:18190->8080/tcp\ntrace-cve-23334-v2-waf-fixed-1   owasp/modsecurity-crs:apache   \"/docker-entrypoint.…\"   waf-fixed   3 seconds ago   Up Less than a second (health: starting)   127.0.0.1:18193->8080/tcp\ntrace-cve-23334-v2-waf-vuln-1    owasp/modsecurity-crs:apache   \"/docker-entrypoint.…\"   waf-vuln    3 seconds ago   Up 1 second (health: starting)             127.0.0.1:18192->8080/tcp\n",
+    "stderr": "",
+    "utc": "2026-10-17T01:49:12.734930+00:00"
+  },
+  "docker_images": {
+    "cmd": [
+      "docker",
+      "compose",
+      "-f",
+      "/Users/tuyen/Downloads/TRACE_WAF_HO_SO_NGHIEN_CUU/checkpoint_tools/go_lab_v2/cve_compose.yaml",
+      "images",
+      "--format",
+      "json"
+    ],
+    "returncode": 0,
+    "stdout": "[{\"ID\":\"sha256:0df9ced6cce90a78a08162cda57baa837f96bca1338225bd7382bbb9bbddbf2c\",\"ContainerName\":\"trace-cve-23334-v2-vuln-1\",\"Repository\":\"trace-cve-23334-v2-vuln\",\"Tag\":\"latest\",\"Platform\":\"linux/amd64\",\"Size\":218172152,\"Created\":\"2026-10-17T00:04:16.609588633Z\",\"LastTagTime\":\"2026-10-17T01:49:08.406770159Z\"},{\"ID\":\"sha256:f185efa65577877778cb8af2ce22d0ffa1f6417df2791d83aec3d48edca6316f\",\"ContainerName\":\"trace-cve-23334-v2-fixed-1\",\"Repository\":\"trace-cve-23334-v2-fixed\",\"Tag\":\"latest\",\"Platform\":\"linux/amd64\",\"Size\":218174435,\"Created\":\"2026-10-17T00:04:16.604516782Z\",\"LastTagTime\":\"2026-10-17T01:49:08.420838357Z\"},{\"ID\":\"sha256:497251aeb7bba3711616142af62497736f1f802db7dde2ad3956fdacbbb93879\",\"ContainerName\":\"trace-cve-23334-v2-waf-fixed-1\",\"Repository\":\"owasp/modsecurity-crs\",\"Tag\":\"apache\",\"Platform\":\"linux/amd64\",\"Size\":253862845,\"Created\":\"2026-10-05T00:51:08.307086732Z\",\"LastTagTime\":\"2026-10-16T16:20:49.884961146Z\"},{\"ID\":\"sha256:497251aeb7bba3711616142af62497736f1f802db7dde2ad3956fdacbbb93879\",\"ContainerName\":\"trace-cve-23334-v2-waf-vuln-1\",\"Repository\":\"owasp/modsecurity-crs\",\"Tag\":\"apache\",\"Platform\":\"linux/amd64\",\"Size\":253862845,\"Created\":\"2026-10-05T00:51:08.307086732Z\",\"LastTagTime\":\"2026-10-16T16:20:49.884961146Z\"}]\n\n",
+    "stderr": "",
+    "utc": "2026-10-17T01:49:13.431253+00:00"
+  },
+  "verified_runtime": {
+    "vuln_direct": {
+      "ok": true,
+      "meta": {
+        "product": "aiohttp",
+        "version": "3.9.1",
+        "configuration": "static-follow_symlinks-true",
+        "static_root": "/lab/static",
+        "filesystem_probe": "synthetic-marker-only",
+        "lab": "TRACE-WAF CVE-2024-23334"
+      },
+      "attempts_sample": [
+        {
+          "status": 200,
+          "text": "{\"product\": \"aiohttp\", \"version\": \"3.9.1\", \"configuration\": \"static-follow_symlinks-true\", \"static_root\": \"/lab/static\", \"filesystem_probe\": \"synthetic-marker-only\", \"lab\": \"TRACE-WAF CVE-2024-23334\"}",
+          "sha256": "524ebf04b6a62241b19eaa01637507bd088eec75e55ca9d02b3f728ff503ec74",
+          "marker": false,
+          "echo": "trace-cve-v2-health-3.9.1",
+          "content_type": "application/json; charset=utf-8"
+        }
+      ]
+    },
+    "fixed_direct": {
+      "ok": true,
+      "meta": {
+        "product": "aiohttp",
+        "version": "3.9.2",
+        "configuration": "static-follow_symlinks-true",
+        "static_root": "/lab/static",
+        "filesystem_probe": "synthetic-marker-only",
+        "lab": "TRACE-WAF CVE-2024-23334"
+      },
+      "attempts_sample": [
+        {
+          "status": 200,
+          "text": "{\"product\": \"aiohttp\", \"version\": \"3.9.2\", \"configuration\": \"static-follow_symlinks-true\", \"static_root\": \"/lab/static\", \"filesystem_probe\": \"synthetic-marker-only\", \"lab\": \"TRACE-WAF CVE-2024-23334\"}",
+          "sha256": "ae0ea8a557d20bdb67030e24ed37faafcc7696e3662360ae880d310bdfa3367a",
+          "marker": false,
+          "echo": "trace-cve-v2-health-3.9.2",
+          "content_type": "application/json; charset=utf-8"
+        }
+      ]
+    },
+    "vuln_waf": {
+      "ok": true,
+      "meta": {
+        "product": "aiohttp",
+        "version": "3.9.1",
+        "configuration": "static-follow_symlinks-true",
+        "static_root": "/lab/static",
+        "filesystem_probe": "synthetic-marker-only",
+        "lab": "TRACE-WAF CVE-2024-23334"
+      },
+      "attempts_sample": [
+        {
+          "error": "RemoteDisconnected",
+          "message": "Remote end closed connection without response"
+        },
+        {
+          "status": 200,
+          "text": "{\"product\": \"aiohttp\", \"version\": \"3.9.1\", \"configuration\": \"static-follow_symlinks-true\", \"static_root\": \"/lab/static\", \"filesystem_probe\": \"synthetic-marker-only\", \"lab\": \"TRACE-WAF CVE-2024-23334\"}",
+          "sha256": "524ebf04b6a62241b19eaa01637507bd088eec75e55ca9d02b3f728ff503ec74",
+          "marker": false,
+          "echo": "trace-cve-v2-health-3.9.1",
+          "content_type": "application/json; charset=utf-8"
+        }
+      ]
+    },
+    "fixed_waf": {
+      "ok": true,
+      "meta": {
+        "product": "aiohttp",
+        "version": "3.9.2",
+        "configuration": "static-follow_symlinks-true",
+        "static_root": "/lab/static",
+        "filesystem_probe": "synthetic-marker-only",
+        "lab": "TRACE-WAF CVE-2024-23334"
+      },
+      "attempts_sample": [
+        {
+          "status": 200,
+          "text": "{\"product\": \"aiohttp\", \"version\": \"3.9.2\", \"configuration\": \"static-follow_symlinks-true\", \"static_root\": \"/lab/static\", \"filesystem_probe\": \"synthetic-marker-only\", \"lab\": \"TRACE-WAF CVE-2024-23334\"}",
+          "sha256": "ae0ea8a557d20bdb67030e24ed37faafcc7696e3662360ae880d310bdfa3367a",
+          "marker": false,
+          "echo": "trace-cve-v2-health-3.9.2",
+          "content_type": "application/json; charset=utf-8"
+        }
+      ]
+    }
+  },
+  "vulnerable_direct_exploits": [
+    "raw_dotdot",
+    "encoded_dotdot",
+    "encoded_slash",
+    "encoded_dotdot_slash"
+  ],
+  "patched_direct_exploits": [],
+  "cve_confirmed": true,
+  "waf_protection_confirmed": false,
+  "cleanup": {
+    "cmd": [
+      "docker",
+      "compose",
+      "-f",
+      "/Users/tuyen/Downloads/TRACE_WAF_HO_SO_NGHIEN_CUU/checkpoint_tools/go_lab_v2/cve_compose.yaml",
+      "down",
+      "--remove-orphans"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": " Container trace-cve-23334-v2-waf-fixed-1 Stopping \n Container trace-cve-23334-v2-waf-vuln-1 Stopping \n Container trace-cve-23334-v2-waf-fixed-1 Stopped \n Container trace-cve-23334-v2-waf-fixed-1 Removing \n Container trace-cve-23334-v2-waf-vuln-1 Stopped \n Container trace-cve-23334-v2-waf-vuln-1 Removing \n Container trace-cve-23334-v2-waf-fixed-1 Removed \n Container trace-cve-23334-v2-fixed-1 Stopping \n Container trace-cve-23334-v2-waf-vuln-1 Removed \n Container trace-cve-23334-v2-vuln-1 Stopping \n Container trace-cve-23334-v2-fixed-1 Stopped \n Container trace-cve-23334-v2-fixed-1 Removing \n Container trace-cve-23334-v2-fixed-1 Removed \n Container trace-cve-23334-v2-vuln-1 Stopped \n Container trace-cve-23334-v2-vuln-1 Removing \n Container trace-cve-23334-v2-vuln-1 Removed \n Network trace-cve-23334-v2_host_access Removing \n Network trace-cve-23334-v2_isolated Removing \n Network trace-cve-23334-v2_host_access Removed \n Network trace-cve-23334-v2_isolated Removed \n",
+    "utc": "2026-10-17T01:49:18.774049+00:00"
+  },
+  "finished": "2026-10-17T01:49:18.774992+00:00"
+}

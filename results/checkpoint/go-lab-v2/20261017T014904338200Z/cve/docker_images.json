@@ -1,0 +1,15 @@
+{
+  "cmd": [
+    "docker",
+    "compose",
+    "-f",
+    "/Users/tuyen/Downloads/TRACE_WAF_HO_SO_NGHIEN_CUU/checkpoint_tools/go_lab_v2/cve_compose.yaml",
+    "images",
+    "--format",
+    "json"
+  ],
+  "returncode": 0,
+  "stdout": "[{\"ID\":\"sha256:0df9ced6cce90a78a08162cda57baa837f96bca1338225bd7382bbb9bbddbf2c\",\"ContainerName\":\"trace-cve-23334-v2-vuln-1\",\"Repository\":\"trace-cve-23334-v2-vuln\",\"Tag\":\"latest\",\"Platform\":\"linux/amd64\",\"Size\":218172152,\"Created\":\"2026-10-17T00:04:16.609588633Z\",\"LastTagTime\":\"2026-10-17T01:49:08.406770159Z\"},{\"ID\":\"sha256:f185efa65577877778cb8af2ce22d0ffa1f6417df2791d83aec3d48edca6316f\",\"ContainerName\":\"trace-cve-23334-v2-fixed-1\",\"Repository\":\"trace-cve-23334-v2-fixed\",\"Tag\":\"latest\",\"Platform\":\"linux/amd64\",\"Size\":218174435,\"Created\":\"2026-10-17T00:04:16.604516782Z\",\"LastTagTime\":\"2026-10-17T01:49:08.420838357Z\"},{\"ID\":\"sha256:497251aeb7bba3711616142af62497736f1f802db7dde2ad3956fdacbbb93879\",\"ContainerName\":\"trace-cve-23334-v2-waf-fixed-1\",\"Repository\":\"owasp/modsecurity-crs\",\"Tag\":\"apache\",\"Platform\":\"linux/amd64\",\"Size\":253862845,\"Created\":\"2026-10-05T00:51:08.307086732Z\",\"LastTagTime\":\"2026-10-16T16:20:49.884961146Z\"},{\"ID\":\"sha256:497251aeb7bba3711616142af62497736f1f802db7dde2ad3956fdacbbb93879\",\"ContainerName\":\"trace-cve-23334-v2-waf-vuln-1\",\"Repository\":\"owasp/modsecurity-crs\",\"Tag\":\"apache\",\"Platform\":\"linux/amd64\",\"Size\":253862845,\"Created\":\"2026-10-05T00:51:08.307086732Z\",\"LastTagTime\":\"2026-10-16T16:20:49.884961146Z\"}]\n\n",
+  "stderr": "",
+  "utc": "2026-10-17T01:49:13.431253+00:00"
+}

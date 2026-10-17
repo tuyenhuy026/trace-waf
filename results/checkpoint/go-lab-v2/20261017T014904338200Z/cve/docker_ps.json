@@ -1,0 +1,14 @@
+{
+  "cmd": [
+    "docker",
+    "compose",
+    "-f",
+    "/Users/tuyen/Downloads/TRACE_WAF_HO_SO_NGHIEN_CUU/checkpoint_tools/go_lab_v2/cve_compose.yaml",
+    "ps",
+    "--all"
+  ],
+  "returncode": 0,
+  "stdout": "NAME                             IMAGE                          COMMAND                  SERVICE     CREATED         STATUS                                     PORTS\ntrace-cve-23334-v2-fixed-1       trace-cve-23334-v2-fixed       \"python /lab/server.…\"   fixed       3 seconds ago   Up 2 seconds                               127.0.0.1:18191->8080/tcp\ntrace-cve-23334-v2-vuln-1        trace-cve-23334-v2-vuln        \"python /lab/server.…\"   vuln        3 seconds ago   Up 2 seconds                               127.0.0.1:18190->8080/tcp\ntrace-cve-23334-v2-waf-fixed-1   owasp/modsecurity-crs:apache   \"/docker-entrypoint.…\"   waf-fixed   3 seconds ago   Up Less than a second (health: starting)   127.0.0.1:18193->8080/tcp\ntrace-cve-23334-v2-waf-vuln-1    owasp/modsecurity-crs:apache   \"/docker-entrypoint.…\"   waf-vuln    3 seconds ago   Up 1 second (health: starting)             127.0.0.1:18192->8080/tcp\n",
+  "stderr": "",
+  "utc": "2026-10-17T01:49:12.734930+00:00"
+}

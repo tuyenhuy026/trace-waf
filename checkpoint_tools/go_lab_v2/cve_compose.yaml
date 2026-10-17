@@ -1,0 +1,59 @@
+# Separate case study, all host ports bound to loopback. Do not use against external systems.
+# A non-internal access bridge is necessary for Docker Desktop host port publishing.
+name: trace-cve-23334-v2
+services:
+  vuln:
+    build:
+      context: ../cve_lab
+      dockerfile: Dockerfile
+      args: {AIOHTTP_VERSION: "3.9.1"}
+    environment: {PYTHONUNBUFFERED: "1", PYTHONDONTWRITEBYTECODE: "1"}
+    ports: ["127.0.0.1:18190:8080"]
+    networks: [isolated, host_access]
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+  fixed:
+    build:
+      context: ../cve_lab
+      dockerfile: Dockerfile
+      args: {AIOHTTP_VERSION: "3.9.2"}
+    environment: {PYTHONUNBUFFERED: "1", PYTHONDONTWRITEBYTECODE: "1"}
+    ports: ["127.0.0.1:18191:8080"]
+    networks: [isolated, host_access]
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+  waf-vuln:
+    image: owasp/modsecurity-crs:apache
+    environment:
+      BACKEND: http://vuln:8080
+      SERVER_NAME: localhost
+      MODSEC_RULE_ENGINE: "On"
+      BLOCKING_PARANOIA: "1"
+      ANOMALY_INBOUND: "5"
+      ANOMALY_OUTBOUND: "100"
+      MODSEC_AUDIT_ENGINE: "On"
+      MODSEC_AUDIT_LOG: /dev/stdout
+      PROXY_ERROR_OVERRIDE: "off"
+    ports: ["127.0.0.1:18192:8080"]
+    depends_on: [vuln]
+    networks: [isolated, host_access]
+  waf-fixed:
+    image: owasp/modsecurity-crs:apache
+    environment:
+      BACKEND: http://fixed:8080
+      SERVER_NAME: localhost
+      MODSEC_RULE_ENGINE: "On"
+      BLOCKING_PARANOIA: "1"
+      ANOMALY_INBOUND: "5"
+      ANOMALY_OUTBOUND: "100"
+      MODSEC_AUDIT_ENGINE: "On"
+      MODSEC_AUDIT_LOG: /dev/stdout
+      PROXY_ERROR_OVERRIDE: "off"
+    ports: ["127.0.0.1:18193:8080"]
+    depends_on: [fixed]
+    networks: [isolated, host_access]
+networks:
+  isolated:
+    internal: true
+  host_access:
+    driver: bridge

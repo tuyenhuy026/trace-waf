@@ -1,0 +1,14 @@
+{
+  "cmd": [
+    "docker",
+    "compose",
+    "-f",
+    "/Users/tuyen/Downloads/TRACE_WAF_HO_SO_NGHIEN_CUU/checkpoint_tools/go_lab_v2/cve_compose.yaml",
+    "down",
+    "--remove-orphans"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": " Container trace-cve-23334-v2-waf-fixed-1 Stopping \n Container trace-cve-23334-v2-waf-vuln-1 Stopping \n Container trace-cve-23334-v2-waf-fixed-1 Stopped \n Container trace-cve-23334-v2-waf-fixed-1 Removing \n Container trace-cve-23334-v2-waf-vuln-1 Stopped \n Container trace-cve-23334-v2-waf-vuln-1 Removing \n Container trace-cve-23334-v2-waf-fixed-1 Removed \n Container trace-cve-23334-v2-fixed-1 Stopping \n Container trace-cve-23334-v2-waf-vuln-1 Removed \n Container trace-cve-23334-v2-vuln-1 Stopping \n Container trace-cve-23334-v2-fixed-1 Stopped \n Container trace-cve-23334-v2-fixed-1 Removing \n Container trace-cve-23334-v2-fixed-1 Removed \n Container trace-cve-23334-v2-vuln-1 Stopped \n Container trace-cve-23334-v2-vuln-1 Removing \n Container trace-cve-23334-v2-vuln-1 Removed \n Network trace-cve-23334-v2_host_access Removing \n Network trace-cve-23334-v2_isolated Removing \n Network trace-cve-23334-v2_host_access Removed \n Network trace-cve-23334-v2_isolated Removed \n",
+  "utc": "2026-10-17T01:49:18.774049+00:00"
+}

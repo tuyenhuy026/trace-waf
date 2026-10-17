@@ -1,0 +1,15 @@
+{
+  "cmd": [
+    "docker",
+    "compose",
+    "-f",
+    "/Users/tuyen/Downloads/TRACE_WAF_HO_SO_NGHIEN_CUU/checkpoint_tools/go_lab_v2/cve_compose.yaml",
+    "logs",
+    "--no-color",
+    "fixed"
+  ],
+  "returncode": 0,
+  "stdout": "fixed-1  | ======== Running on http://0.0.0.0:8080 ========\nfixed-1  | (Press CTRL+C to quit)\n",
+  "stderr": "",
+  "utc": "2026-10-17T01:49:16.078068+00:00"
+}
