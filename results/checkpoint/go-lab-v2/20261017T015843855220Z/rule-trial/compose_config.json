@@ -1,0 +1,16 @@
+{
+  "args": [
+    "docker",
+    "compose",
+    "-f",
+    "lab/compose.yaml",
+    "-f",
+    "checkpoint_tools/go_lab_v2/lab_override.yaml",
+    "config",
+    "--quiet"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "utc": "2026-10-17T02:04:50.977253+00:00"
+}

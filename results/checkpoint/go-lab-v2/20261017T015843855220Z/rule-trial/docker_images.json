@@ -1,0 +1,15 @@
+{
+  "args": [
+    "docker",
+    "compose",
+    "-f",
+    "lab/compose.yaml",
+    "-f",
+    "checkpoint_tools/go_lab_v2/lab_override.yaml",
+    "images"
+  ],
+  "returncode": 0,
+  "stdout": "CONTAINER                    REPOSITORY              TAG                 PLATFORM            IMAGE ID            SIZE                CREATED\ntrace-checkpoint-backend-1   python                  3.12-slim           linux/amd64         a6e34c598f24        177MB               11 days ago\ntrace-checkpoint-waf-1       owasp/modsecurity-crs   apache              linux/amd64         497251aeb7bb        254MB               12 days ago\n",
+  "stderr": "",
+  "utc": "2026-10-17T02:04:51.630724+00:00"
+}

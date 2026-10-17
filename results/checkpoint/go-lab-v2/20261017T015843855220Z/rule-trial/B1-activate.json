@@ -1,0 +1,19 @@
+{
+  "args": [
+    "docker",
+    "compose",
+    "-f",
+    "lab/compose.yaml",
+    "-f",
+    "checkpoint_tools/go_lab_v2/lab_override.yaml",
+    "up",
+    "-d",
+    "--no-deps",
+    "--force-recreate",
+    "waf"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": " Container trace-checkpoint-waf-1 Recreate \n Container trace-checkpoint-waf-1 Recreated \n Container trace-checkpoint-waf-1 Starting \n Container trace-checkpoint-waf-1 Started \n",
+  "utc": "2026-10-17T02:04:54.486754+00:00"
+}

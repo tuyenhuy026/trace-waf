@@ -1,0 +1,60 @@
+{
+  "status": "EVALUATED",
+  "utc": "2026-10-17T02:04:49.474882+00:00",
+  "frozen_before_test": true,
+  "no_test_tuning": true,
+  "corpus_sha256": "82cf2f8ce471eb48613283b01c80a37f7bbdb2120a3d42ff52b2d75fb5155b4a",
+  "model_requested": "gpt-5.6-sol",
+  "model_response": "gpt-5.6-sol",
+  "run_counts": {
+    "B1": 92,
+    "G2": 92
+  },
+  "rollback_verified": false,
+  "direct_oracle_stable": true,
+  "baseline": {
+    "coverage": 1.0,
+    "robustness": 1.0,
+    "fpr": 0.08064516129032258,
+    "benign_n": 62,
+    "valid_attack_n": 24,
+    "valid_transformed_n": 14,
+    "valid_families_per_cwe": {
+      "CWE-89": 4,
+      "CWE-79": 3,
+      "CWE-22": 3
+    },
+    "functional_regressions": 0,
+    "uncertain_n": 0,
+    "outcomes": {
+      "blocked_attack": 24,
+      "invalid_attack": 6,
+      "true_negative": 57,
+      "false_positive": 5
+    }
+  },
+  "B1_observations_sha256": "18bdec94f77a9a216aff1199b36fbb49547f9de755daa096d6763869c12b5ff4",
+  "candidate": {
+    "coverage": 1.0,
+    "robustness": 1.0,
+    "fpr": 0.08064516129032258,
+    "benign_n": 62,
+    "valid_attack_n": 24,
+    "valid_transformed_n": 14,
+    "valid_families_per_cwe": {
+      "CWE-89": 4,
+      "CWE-79": 3,
+      "CWE-22": 3
+    },
+    "functional_regressions": 0,
+    "uncertain_n": 0,
+    "outcomes": {
+      "blocked_attack": 24,
+      "invalid_attack": 6,
+      "true_negative": 57,
+      "false_positive": 5
+    }
+  },
+  "G2_observations_sha256": "10162ae857f08198ee900b9b362d8b20f53b87b570fa16dab6686475e48ffcce",
+  "rollback_error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+}

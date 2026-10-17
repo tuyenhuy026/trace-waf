@@ -1,0 +1,12 @@
+{
+  "args": [
+    "docker",
+    "info",
+    "--format",
+    "{{.ServerVersion}}"
+  ],
+  "returncode": 0,
+  "stdout": "29.8.1\n",
+  "stderr": "",
+  "utc": "2026-10-17T02:04:50.788549+00:00"
+}
