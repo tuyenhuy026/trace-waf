@@ -1,0 +1,22 @@
+{
+  "utc": "2026-10-17T00:29:38.280247+00:00",
+  "model_alias": "gpt-6-luna",
+  "model_weights_verified": false,
+  "reps": 1,
+  "raw_response_files": [
+    "responses/call-0.json"
+  ],
+  "accepted_generated": 12,
+  "rejected": [],
+  "heuristic_budget": 12,
+  "status": "GENERATED_NOT_EVALUATED",
+  "inference_is_exploratory": true,
+  "development_split_only": true,
+  "model_superiority_demonstrated": false,
+  "limitations": [
+    "Dev-only: no held-out family independence.",
+    "Heuristic control differs from generative search space.",
+    "Gateway service model alias does not cryptographically verify weights.",
+    "No rule creation, modification, or promotion from this experiment."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "model": "gpt-6-luna",
+  "reps": 1,
+  "fixed_max_cases_per_request": 12,
+  "total_candidate_budget": 12,
+  "dev_only": true,
+  "new_calls": 1,
+  "validation_or_test_data_used_in_prompt": false,
+  "tuning_allowed": false,
+  "selection_allowed": false,
+  "comparison_heuristic_budget": 12,
+  "source_dev_hash": "20b8779d0427e45db64806e5726585a30ef4233499bc69458dab29e31534ff80",
+  "created_utc": "2026-10-17T00:28:58.902726+00:00"
+}

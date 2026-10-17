@@ -1,0 +1,108 @@
+{
+  "utc": "2026-10-17T00:29:38.280247+00:00",
+  "model_alias": "gpt-6-luna",
+  "model_weights_verified": false,
+  "reps": 1,
+  "raw_response_files": [
+    "responses/call-0.json"
+  ],
+  "accepted_generated": 12,
+  "rejected": [],
+  "heuristic_budget": 12,
+  "status": "EXPLORATORY_DEV_MEASURED",
+  "inference_is_exploratory": true,
+  "development_split_only": true,
+  "model_superiority_demonstrated": false,
+  "limitations": [
+    "Dev-only: no held-out family independence.",
+    "Heuristic control differs from generative search space.",
+    "Gateway service model alias does not cryptographically verify weights.",
+    "No rule creation, modification, or promotion from this experiment."
+  ],
+  "observations_sha256": "902509d99eff01f0a68c287d782b248b949742dfdc257697540aadea4443cae3",
+  "comparison": {
+    "heuristic": {
+      "ALL": {
+        "proposed": 12,
+        "valid_oracle": 4,
+        "invalid_attack": 8,
+        "blocked": 4,
+        "bypass": 0,
+        "uncertain": 0,
+        "bypass_per_valid": 0.0
+      },
+      "CWE-89": {
+        "proposed": 4,
+        "valid_oracle": 2,
+        "invalid_attack": 2,
+        "blocked": 2,
+        "bypass": 0,
+        "uncertain": 0,
+        "bypass_per_valid": 0.0
+      },
+      "CWE-79": {
+        "proposed": 4,
+        "valid_oracle": 1,
+        "invalid_attack": 3,
+        "blocked": 1,
+        "bypass": 0,
+        "uncertain": 0,
+        "bypass_per_valid": 0.0
+      },
+      "CWE-22": {
+        "proposed": 4,
+        "valid_oracle": 1,
+        "invalid_attack": 3,
+        "blocked": 1,
+        "bypass": 0,
+        "uncertain": 0,
+        "bypass_per_valid": 0.0
+      }
+    },
+    "gpt-6-luna": {
+      "ALL": {
+        "proposed": 12,
+        "valid_oracle": 0,
+        "invalid_attack": 12,
+        "blocked": 0,
+        "bypass": 0,
+        "uncertain": 0,
+        "bypass_per_valid": null
+      },
+      "CWE-89": {
+        "proposed": 4,
+        "valid_oracle": 0,
+        "invalid_attack": 4,
+        "blocked": 0,
+        "bypass": 0,
+        "uncertain": 0,
+        "bypass_per_valid": null
+      },
+      "CWE-79": {
+        "proposed": 4,
+        "valid_oracle": 0,
+        "invalid_attack": 4,
+        "blocked": 0,
+        "bypass": 0,
+        "uncertain": 0,
+        "bypass_per_valid": null
+      },
+      "CWE-22": {
+        "proposed": 4,
+        "valid_oracle": 0,
+        "invalid_attack": 4,
+        "blocked": 0,
+        "bypass": 0,
+        "uncertain": 0,
+        "bypass_per_valid": null
+      }
+    }
+  },
+  "rollback": {
+    "attempted": true,
+    "restored": true,
+    "original_sha256": "98b3b9c70039268487d31bb2caff2b08a63e2da0c0bf1a2144e233d804317df8",
+    "active_rules_sha256": "98b3b9c70039268487d31bb2caff2b08a63e2da0c0bf1a2144e233d804317df8",
+    "utc": "2026-10-17T00:30:00.050217+00:00"
+  }
+}
