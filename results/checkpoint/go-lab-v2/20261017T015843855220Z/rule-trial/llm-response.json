@@ -1,0 +1,39 @@
+{
+  "requested_model": "gpt-5.6-sol",
+  "utc": "2026-10-17T01:58:43.866057+00:00",
+  "request": {
+    "model": "gpt-5.6-sol",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are reviewing one authorized localhost-only TRACE-WAF training lab.\nPropose ONE conservative JSON rule policy; no shell commands, raw ModSecurity directives or control of deployment.\nThe schema MUST be exactly {\"exempt_routes\": [\"/docs\",\"/search\"], \"patterns\": [{\"route\":\"/sql\",\"regex\":\"...\"}, {\"route\":\"/xss\",\"regex\":\"...\"}, {\"route\":\"/file\",\"regex\":\"...\"}], \"rationale\":\"...\", \"risks\":\"...\"}.\nRoute semantics: /sql is a deliberately vulnerable SQLite concat query, /xss renders an unsafe HTML fragment, /file reads a synthetic canary if traversal is effective; /docs and /search HTML-escape q. A policy must preserve benign functionality and avoid false positives, not merely block more attacks. Report risks of regex on SQL comments and legitimate strings. Only dev-side observations are supplied: CRS stock FP is high, a fixed non-LLM route-level adjustment helps but benign false positives persist. Heuristic control and all LLM proposals must be tested at the same CRS paranoia level. Restrict to 2 route exemptions and at most 3 regex patterns each <=512 chars, compiled by a separate restricted compiler. DO NOT change anomaly threshold or disable WAF globally. The /sql regex must NOT reject standalone punctuation `--` in a benign string. The /file rules must distinguish permissible public-readme paths from traversal to the synthetic secret. Do not mention any held-out test cases or their results. Return the JSON object only.\n"
+      }
+    ],
+    "temperature": 0.2,
+    "max_tokens": 2500,
+    "stream": false
+  },
+  "response": {
+    "id": "resp_0c435e101790f898016ad2d655552c81919c0f7a1790942e51",
+    "object": "chat.completion",
+    "created": 1792202325,
+    "model": "gpt-5.6-sol",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"exempt_routes\":[\"/docs\",\"/search\"],\"patterns\":[{\"route\":\"/sql\",\"regex\":\"(?i)\\\\bunion\\\\s+(?:all\\\\s+)?select\\\\b|(?:^|[\\\\s'\\\"])\\\\b(?:or|and)\\\\s+(?:\\\\d+\\\\s*=\\\\s*\\\\d+|'[^'\\\\r\\\\n]{0,64}'\\\\s*=\\\\s*'[^'\\\\r\\\\n]{0,64}')\"},{\"route\":\"/xss\",\"regex\":\"(?i)<\\\\s*script\\\\b|<[^>\\\\r\\\\n]{0,200}\\\\s+on[a-z]{3,24}\\\\s*=|javascript\\\\s*:|data\\\\s*:\\\\s*text/html\"},{\"route\":\"/file\",\"regex\":\"(?i)(?:\\\\.|%2e|%252e){2}(?:/|\\\\\\\\|%2f|%5c|%252f|%255c)\"}],\"rationale\":\"Exempt only the two documented HTML-escaping routes. Apply narrow, route-specific checks elsewhere: SQL UNION and tautology structures without treating standalone -- punctuation as malicious; executable HTML markers on the unsafe fragment route; and dot-dot path components, including common encoded forms, on the file route. Ordinary public-readme paths remain permissible. Evaluate this policy, heuristic control, and all LLM proposals at the same CRS paranoia level.\",\"risks\":\"Regex cannot fully parse SQL, HTML, URL decoding, or normalization. SQL comments can split tokens and evade structural matching, while broader comment rules would falsely reject legitimate strings containing -- or comment-like text. Legitimate prose, code examples, event-handler documentation, javascript: text, or paths intentionally containing parent-directory components may still trigger. Alternate encodings, malformed markup, unusual SQLite syntax, double decoding beyond covered forms, absolute paths, symlink behavior, and platform-specific separators may bypass these patterns; the separate restricted compiler must verify supported syntax and matching semantics.\"}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2792,
+      "completion_tokens": 1191,
+      "total_tokens": 3983
+    }
+  },
+  "response_model": "gpt-5.6-sol",
+  "status": "POLICY_COMPILED"
+}

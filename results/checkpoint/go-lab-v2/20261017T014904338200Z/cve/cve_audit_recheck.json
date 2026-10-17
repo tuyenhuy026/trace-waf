@@ -1,0 +1,183 @@
+{
+  "reviewed_utc": "2026-10-17T01:58:15.509857+00:00",
+  "original_summary_sha256": "7ac2f1e87e123e99ff77337336aaba6d013f2700aaeb59aad2de872340c8f965",
+  "audit_log_sha256": {
+    "waf-vuln": "5bc1457d779733689e9751440cc9331ac87262121ee5980b1050c5892ea42add",
+    "waf-fixed": "383de1c3f1f67305b558f7f2ba42589d8d8d0d7e80baf51bbb377d8416ccd1ff"
+  },
+  "evidence_origin": "/Users/tuyen/Downloads/TRACE_WAF_HO_SO_NGHIEN_CUU/results/checkpoint/go-lab-v2/20261017T014904338200Z/cve",
+  "original_status": "CVE_CONFIRMED_WAF_NOT_CONFIRMED",
+  "probes": [
+    {
+      "probe": "encoded_dotdot",
+      "vuln_direct": {
+        "http_status": 200,
+        "canary_leaked": true
+      },
+      "fixed_direct": {
+        "http_status": 404,
+        "canary_leaked": false
+      },
+      "vuln_waf": {
+        "http_status": 403,
+        "canary_leaked": false,
+        "error": null,
+        "trace_id": "trace-cve-v2-encoded_dotdot-vuln_waf",
+        "audit_transactions_matched": 1,
+        "correlated_audit": [
+          {
+            "rid": "trace-cve-v2-encoded_dotdot-vuln_waf",
+            "http_status": 403,
+            "request_line": "GET /static/%2e%2e/trace-only-cve-marker.txt HTTP/1.1",
+            "intercepted": true,
+            "rule_ids": [
+              "920350",
+              "930100",
+              "930110",
+              "949110",
+              "980170"
+            ],
+            "crs_949110": true,
+            "disruptive_message": true,
+            "transaction_id": "atLUG8rN8Dm_HLszkNFQCgAAAEI"
+          }
+        ]
+      },
+      "fixed_waf": {
+        "http_status": 403,
+        "canary_leaked": false,
+        "audit_transactions_matched": 1
+      },
+      "status": "WAF_CRS_BLOCK_CORROBORATED"
+    },
+    {
+      "probe": "encoded_dotdot_slash",
+      "vuln_direct": {
+        "http_status": 200,
+        "canary_leaked": true
+      },
+      "fixed_direct": {
+        "http_status": 404,
+        "canary_leaked": false
+      },
+      "vuln_waf": {
+        "http_status": 404,
+        "canary_leaked": false,
+        "error": null,
+        "trace_id": "trace-cve-v2-encoded_dotdot_slash-vuln_waf",
+        "audit_transactions_matched": 1,
+        "correlated_audit": [
+          {
+            "rid": "trace-cve-v2-encoded_dotdot_slash-vuln_waf",
+            "http_status": 404,
+            "request_line": "GET /static/%2e%2e%2ftrace-only-cve-marker.txt HTTP/1.1",
+            "intercepted": false,
+            "rule_ids": [
+              "920350",
+              "980170"
+            ],
+            "crs_949110": false,
+            "disruptive_message": false,
+            "transaction_id": "atLUG8rN8Dm_HLszkNFQDAAAAEQ"
+          }
+        ]
+      },
+      "fixed_waf": {
+        "http_status": 404,
+        "canary_leaked": false,
+        "audit_transactions_matched": 1
+      },
+      "status": "WAF_OR_PROXY_REWRITE_INCONCLUSIVE"
+    },
+    {
+      "probe": "encoded_slash",
+      "vuln_direct": {
+        "http_status": 200,
+        "canary_leaked": true
+      },
+      "fixed_direct": {
+        "http_status": 404,
+        "canary_leaked": false
+      },
+      "vuln_waf": {
+        "http_status": 404,
+        "canary_leaked": false,
+        "error": null,
+        "trace_id": "trace-cve-v2-encoded_slash-vuln_waf",
+        "audit_transactions_matched": 1,
+        "correlated_audit": [
+          {
+            "rid": "trace-cve-v2-encoded_slash-vuln_waf",
+            "http_status": 404,
+            "request_line": "GET /static/..%2ftrace-only-cve-marker.txt HTTP/1.1",
+            "intercepted": false,
+            "rule_ids": [
+              "920350",
+              "980170"
+            ],
+            "crs_949110": false,
+            "disruptive_message": false,
+            "transaction_id": "atLUG8rN8Dm_HLszkNFQCwAAAEM"
+          }
+        ]
+      },
+      "fixed_waf": {
+        "http_status": 404,
+        "canary_leaked": false,
+        "audit_transactions_matched": 1
+      },
+      "status": "WAF_OR_PROXY_REWRITE_INCONCLUSIVE"
+    },
+    {
+      "probe": "raw_dotdot",
+      "vuln_direct": {
+        "http_status": 200,
+        "canary_leaked": true
+      },
+      "fixed_direct": {
+        "http_status": 404,
+        "canary_leaked": false
+      },
+      "vuln_waf": {
+        "http_status": 403,
+        "canary_leaked": false,
+        "error": null,
+        "trace_id": "trace-cve-v2-raw_dotdot-vuln_waf",
+        "audit_transactions_matched": 1,
+        "correlated_audit": [
+          {
+            "rid": "trace-cve-v2-raw_dotdot-vuln_waf",
+            "http_status": 403,
+            "request_line": "GET /static/../trace-only-cve-marker.txt HTTP/1.1",
+            "intercepted": true,
+            "rule_ids": [
+              "920350",
+              "930100",
+              "930110",
+              "949110",
+              "980170"
+            ],
+            "crs_949110": true,
+            "disruptive_message": true,
+            "transaction_id": "atLUG1NEoCmzQGfKWT_o1QAAAIA"
+          }
+        ]
+      },
+      "fixed_waf": {
+        "http_status": 403,
+        "canary_leaked": false,
+        "audit_transactions_matched": 1
+      },
+      "status": "WAF_CRS_BLOCK_CORROBORATED"
+    }
+  ],
+  "counts": {
+    "WAF_CRS_BLOCK_CORROBORATED": 2,
+    "WAF_OR_PROXY_REWRITE_INCONCLUSIVE": 2
+  },
+  "direct_CVE_with_patched_negative_control_confirmed": true,
+  "WAF_CRS_protection_confirmed": false,
+  "review_conclusion": "CVE_CONFIRMED_WAF_NOT_FULLY_CORROBORATED",
+  "claim_boundary": "Cannot infer LLM rule protects CVE: this lab uses CRS separately.",
+  "method": "Offline post-hoc correction of audit parser; original experiment and logs are immutable. No additional HTTP request."
+}

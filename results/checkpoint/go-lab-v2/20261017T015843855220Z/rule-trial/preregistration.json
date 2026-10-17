@@ -1,0 +1,40 @@
+{
+  "utc": "2026-10-17T01:58:43.861690+00:00",
+  "experiment": "prospective_demo_lab",
+  "freeze_before_model_request": true,
+  "corpus_sha256": "82cf2f8ce471eb48613283b01c80a37f7bbdb2120a3d42ff52b2d75fb5155b4a",
+  "case_count": 92,
+  "model_requested": "gpt-5.6-sol",
+  "gateway": "http://127.0.0.1:20128/v1/chat/completions",
+  "api_call_budget": 1,
+  "thresholds": {
+    "coverage_min": 0.9,
+    "fpr_max": 0.05,
+    "robustness_min": 0.85,
+    "min_valid_families_per_cwe": 2,
+    "min_benign": 40,
+    "zero_uncertain": true,
+    "zero_regressions": true
+  },
+  "candidate": "G2",
+  "baseline": "B1",
+  "selection_after_test": false,
+  "old_checkpoint_untouched": true,
+  "model_prompt_excludes_heldout_cases": true,
+  "new_round_rationale": null,
+  "previous_registered_rounds": [],
+  "proxy_override_sha256": "cbb0fcdb3172f6843233acfb3d24b606fb5b76c9a1536b0c6fca20cc281922e0",
+  "baseline_runner_sha256": "b57de18a3a6a365af3c7f016805bb73364fec13d6350fba1c34cd7476d53d05c",
+  "policy_compiler_sha256": "b9fd05cee7865f0ffe29b10ea510bc6a7051ae854501797c12ac9b914f1cebfc",
+  "backend_source_sha256": "2013a3a86a9d0d358698d37055ad94495287c60758e2876505b04ce0d7d0d1b6",
+  "limitations": [
+    "Fixed new fixture cohort is not a population-random sample.",
+    "Authors know old checkpoint findings; no statistical independence from prior design decisions.",
+    "The returned model alias is provider metadata, not cryptographic model weights."
+  ],
+  "status": "FROZEN",
+  "model_response": "gpt-5.6-sol",
+  "model_response_file_sha256": "049b35b3cc20694568efebfe12c85f61cc3fea4c2316e8f07a2d254d3a8c573f",
+  "G2_sha256": "24c0fdfbd3192989e754a42be7d81ef02c40466c25bf21d449ac3345a857b436",
+  "B1_sha256": "b80730cdd94bb16f7bc1e12236b4f9d2f332af4f79522eb8bf531e5d3be2cab0"
+}

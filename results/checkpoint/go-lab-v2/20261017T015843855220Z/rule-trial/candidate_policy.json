@@ -1,0 +1,22 @@
+{
+  "exempt_routes": [
+    "/docs",
+    "/search"
+  ],
+  "patterns": [
+    {
+      "route": "/sql",
+      "regex": "(?i)\\bunion\\s+(?:all\\s+)?select\\b|(?:^|[\\s'\"])\\b(?:or|and)\\s+(?:\\d+\\s*=\\s*\\d+|'[^'\\r\\n]{0,64}'\\s*=\\s*'[^'\\r\\n]{0,64}')"
+    },
+    {
+      "route": "/xss",
+      "regex": "(?i)<\\s*script\\b|<[^>\\r\\n]{0,200}\\s+on[a-z]{3,24}\\s*=|javascript\\s*:|data\\s*:\\s*text/html"
+    },
+    {
+      "route": "/file",
+      "regex": "(?i)(?:\\.|%2e|%252e){2}(?:/|\\\\|%2f|%5c|%252f|%255c)"
+    }
+  ],
+  "rationale": "Exempt only the two documented HTML-escaping routes. Apply narrow, route-specific checks elsewhere: SQL UNION and tautology structures without treating standalone -- punctuation as malicious; executable HTML markers on the unsafe fragment route; and dot-dot path components, including common encoded forms, on the file route. Ordinary public-readme paths remain permissible. Evaluate this policy, heuristic control, and all LLM proposals at the same CRS paranoia level.",
+  "risks": "Regex cannot fully parse SQL, HTML, URL decoding, or normalization. SQL comments can split tokens and evade structural matching, while broader comment rules would falsely reject legitimate strings containing -- or comment-like text. Legitimate prose, code examples, event-handler documentation, javascript: text, or paths intentionally containing parent-directory components may still trigger. Alternate encodings, malformed markup, unusual SQLite syntax, double decoding beyond covered forms, absolute paths, symlink behavior, and platform-specific separators may bypass these patterns; the separate restricted compiler must verify supported syntax and matching semantics."
+}
